@@ -1,0 +1,42 @@
+//
+//  NSDictionary+MH.m
+//  MHFoundation
+//
+//  Created by Malcolm Hall on 23/01/2016.
+//  Copyright © 2016 Malcolm Hall. All rights reserved.
+//
+
+#import "NSDictionary+MH.h"
+
+@implementation NSDictionary (MH)
+
+-(NSSet*)mh_allKeysSet{
+    return [NSSet setWithArray:self.allKeys];
+}
+
+//- (NSArray*)mh_objectsForKnownKeys:(NSArray*)keys{
+//    return [self objectsForKeys:keys notFoundMarker:[NSNull null]];
+//}
+
+-(NSDictionary*)mh_unflattenDictionary{
+    // create the new dict we will fill
+    NSMutableDictionary* d = [NSMutableDictionary dictionary];
+    for(NSString* key in self.allKeys){ // app.name, app.date etc.
+        // copy a reference to a variable that we will change as we go through the tree.
+        NSMutableDictionary* d2 = d;
+        NSArray* parts = [key componentsSeparatedByString:@"."]; //e.g. key1,key2,key3
+        NSArray* partsExceptLast = [parts subarrayWithRange:NSMakeRange(0, parts.count - 1)]; // e.g. key1,key2
+        for(NSString* part in partsExceptLast){
+            NSMutableDictionary* d3 = d2[part];
+            if(!d3){
+                d3 = [NSMutableDictionary dictionary];
+            }
+            d2[part] = d3;
+            d2 = d3; // change the main dict to this sub dict so we can go deeper.
+        }
+        d2[parts.lastObject] = self[key]; // set the final value
+    }
+    return d;
+}
+
+@end
