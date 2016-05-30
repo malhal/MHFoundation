@@ -7,6 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MHFoundation/MHFoundationDefines.h>
+
+#define mh_allKeysSet MHFOUNDATION_ADD_PREFIX(mh_allKeysSet)
+#define mh_unflattenDictionary MHFOUNDATION_ADD_PREFIX(mh_unflattenDictionary)
 
 @interface NSDictionary<__covariant KeyType, __covariant ObjectType> (MH)
 
