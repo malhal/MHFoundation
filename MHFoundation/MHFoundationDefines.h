@@ -17,13 +17,13 @@
 #endif
 
 // Tweak class clash safety, when using in a tweak define MHDATA_PREFIX_TO_ADD as the tweak name in caps.
-#ifndef MHDATA_ADD_PREFIX
-#ifdef MHDATA_PREFIX_TO_ADD
-#define __MHDATA_PASTE__(a, b) a ## _ ## b
-#define __MHDATA_ADD_PREFIX_IMPL__(a, b) __MHDATA_PASTE__(a, b)
-#define MHDATA_ADD_PREFIX(name) __MHDATA_ADD_PREFIX_IMPL__(MHDATA_PREFIX_TO_ADD, name)
+#ifndef MHFOUNDATION_ADD_PREFIX
+#ifdef MHFOUNDATION_PREFIX_TO_ADD
+#define __MHFOUNDATION_PASTE__(a, b) a ## _ ## b
+#define __MHFOUNDATION_ADD_PREFIX_IMPL__(a, b) __MHFOUNDATION_PASTE__(a, b)
+#define MHFOUNDATION_ADD_PREFIX(name) __MHFOUNDATION_ADD_PREFIX_IMPL__(MHFOUNDATION_PREFIX_TO_ADD, name)
 #else
-#define MHDATA_ADD_PREFIX(name) name
+#define MHFOUNDATION_ADD_PREFIX(name) name
 #endif
 #endif
 
