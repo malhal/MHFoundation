@@ -25,7 +25,7 @@
 		ECA799C41D01F0DB005AB8F7 /* MALSerialQueueAsyncOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA799B51D01F0DB005AB8F7 /* MALSerialQueueAsyncOperation.h */; };
 		ECA799C51D01F0DB005AB8F7 /* MALSerialQueueAsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA799B61D01F0DB005AB8F7 /* MALSerialQueueAsyncOperation.m */; };
 		ECA799C61D01F0DB005AB8F7 /* NSArray+MAL.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA799B71D01F0DB005AB8F7 /* NSArray+MAL.h */; };
-		ECA799C71D01F0DB005AB8F7 /* MALArray+MAL.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA799B81D01F0DB005AB8F7 /* MALArray+MAL.m */; };
+		ECA799C71D01F0DB005AB8F7 /* NSArray+MAL.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA799B81D01F0DB005AB8F7 /* NSArray+MAL.m */; };
 		ECA799C81D01F0DB005AB8F7 /* NSDictionary+MAL.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA799B91D01F0DB005AB8F7 /* NSDictionary+MAL.h */; };
 		ECA799C91D01F0DB005AB8F7 /* NSDictionary+MAL.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA799BA1D01F0DB005AB8F7 /* NSDictionary+MAL.m */; };
 		ECA799CA1D01F0DB005AB8F7 /* NSOperationQueue+MAL.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA799BB1D01F0DB005AB8F7 /* NSOperationQueue+MAL.h */; };
@@ -83,7 +83,7 @@
 		ECA799B51D01F0DB005AB8F7 /* MALSerialQueueAsyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MALSerialQueueAsyncOperation.h; sourceTree = "<group>"; };
 		ECA799B61D01F0DB005AB8F7 /* MALSerialQueueAsyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MALSerialQueueAsyncOperation.m; sourceTree = "<group>"; };
 		ECA799B71D01F0DB005AB8F7 /* NSArray+MAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MAL.h"; sourceTree = "<group>"; };
-		ECA799B81D01F0DB005AB8F7 /* MALArray+MAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MALArray+MAL.m"; sourceTree = "<group>"; };
+		ECA799B81D01F0DB005AB8F7 /* NSArray+MAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MAL.m"; sourceTree = "<group>"; };
 		ECA799B91D01F0DB005AB8F7 /* NSDictionary+MAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+MAL.h"; sourceTree = "<group>"; };
 		ECA799BA1D01F0DB005AB8F7 /* NSDictionary+MAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+MAL.m"; sourceTree = "<group>"; };
 		ECA799BB1D01F0DB005AB8F7 /* NSOperationQueue+MAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOperationQueue+MAL.h"; sourceTree = "<group>"; };
@@ -228,7 +228,7 @@
 				ECA799B51D01F0DB005AB8F7 /* MALSerialQueueAsyncOperation.h */,
 				ECA799B61D01F0DB005AB8F7 /* MALSerialQueueAsyncOperation.m */,
 				ECA799B71D01F0DB005AB8F7 /* NSArray+MAL.h */,
-				ECA799B81D01F0DB005AB8F7 /* MALArray+MAL.m */,
+				ECA799B81D01F0DB005AB8F7 /* NSArray+MAL.m */,
 				ECA799B91D01F0DB005AB8F7 /* NSDictionary+MAL.h */,
 				ECA799BA1D01F0DB005AB8F7 /* NSDictionary+MAL.m */,
 				ECA799BB1D01F0DB005AB8F7 /* NSOperationQueue+MAL.h */,
@@ -389,7 +389,7 @@
 			files = (
 				F97C358CD0D67181CDC2726317977D89 /* MALFoundation-dummy.m in Sources */,
 				ECA799BE1D01F0DB005AB8F7 /* MALAsyncOperation.m in Sources */,
-				ECA799C71D01F0DB005AB8F7 /* MALArray+MAL.m in Sources */,
+				ECA799C71D01F0DB005AB8F7 /* NSArray+MAL.m in Sources */,
 				ECA799C91D01F0DB005AB8F7 /* NSDictionary+MAL.m in Sources */,
 				ECA799C31D01F0DB005AB8F7 /* MALRunLoopOperation.m in Sources */,
 				ECA799C11D01F0DB005AB8F7 /* MALFoundationDefines.m in Sources */,
