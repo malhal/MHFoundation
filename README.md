@@ -1,6 +1,6 @@
 # MALFoundation
 
-[![CI Status](http://img.shields.io/travis/Malcolm Hall/MALFoundation.svg?style=flat)](https://travis-ci.org/Malcolm Hall/MALFoundation)
+[![CI Status](http://img.shields.io/travis/malhal/MALFoundation.svg?style=flat)](https://travis-ci.org/malhal/MALFoundation)
 [![Version](https://img.shields.io/cocoapods/v/MALFoundation.svg?style=flat)](http://cocoapods.org/pods/MALFoundation)
 [![License](https://img.shields.io/cocoapods/l/MALFoundation.svg?style=flat)](http://cocoapods.org/pods/MALFoundation)
 [![Platform](https://img.shields.io/cocoapods/p/MALFoundation.svg?style=flat)](http://cocoapods.org/pods/MALFoundation)
