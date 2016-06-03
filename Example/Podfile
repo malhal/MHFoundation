@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MALFoundation_Example' do
+  pod 'MALFoundation', :path => '../'
+
+  target 'MALFoundation_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
