@@ -14,8 +14,8 @@
 #import <MALFoundation/NSArray+MAL.h>
 #import <MALFoundation/NSOperationQueue+MAL.h>
 
-#import <MALFoundation/MHSerialQueueAsyncOperation.h>
-#import <MALFoundation/MHRunLoopOperation.h>
-#import <MALFoundation/MHAsyncOperation.h>
+#import <MALFoundation/MALSerialQueueAsyncOperation.h>
+#import <MALFoundation/MALRunLoopOperation.h>
+#import <MALFoundation/MALAsyncOperation.h>
 
 //test2

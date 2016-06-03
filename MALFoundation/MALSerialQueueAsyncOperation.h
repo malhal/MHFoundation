@@ -1,5 +1,5 @@
 //
-//  MHQueueAsyncOperation.h
+//  MALQueueAsyncOperation.h
 //  MALFoundation
 //
 //  Created by Malcolm Hall on 11/04/2016.
@@ -15,7 +15,7 @@
 
 // the operation that is dependent on all other operations on the queue. Dependencies are added when operation starts.
 // exposed here for adding dependencies after the operation has started.
-//@property (strong, readonly) MHAsyncOperation* finishedOperation;
+//@property (strong, readonly) MALAsyncOperation* finishedOperation;
 
 // adds an operation to the queue and adds a dependency on queueFinishedOperation.
 -(void)addOperation:(NSOperation*)op;

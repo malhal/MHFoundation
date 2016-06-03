@@ -8,7 +8,7 @@
 
 #import "NSOperationQueue+MAL.h"
 
-@implementation NSOperationQueue (MH)
+@implementation NSOperationQueue (MAL)
 
 - (void)mal_addOperationAfterLast:(NSOperation *)op
 {

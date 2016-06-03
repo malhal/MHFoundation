@@ -8,7 +8,7 @@
 
 #import "NSArray+MAL.h"
 
-@implementation NSArray (MH)
+@implementation NSArray (MAL)
 
 - (void)mal_asyncEnumerateObjectsUsingBlock:(void (^)(id obj, NSUInteger idx, BOOL isLast, dispatch_block_t next))block{
     __block NSUInteger index = 0;

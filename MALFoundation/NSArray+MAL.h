@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSArray<__covariant ObjectType> (MH)
+@interface NSArray<__covariant ObjectType> (MAL)
 
 // Enumerates each object in an array and allows you to call an asyncronous method and call next when done.
 // Next must be called from the same thread so that the index can be incrememnted safely.

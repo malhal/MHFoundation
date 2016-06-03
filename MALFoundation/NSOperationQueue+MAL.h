@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSOperationQueue (MH)
+@interface NSOperationQueue (MAL)
 
 // Adds an operation and makes the last one in the queue dependent on it so it runs afterwards.
 // It also ensures the queue's maxConcurrentOperationCount to 1.

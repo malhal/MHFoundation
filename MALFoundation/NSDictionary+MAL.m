@@ -8,7 +8,7 @@
 
 #import "NSDictionary+MAL.h"
 
-@implementation NSDictionary (MH)
+@implementation NSDictionary (MAL)
 
 -(NSSet*)mal_allKeysSet{
     return [NSSet setWithArray:self.allKeys];

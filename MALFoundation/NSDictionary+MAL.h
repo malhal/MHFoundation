@@ -12,7 +12,7 @@
 #define mal_allKeysSet MALFOUNDATION_ADD_PREFIX(mal_allKeysSet)
 #define mal_unflattenDictionary MALFOUNDATION_ADD_PREFIX(mal_unflattenDictionary)
 
-@interface NSDictionary<__covariant KeyType, __covariant ObjectType> (MH)
+@interface NSDictionary<__covariant KeyType, __covariant ObjectType> (MAL)
 
 @property (readonly, copy) NSArray<KeyType> *mal_allKeysSet;
 

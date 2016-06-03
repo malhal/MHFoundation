@@ -16,7 +16,7 @@
     #endif
 #endif
 
-// Tweak class clash safety, when using in a tweak define MHDATA_PREFIX_TO_ADD as the tweak name in caps.
+// Tweak class clash safety, when using in a tweak define MALDATA_PREFIX_TO_ADD as the tweak name in caps.
 #ifndef MALFOUNDATION_ADD_PREFIX
 #ifdef MALFOUNDATION_PREFIX_TO_ADD
 #define __MALFOUNDATION_PASTE__(a, b) a ## _ ## b
