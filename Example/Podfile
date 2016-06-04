@@ -1,9 +1,9 @@
 use_frameworks!
 
-target 'MALFoundation_Example' do
-  pod 'MALFoundation', :path => '../'
+target 'MHFoundation_Example' do
+  pod 'MHFoundation', :path => '../'
 
-  target 'MALFoundation_Tests' do
+  target 'MHFoundation_Tests' do
     inherit! :search_paths
 
     

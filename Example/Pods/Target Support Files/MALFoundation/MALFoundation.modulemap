@@ -1,6 +1,0 @@
-framework module MALFoundation {
-  umbrella header "MALFoundation-umbrella.h"
-
-  export *
-  module * { export * }
-}

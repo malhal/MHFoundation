@@ -1,9 +1,9 @@
-# MALFoundation
+# MHFoundation
 
-[![CI Status](http://img.shields.io/travis/malhal/MALFoundation.svg?style=flat)](https://travis-ci.org/malhal/MALFoundation)
-[![Version](https://img.shields.io/cocoapods/v/MALFoundation.svg?style=flat)](http://cocoapods.org/pods/MALFoundation)
-[![License](https://img.shields.io/cocoapods/l/MALFoundation.svg?style=flat)](http://cocoapods.org/pods/MALFoundation)
-[![Platform](https://img.shields.io/cocoapods/p/MALFoundation.svg?style=flat)](http://cocoapods.org/pods/MALFoundation)
+[![CI Status](http://img.shields.io/travis/Malcolm Hall/MHFoundation.svg?style=flat)](https://travis-ci.org/Malcolm Hall/MHFoundation)
+[![Version](https://img.shields.io/cocoapods/v/MHFoundation.svg?style=flat)](http://cocoapods.org/pods/MHFoundation)
+[![License](https://img.shields.io/cocoapods/l/MHFoundation.svg?style=flat)](http://cocoapods.org/pods/MHFoundation)
+[![Platform](https://img.shields.io/cocoapods/p/MHFoundation.svg?style=flat)](http://cocoapods.org/pods/MHFoundation)
 
 ## Example
 
@@ -13,11 +13,11 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-MALFoundation is available through [CocoaPods](http://cocoapods.org). To install
+MHFoundation is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "MALFoundation"
+pod "MHFoundation"
 ```
 
 ## Author
@@ -26,4 +26,4 @@ Malcolm Hall, malhal@users.noreply.github.com
 
 ## License
 
-MALFoundation is available under the MIT license. See the LICENSE file for more info.
+MHFoundation is available under the MIT license. See the LICENSE file for more info.
