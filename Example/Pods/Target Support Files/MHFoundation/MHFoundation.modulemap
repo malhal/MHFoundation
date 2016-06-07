@@ -1,6 +1,0 @@
-framework module MHFoundation {
-  umbrella header "MHFoundation-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -1,6 +1,0 @@
-framework module Pods_MHFoundation_Tests {
-  umbrella header "Pods-MHFoundation_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -1,0 +1,447 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC3144511D073A1A0025F669 /* MHFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3144501D073A1A0025F669 /* MHFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC3144581D073A1A0025F669 /* MHFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC31444D1D073A1A0025F669 /* MHFoundation.framework */; };
+		EC31445D1D073A1A0025F669 /* MHFoundationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC31445C1D073A1A0025F669 /* MHFoundationTests.m */; };
+		EC3144751D073AC10025F669 /* MHFAsyncOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3144671D073AC10025F669 /* MHFAsyncOperation.h */; };
+		EC3144761D073AC10025F669 /* MHFAsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3144681D073AC10025F669 /* MHFAsyncOperation.m */; };
+		EC3144771D073AC10025F669 /* MHFoundationDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3144691D073AC10025F669 /* MHFoundationDefines.h */; };
+		EC3144781D073AC10025F669 /* MHFoundationDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = EC31446A1D073AC10025F669 /* MHFoundationDefines.m */; };
+		EC3144791D073AC10025F669 /* MHFRunLoopOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = EC31446B1D073AC10025F669 /* MHFRunLoopOperation.h */; };
+		EC31447A1D073AC10025F669 /* MHFRunLoopOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = EC31446C1D073AC10025F669 /* MHFRunLoopOperation.m */; };
+		EC31447B1D073AC10025F669 /* MHFSerialQueueAsyncOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = EC31446D1D073AC10025F669 /* MHFSerialQueueAsyncOperation.h */; };
+		EC31447C1D073AC10025F669 /* MHFSerialQueueAsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = EC31446E1D073AC10025F669 /* MHFSerialQueueAsyncOperation.m */; };
+		EC31447D1D073AC10025F669 /* NSArray+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = EC31446F1D073AC10025F669 /* NSArray+MHF.h */; };
+		EC31447E1D073AC10025F669 /* NSArray+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3144701D073AC10025F669 /* NSArray+MHF.m */; };
+		EC31447F1D073AC10025F669 /* NSDictionary+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3144711D073AC10025F669 /* NSDictionary+MHF.h */; };
+		EC3144801D073AC10025F669 /* NSDictionary+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3144721D073AC10025F669 /* NSDictionary+MHF.m */; };
+		EC3144811D073AC10025F669 /* NSOperationQueue+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3144731D073AC10025F669 /* NSOperationQueue+MHF.h */; };
+		EC3144821D073AC10025F669 /* NSOperationQueue+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3144741D073AC10025F669 /* NSOperationQueue+MHF.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC3144591D073A1A0025F669 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC3144441D073A1A0025F669 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC31444C1D073A1A0025F669;
+			remoteInfo = MHFoundation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EC31444D1D073A1A0025F669 /* MHFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MHFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC3144501D073A1A0025F669 /* MHFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHFoundation.h; sourceTree = "<group>"; };
+		EC3144521D073A1A0025F669 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC3144571D073A1A0025F669 /* MHFoundationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MHFoundationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC31445C1D073A1A0025F669 /* MHFoundationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHFoundationTests.m; sourceTree = "<group>"; };
+		EC31445E1D073A1A0025F669 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC3144671D073AC10025F669 /* MHFAsyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFAsyncOperation.h; sourceTree = "<group>"; };
+		EC3144681D073AC10025F669 /* MHFAsyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHFAsyncOperation.m; sourceTree = "<group>"; };
+		EC3144691D073AC10025F669 /* MHFoundationDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFoundationDefines.h; sourceTree = "<group>"; };
+		EC31446A1D073AC10025F669 /* MHFoundationDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHFoundationDefines.m; sourceTree = "<group>"; };
+		EC31446B1D073AC10025F669 /* MHFRunLoopOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFRunLoopOperation.h; sourceTree = "<group>"; };
+		EC31446C1D073AC10025F669 /* MHFRunLoopOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHFRunLoopOperation.m; sourceTree = "<group>"; };
+		EC31446D1D073AC10025F669 /* MHFSerialQueueAsyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFSerialQueueAsyncOperation.h; sourceTree = "<group>"; };
+		EC31446E1D073AC10025F669 /* MHFSerialQueueAsyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHFSerialQueueAsyncOperation.m; sourceTree = "<group>"; };
+		EC31446F1D073AC10025F669 /* NSArray+MHF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MHF.h"; sourceTree = "<group>"; };
+		EC3144701D073AC10025F669 /* NSArray+MHF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MHF.m"; sourceTree = "<group>"; };
+		EC3144711D073AC10025F669 /* NSDictionary+MHF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+MHF.h"; sourceTree = "<group>"; };
+		EC3144721D073AC10025F669 /* NSDictionary+MHF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+MHF.m"; sourceTree = "<group>"; };
+		EC3144731D073AC10025F669 /* NSOperationQueue+MHF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOperationQueue+MHF.h"; sourceTree = "<group>"; };
+		EC3144741D073AC10025F669 /* NSOperationQueue+MHF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperationQueue+MHF.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC3144491D073A1A0025F669 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC3144541D073A1A0025F669 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC3144581D073A1A0025F669 /* MHFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC3144431D073A1A0025F669 = {
+			isa = PBXGroup;
+			children = (
+				EC31444F1D073A1A0025F669 /* MHFoundation */,
+				EC31445B1D073A1A0025F669 /* MHFoundationTests */,
+				EC31444E1D073A1A0025F669 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EC31444E1D073A1A0025F669 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC31444D1D073A1A0025F669 /* MHFoundation.framework */,
+				EC3144571D073A1A0025F669 /* MHFoundationTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC31444F1D073A1A0025F669 /* MHFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				EC3144671D073AC10025F669 /* MHFAsyncOperation.h */,
+				EC3144681D073AC10025F669 /* MHFAsyncOperation.m */,
+				EC3144691D073AC10025F669 /* MHFoundationDefines.h */,
+				EC31446A1D073AC10025F669 /* MHFoundationDefines.m */,
+				EC31446B1D073AC10025F669 /* MHFRunLoopOperation.h */,
+				EC31446C1D073AC10025F669 /* MHFRunLoopOperation.m */,
+				EC31446D1D073AC10025F669 /* MHFSerialQueueAsyncOperation.h */,
+				EC31446E1D073AC10025F669 /* MHFSerialQueueAsyncOperation.m */,
+				EC31446F1D073AC10025F669 /* NSArray+MHF.h */,
+				EC3144701D073AC10025F669 /* NSArray+MHF.m */,
+				EC3144711D073AC10025F669 /* NSDictionary+MHF.h */,
+				EC3144721D073AC10025F669 /* NSDictionary+MHF.m */,
+				EC3144731D073AC10025F669 /* NSOperationQueue+MHF.h */,
+				EC3144741D073AC10025F669 /* NSOperationQueue+MHF.m */,
+				EC3144501D073A1A0025F669 /* MHFoundation.h */,
+				EC3144521D073A1A0025F669 /* Info.plist */,
+			);
+			path = MHFoundation;
+			sourceTree = "<group>";
+		};
+		EC31445B1D073A1A0025F669 /* MHFoundationTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC31445C1D073A1A0025F669 /* MHFoundationTests.m */,
+				EC31445E1D073A1A0025F669 /* Info.plist */,
+			);
+			path = MHFoundationTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		EC31444A1D073A1A0025F669 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC31447F1D073AC10025F669 /* NSDictionary+MHF.h in Headers */,
+				EC3144811D073AC10025F669 /* NSOperationQueue+MHF.h in Headers */,
+				EC3144771D073AC10025F669 /* MHFoundationDefines.h in Headers */,
+				EC31447B1D073AC10025F669 /* MHFSerialQueueAsyncOperation.h in Headers */,
+				EC3144511D073A1A0025F669 /* MHFoundation.h in Headers */,
+				EC31447D1D073AC10025F669 /* NSArray+MHF.h in Headers */,
+				EC3144791D073AC10025F669 /* MHFRunLoopOperation.h in Headers */,
+				EC3144751D073AC10025F669 /* MHFAsyncOperation.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		EC31444C1D073A1A0025F669 /* MHFoundation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC3144611D073A1A0025F669 /* Build configuration list for PBXNativeTarget "MHFoundation" */;
+			buildPhases = (
+				EC3144481D073A1A0025F669 /* Sources */,
+				EC3144491D073A1A0025F669 /* Frameworks */,
+				EC31444A1D073A1A0025F669 /* Headers */,
+				EC31444B1D073A1A0025F669 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MHFoundation;
+			productName = MHFoundation;
+			productReference = EC31444D1D073A1A0025F669 /* MHFoundation.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EC3144561D073A1A0025F669 /* MHFoundationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC3144641D073A1A0025F669 /* Build configuration list for PBXNativeTarget "MHFoundationTests" */;
+			buildPhases = (
+				EC3144531D073A1A0025F669 /* Sources */,
+				EC3144541D073A1A0025F669 /* Frameworks */,
+				EC3144551D073A1A0025F669 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC31445A1D073A1A0025F669 /* PBXTargetDependency */,
+			);
+			name = MHFoundationTests;
+			productName = MHFoundationTests;
+			productReference = EC3144571D073A1A0025F669 /* MHFoundationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC3144441D073A1A0025F669 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Malcolm Hall";
+				TargetAttributes = {
+					EC31444C1D073A1A0025F669 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					EC3144561D073A1A0025F669 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = EC3144471D073A1A0025F669 /* Build configuration list for PBXProject "MHFoundation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EC3144431D073A1A0025F669;
+			productRefGroup = EC31444E1D073A1A0025F669 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC31444C1D073A1A0025F669 /* MHFoundation */,
+				EC3144561D073A1A0025F669 /* MHFoundationTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC31444B1D073A1A0025F669 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC3144551D073A1A0025F669 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC3144481D073A1A0025F669 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC3144801D073AC10025F669 /* NSDictionary+MHF.m in Sources */,
+				EC3144821D073AC10025F669 /* NSOperationQueue+MHF.m in Sources */,
+				EC31447C1D073AC10025F669 /* MHFSerialQueueAsyncOperation.m in Sources */,
+				EC31447E1D073AC10025F669 /* NSArray+MHF.m in Sources */,
+				EC3144781D073AC10025F669 /* MHFoundationDefines.m in Sources */,
+				EC3144761D073AC10025F669 /* MHFAsyncOperation.m in Sources */,
+				EC31447A1D073AC10025F669 /* MHFRunLoopOperation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC3144531D073A1A0025F669 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC31445D1D073A1A0025F669 /* MHFoundationTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC31445A1D073A1A0025F669 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC31444C1D073A1A0025F669 /* MHFoundation */;
+			targetProxy = EC3144591D073A1A0025F669 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EC31445F1D073A1A0025F669 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EC3144601D073A1A0025F669 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EC3144621D073A1A0025F669 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MHFoundation/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.malhal.MHFoundation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		EC3144631D073A1A0025F669 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MHFoundation/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.malhal.MHFoundation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		EC3144651D073A1A0025F669 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MHFoundationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.malhal.MHFoundationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EC3144661D073A1A0025F669 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MHFoundationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.malhal.MHFoundationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC3144471D073A1A0025F669 /* Build configuration list for PBXProject "MHFoundation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC31445F1D073A1A0025F669 /* Debug */,
+				EC3144601D073A1A0025F669 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC3144611D073A1A0025F669 /* Build configuration list for PBXNativeTarget "MHFoundation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC3144621D073A1A0025F669 /* Debug */,
+				EC3144631D073A1A0025F669 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EC3144641D073A1A0025F669 /* Build configuration list for PBXNativeTarget "MHFoundationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC3144651D073A1A0025F669 /* Debug */,
+				EC3144661D073A1A0025F669 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC3144441D073A1A0025F669 /* Project object */;
+}
