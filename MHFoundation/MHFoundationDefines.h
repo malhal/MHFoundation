@@ -39,8 +39,3 @@
 
 #endif
 
-NS_ASSUME_NONNULL_BEGIN
-
-MHFOUNDATION_EXTERN NSString * const MHFoundationErrorDomain;
-
-NS_ASSUME_NONNULL_END

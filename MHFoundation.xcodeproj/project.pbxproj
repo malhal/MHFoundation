@@ -23,7 +23,8 @@
 		EC3144811D073AC10025F669 /* NSOperationQueue+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3144731D073AC10025F669 /* NSOperationQueue+MHF.h */; };
 		EC3144821D073AC10025F669 /* NSOperationQueue+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3144741D073AC10025F669 /* NSOperationQueue+MHF.m */; };
 		ECC991341D0D54A4000F5EFB /* MHFoundationDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC991321D0D54A4000F5EFB /* MHFoundationDefines.h */; };
-		ECC991351D0D54A4000F5EFB /* MHFoundationDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC991331D0D54A4000F5EFB /* MHFoundationDefines.m */; };
+		ECC991381D0D74FD000F5EFB /* MHFoundationErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC991361D0D74FD000F5EFB /* MHFoundationErrors.h */; };
+		ECC991391D0D74FD000F5EFB /* MHFoundationErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC991371D0D74FD000F5EFB /* MHFoundationErrors.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +57,8 @@
 		EC3144731D073AC10025F669 /* NSOperationQueue+MHF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOperationQueue+MHF.h"; sourceTree = "<group>"; };
 		EC3144741D073AC10025F669 /* NSOperationQueue+MHF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperationQueue+MHF.m"; sourceTree = "<group>"; };
 		ECC991321D0D54A4000F5EFB /* MHFoundationDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFoundationDefines.h; sourceTree = "<group>"; };
-		ECC991331D0D54A4000F5EFB /* MHFoundationDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHFoundationDefines.m; sourceTree = "<group>"; };
+		ECC991361D0D74FD000F5EFB /* MHFoundationErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFoundationErrors.h; sourceTree = "<group>"; };
+		ECC991371D0D74FD000F5EFB /* MHFoundationErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHFoundationErrors.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +115,9 @@
 				EC3144741D073AC10025F669 /* NSOperationQueue+MHF.m */,
 				EC3144501D073A1A0025F669 /* MHFoundation.h */,
 				ECC991321D0D54A4000F5EFB /* MHFoundationDefines.h */,
-				ECC991331D0D54A4000F5EFB /* MHFoundationDefines.m */,
 				EC3144521D073A1A0025F669 /* Info.plist */,
+				ECC991361D0D74FD000F5EFB /* MHFoundationErrors.h */,
+				ECC991371D0D74FD000F5EFB /* MHFoundationErrors.m */,
 			);
 			path = MHFoundation;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 				EC3144511D073A1A0025F669 /* MHFoundation.h in Headers */,
 				EC31447D1D073AC10025F669 /* NSArray+MHF.h in Headers */,
 				EC3144791D073AC10025F669 /* MHFRunLoopOperation.h in Headers */,
+				ECC991381D0D74FD000F5EFB /* MHFoundationErrors.h in Headers */,
 				EC3144751D073AC10025F669 /* MHFAsyncOperation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,9 +246,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECC991391D0D74FD000F5EFB /* MHFoundationErrors.m in Sources */,
 				EC3144801D073AC10025F669 /* NSDictionary+MHF.m in Sources */,
 				EC3144821D073AC10025F669 /* NSOperationQueue+MHF.m in Sources */,
-				ECC991351D0D54A4000F5EFB /* MHFoundationDefines.m in Sources */,
 				EC31447C1D073AC10025F669 /* MHFSerialQueueAsyncOperation.m in Sources */,
 				EC31447E1D073AC10025F669 /* NSArray+MHF.m in Sources */,
 				EC3144761D073AC10025F669 /* MHFAsyncOperation.m in Sources */,
