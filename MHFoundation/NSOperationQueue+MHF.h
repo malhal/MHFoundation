@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NSOperationQueue (MHF)
 
 // Adds an operation and makes the last one in the queue dependent on it so it runs afterwards.
@@ -15,3 +17,5 @@
 - (void)mhf_addOperationAfterLast:(NSOperation *)op;
 
 @end
+
+NS_ASSUME_NONNULL_END

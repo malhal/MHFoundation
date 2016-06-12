@@ -12,8 +12,6 @@
 		EC31445D1D073A1A0025F669 /* MHFoundationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC31445C1D073A1A0025F669 /* MHFoundationTests.m */; };
 		EC3144751D073AC10025F669 /* MHFAsyncOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3144671D073AC10025F669 /* MHFAsyncOperation.h */; };
 		EC3144761D073AC10025F669 /* MHFAsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3144681D073AC10025F669 /* MHFAsyncOperation.m */; };
-		EC3144771D073AC10025F669 /* MHFoundationDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3144691D073AC10025F669 /* MHFoundationDefines.h */; };
-		EC3144781D073AC10025F669 /* MHFoundationDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = EC31446A1D073AC10025F669 /* MHFoundationDefines.m */; };
 		EC3144791D073AC10025F669 /* MHFRunLoopOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = EC31446B1D073AC10025F669 /* MHFRunLoopOperation.h */; };
 		EC31447A1D073AC10025F669 /* MHFRunLoopOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = EC31446C1D073AC10025F669 /* MHFRunLoopOperation.m */; };
 		EC31447B1D073AC10025F669 /* MHFSerialQueueAsyncOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = EC31446D1D073AC10025F669 /* MHFSerialQueueAsyncOperation.h */; };
@@ -24,6 +22,8 @@
 		EC3144801D073AC10025F669 /* NSDictionary+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3144721D073AC10025F669 /* NSDictionary+MHF.m */; };
 		EC3144811D073AC10025F669 /* NSOperationQueue+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3144731D073AC10025F669 /* NSOperationQueue+MHF.h */; };
 		EC3144821D073AC10025F669 /* NSOperationQueue+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3144741D073AC10025F669 /* NSOperationQueue+MHF.m */; };
+		ECC991341D0D54A4000F5EFB /* MHFoundationDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC991321D0D54A4000F5EFB /* MHFoundationDefines.h */; };
+		ECC991351D0D54A4000F5EFB /* MHFoundationDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC991331D0D54A4000F5EFB /* MHFoundationDefines.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +45,6 @@
 		EC31445E1D073A1A0025F669 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC3144671D073AC10025F669 /* MHFAsyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFAsyncOperation.h; sourceTree = "<group>"; };
 		EC3144681D073AC10025F669 /* MHFAsyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHFAsyncOperation.m; sourceTree = "<group>"; };
-		EC3144691D073AC10025F669 /* MHFoundationDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFoundationDefines.h; sourceTree = "<group>"; };
-		EC31446A1D073AC10025F669 /* MHFoundationDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHFoundationDefines.m; sourceTree = "<group>"; };
 		EC31446B1D073AC10025F669 /* MHFRunLoopOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFRunLoopOperation.h; sourceTree = "<group>"; };
 		EC31446C1D073AC10025F669 /* MHFRunLoopOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHFRunLoopOperation.m; sourceTree = "<group>"; };
 		EC31446D1D073AC10025F669 /* MHFSerialQueueAsyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFSerialQueueAsyncOperation.h; sourceTree = "<group>"; };
@@ -57,6 +55,8 @@
 		EC3144721D073AC10025F669 /* NSDictionary+MHF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+MHF.m"; sourceTree = "<group>"; };
 		EC3144731D073AC10025F669 /* NSOperationQueue+MHF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOperationQueue+MHF.h"; sourceTree = "<group>"; };
 		EC3144741D073AC10025F669 /* NSOperationQueue+MHF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperationQueue+MHF.m"; sourceTree = "<group>"; };
+		ECC991321D0D54A4000F5EFB /* MHFoundationDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFoundationDefines.h; sourceTree = "<group>"; };
+		ECC991331D0D54A4000F5EFB /* MHFoundationDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHFoundationDefines.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +101,6 @@
 			children = (
 				EC3144671D073AC10025F669 /* MHFAsyncOperation.h */,
 				EC3144681D073AC10025F669 /* MHFAsyncOperation.m */,
-				EC3144691D073AC10025F669 /* MHFoundationDefines.h */,
-				EC31446A1D073AC10025F669 /* MHFoundationDefines.m */,
 				EC31446B1D073AC10025F669 /* MHFRunLoopOperation.h */,
 				EC31446C1D073AC10025F669 /* MHFRunLoopOperation.m */,
 				EC31446D1D073AC10025F669 /* MHFSerialQueueAsyncOperation.h */,
@@ -114,6 +112,8 @@
 				EC3144731D073AC10025F669 /* NSOperationQueue+MHF.h */,
 				EC3144741D073AC10025F669 /* NSOperationQueue+MHF.m */,
 				EC3144501D073A1A0025F669 /* MHFoundation.h */,
+				ECC991321D0D54A4000F5EFB /* MHFoundationDefines.h */,
+				ECC991331D0D54A4000F5EFB /* MHFoundationDefines.m */,
 				EC3144521D073A1A0025F669 /* Info.plist */,
 			);
 			path = MHFoundation;
@@ -137,7 +137,7 @@
 			files = (
 				EC31447F1D073AC10025F669 /* NSDictionary+MHF.h in Headers */,
 				EC3144811D073AC10025F669 /* NSOperationQueue+MHF.h in Headers */,
-				EC3144771D073AC10025F669 /* MHFoundationDefines.h in Headers */,
+				ECC991341D0D54A4000F5EFB /* MHFoundationDefines.h in Headers */,
 				EC31447B1D073AC10025F669 /* MHFSerialQueueAsyncOperation.h in Headers */,
 				EC3144511D073A1A0025F669 /* MHFoundation.h in Headers */,
 				EC31447D1D073AC10025F669 /* NSArray+MHF.h in Headers */,
@@ -244,9 +244,9 @@
 			files = (
 				EC3144801D073AC10025F669 /* NSDictionary+MHF.m in Sources */,
 				EC3144821D073AC10025F669 /* NSOperationQueue+MHF.m in Sources */,
+				ECC991351D0D54A4000F5EFB /* MHFoundationDefines.m in Sources */,
 				EC31447C1D073AC10025F669 /* MHFSerialQueueAsyncOperation.m in Sources */,
 				EC31447E1D073AC10025F669 /* NSArray+MHF.m in Sources */,
-				EC3144781D073AC10025F669 /* MHFoundationDefines.m in Sources */,
 				EC3144761D073AC10025F669 /* MHFAsyncOperation.m in Sources */,
 				EC31447A1D073AC10025F669 /* MHFRunLoopOperation.m in Sources */,
 			);
@@ -432,6 +432,7 @@
 				EC3144631D073A1A0025F669 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EC3144641D073A1A0025F669 /* Build configuration list for PBXNativeTarget "MHFoundationTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +441,7 @@
 				EC3144661D073A1A0025F669 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

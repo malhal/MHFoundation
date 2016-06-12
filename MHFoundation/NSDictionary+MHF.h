@@ -9,8 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <MHFoundation/MHFoundationDefines.h>
 
-#define mhf_allKeysSet MHFOUNDATION_ADD_PREFIX(mhf_allKeysSet)
-#define mhf_unflattenDictionary MHFOUNDATION_ADD_PREFIX(mhf_unflattenDictionary)
+NS_ASSUME_NONNULL_BEGIN
 
 @interface NSDictionary<__covariant KeyType, __covariant ObjectType> (MHF)
 
@@ -24,3 +23,5 @@
 //- (NSArray<ObjectType> *)mhf_objectsForKnownKeys:(NSArray<KeyType> *)keys;
 
 @end
+
+NS_ASSUME_NONNULL_END
