@@ -66,6 +66,7 @@ static NSString* kOperationCountChanged = @"kOperationCountChanged";
 
 // also cancel any data task associated to this task
 - (void)cancel{
+    [super cancel];
     self.error = [NSError errorWithDomain:NSCocoaErrorDomain code:NSUserCancelledError userInfo:@{NSLocalizedDescriptionKey : @"The queue operation was cancelled"}];
     [self.operationQueue cancelAllOperations];    
 }
