@@ -25,6 +25,8 @@
 		ECC991341D0D54A4000F5EFB /* MHFoundationDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC991321D0D54A4000F5EFB /* MHFoundationDefines.h */; };
 		ECC991381D0D74FD000F5EFB /* MHFoundationErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC991361D0D74FD000F5EFB /* MHFoundationErrors.h */; };
 		ECC991391D0D74FD000F5EFB /* MHFoundationErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC991371D0D74FD000F5EFB /* MHFoundationErrors.m */; };
+		ECFD7F721D44087000449373 /* NSDate+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD7F701D44087000449373 /* NSDate+MHF.h */; };
+		ECFD7F731D44087000449373 /* NSDate+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFD7F711D44087000449373 /* NSDate+MHF.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		ECC991321D0D54A4000F5EFB /* MHFoundationDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFoundationDefines.h; sourceTree = "<group>"; };
 		ECC991361D0D74FD000F5EFB /* MHFoundationErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFoundationErrors.h; sourceTree = "<group>"; };
 		ECC991371D0D74FD000F5EFB /* MHFoundationErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHFoundationErrors.m; sourceTree = "<group>"; };
+		ECFD7F701D44087000449373 /* NSDate+MHF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+MHF.h"; sourceTree = "<group>"; };
+		ECFD7F711D44087000449373 /* NSDate+MHF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+MHF.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 				EC3144521D073A1A0025F669 /* Info.plist */,
 				ECC991361D0D74FD000F5EFB /* MHFoundationErrors.h */,
 				ECC991371D0D74FD000F5EFB /* MHFoundationErrors.m */,
+				ECFD7F701D44087000449373 /* NSDate+MHF.h */,
+				ECFD7F711D44087000449373 /* NSDate+MHF.m */,
 			);
 			path = MHFoundation;
 			sourceTree = "<group>";
@@ -147,6 +153,7 @@
 				EC3144791D073AC10025F669 /* MHFRunLoopOperation.h in Headers */,
 				ECC991381D0D74FD000F5EFB /* MHFoundationErrors.h in Headers */,
 				EC3144751D073AC10025F669 /* MHFAsyncOperation.h in Headers */,
+				ECFD7F721D44087000449373 /* NSDate+MHF.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +257,7 @@
 				EC3144801D073AC10025F669 /* NSDictionary+MHF.m in Sources */,
 				EC3144821D073AC10025F669 /* NSOperationQueue+MHF.m in Sources */,
 				EC31447C1D073AC10025F669 /* MHFSerialQueueAsyncOperation.m in Sources */,
+				ECFD7F731D44087000449373 /* NSDate+MHF.m in Sources */,
 				EC31447E1D073AC10025F669 /* NSArray+MHF.m in Sources */,
 				EC3144761D073AC10025F669 /* MHFAsyncOperation.m in Sources */,
 				EC31447A1D073AC10025F669 /* MHFRunLoopOperation.m in Sources */,
