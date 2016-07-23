@@ -12,14 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MHFSerialQueueAsyncOperation : MHFAsyncOperation
 
-// Do not add operations directly to the queue, instead use addQueueOperation
-//@property (strong, readonly) NSOperationQueue* operationQueue;
+// You can add directly to the queue if you want an operation to not be run after last.
+@property (strong, readonly) NSOperationQueue* operationQueue;
 
 // the operation that is dependent on all other operations on the queue. Dependencies are added when operation starts.
 // exposed here for adding dependencies after the operation has started.
 //@property (strong, readonly) MHFAsyncOperation* finishedOperation;
 
-// adds an operation to the queue and adds a dependency on queueFinishedOperation.
+// adds an operation to the back of the queue by adding a dependency on the last operation in the queue.
 -(void)addOperation:(NSOperation*)op;
 
 // calling super adds the finished operation to the queue, call first.
