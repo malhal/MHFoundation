@@ -11,22 +11,17 @@
 
 static NSString* kOperationCountChanged = @"kOperationCountChanged";
 
-@interface MHFSerialQueueAsyncOperation()
-
-@property (strong, nonatomic) NSOperationQueue* operationQueue;
-
-@property (strong, nonatomic) NSError* error;
-
-@end
-
-@implementation MHFSerialQueueAsyncOperation
+@implementation MHFSerialQueueAsyncOperation{
+    NSOperationQueue* _operationQueue;
+    NSError* _error;
+}
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        self.operationQueue = [[NSOperationQueue alloc] init];
-        self.operationQueue.suspended = YES;
+        _operationQueue = [[NSOperationQueue alloc] init];
+        _operationQueue.suspended = YES;
         
         [self.operationQueue addObserver:self
                               forKeyPath:@"operationCount"
@@ -43,7 +38,7 @@ static NSString* kOperationCountChanged = @"kOperationCountChanged";
     // if it was our observation
     if(context == &kOperationCountChanged){
         if([[change objectForKey:NSKeyValueChangeNewKey] isEqual:@0]){
-            [self finishWithError:self.error];
+            [self finishWithError:_error];
         }
     }
     else{
@@ -67,7 +62,7 @@ static NSString* kOperationCountChanged = @"kOperationCountChanged";
 // also cancel any data task associated to this task
 - (void)cancel{
     [super cancel];
-    self.error = [NSError errorWithDomain:NSCocoaErrorDomain code:NSUserCancelledError userInfo:@{NSLocalizedDescriptionKey : @"The queue operation was cancelled"}];
+    _error = [NSError errorWithDomain:NSCocoaErrorDomain code:NSUserCancelledError userInfo:@{NSLocalizedDescriptionKey : @"The queue operation was cancelled"}];
     [self.operationQueue cancelAllOperations];    
 }
 

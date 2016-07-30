@@ -8,20 +8,17 @@
 
 #import "MHFAsyncOperation.h"
 
-@interface MHFAsyncOperation()
-@property (nonatomic) dispatch_queue_t callbackQueue;
-@end
-
 @implementation MHFAsyncOperation{
     BOOL _isFinished;
     BOOL _isExecuting;
+    dispatch_queue_t _callbackQueue;
 }
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        self.callbackQueue = dispatch_queue_create(NULL, DISPATCH_QUEUE_SERIAL);
+        _callbackQueue = dispatch_queue_create(NULL, DISPATCH_QUEUE_SERIAL);
         //dispatch_queue_set_specific(self.callbackQueue, (__bridge const void *)(self.callbackQueue), (__bridge void *)(self), NULL);
     }
     return self;
@@ -130,7 +127,7 @@
 }
 
 - (void)performBlockOnCallbackQueue:(dispatch_block_t)block {
-    dispatch_async(self.callbackQueue, block);
+    dispatch_async(_callbackQueue, block);
 }
 
 -(void)dealloc{
