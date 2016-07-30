@@ -7,15 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MHFoundation/MHFDefines.h>
 
 @interface NSDate (MHF)
 
-- (BOOL)isLaterThanOrEqualTo:(NSDate*)date;
+- (BOOL)mhf_isLaterThanOrEqualTo:(NSDate*)date;
 
-- (BOOL)isEarlierThanOrEqualTo:(NSDate*)date;
+- (BOOL)mhf_isEarlierThanOrEqualTo:(NSDate*)date;
 
-- (BOOL)isLaterThan:(NSDate*)date;
+- (BOOL)mhf_isLaterThan:(NSDate*)date;
 
-- (BOOL)isEarlierThan:(NSDate*)date;
+- (BOOL)mhf_isEarlierThan:(NSDate*)date;
 
 @end

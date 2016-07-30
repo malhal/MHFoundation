@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MHFoundation/MHFDefines.h>
+#import <MHFoundation/MHFDefines.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

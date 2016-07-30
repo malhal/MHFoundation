@@ -7,6 +7,7 @@
 //
 
 #import <MHFoundation/MHFAsyncOperation.h>
+#import <MHFoundation/MHFDefines.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -10,18 +10,18 @@
 
 @implementation NSDate (MHF)
 
-- (BOOL)isLaterThanOrEqualTo:(NSDate*)date {
+- (BOOL)mhf_isLaterThanOrEqualTo:(NSDate*)date {
     return !([self compare:date] == NSOrderedAscending);
 }
 
-- (BOOL)isEarlierThanOrEqualTo:(NSDate*)date {
+- (BOOL)mhf_isEarlierThanOrEqualTo:(NSDate*)date {
     return !([self compare:date] == NSOrderedDescending);
 }
-- (BOOL)isLaterThan:(NSDate*)date {
+- (BOOL)mhf_isLaterThan:(NSDate*)date {
     return ([self compare:date] == NSOrderedDescending);
     
 }
-- (BOOL)isEarlierThan:(NSDate*)date {
+- (BOOL)mhf_isEarlierThan:(NSDate*)date {
     return ([self compare:date] == NSOrderedAscending);
 }
 
