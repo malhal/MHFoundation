@@ -6,7 +6,7 @@
 //
 //
 
-#import <Foundation/Foundation.h>
+#import <MHFoundation/MHFNamespaceDefines.h>
 
 #ifndef MHFOUNDATION_EXTERN
     #ifdef __cplusplus
