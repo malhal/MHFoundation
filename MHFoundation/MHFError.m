@@ -6,6 +6,6 @@
 //  Copyright © 2016 Malcolm Hall. All rights reserved.
 //
 
-#import "MHFoundationErrors.h"
+#import "NSError+MHF.h"
 
-NSString * const MHFoundationErrorDomain = @"MHFoundation";
+NSString * const MHFoundationErrorDomain = @"MHFoundationErrorDomain";

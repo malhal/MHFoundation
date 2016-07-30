@@ -8,6 +8,8 @@
 
 #import "MHFSerialQueueAsyncOperation.h"
 #import "NSOperationQueue+MHF.h"
+#import "MHFError.h"
+#import "NSError+MHF.h"
 
 static NSString* kOperationCountChanged = @"kOperationCountChanged";
 
@@ -23,7 +25,7 @@ static NSString* kOperationCountChanged = @"kOperationCountChanged";
         _operationQueue = [[NSOperationQueue alloc] init];
         _operationQueue.suspended = YES;
         [_operationQueue addObserver:self
-                              forKeyPath:@"operationCount"
+                              forKeyPath:NSStringFromSelector(@selector(operationCount))
                                  options:NSKeyValueObservingOptionNew
                                  context:&kOperationCountChanged];
     }
@@ -61,7 +63,7 @@ static NSString* kOperationCountChanged = @"kOperationCountChanged";
 // also cancel any data task associated to this task
 - (void)cancel{
     [super cancel];
-    _error = [NSError errorWithDomain:NSCocoaErrorDomain code:NSUserCancelledError userInfo:@{NSLocalizedDescriptionKey : @"The queue operation was cancelled"}];
+    _error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorOperationCancelled descriptionFormat:@"The %@ was cancelled", NSStringFromClass(self.class)];
     [_operationQueue cancelAllOperations];
 }
 
@@ -71,7 +73,7 @@ static NSString* kOperationCountChanged = @"kOperationCountChanged";
 
 - (void)dealloc
 {
-    [_operationQueue removeObserver:self forKeyPath:@"operationCount"];
+    [_operationQueue removeObserver:self forKeyPath:NSStringFromSelector(@selector(operationCount))];
     //NSLog(@"queue dealloc");
 }
 

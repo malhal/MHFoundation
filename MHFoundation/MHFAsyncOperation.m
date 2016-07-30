@@ -7,6 +7,8 @@
 //
 
 #import "MHFAsyncOperation.h"
+#import "MHFError.h"
+#import "NSError+MHF.h"
 
 @implementation MHFAsyncOperation{
     BOOL _isFinished;
@@ -38,7 +40,7 @@
 
 -(void)cancel{
     [super cancel];
-    NSError* error = [NSError errorWithDomain:NSCocoaErrorDomain code:NSUserCancelledError userInfo:@{NSLocalizedDescriptionKey : @"The operation was cancelled"}];
+    NSError* error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorOperationCancelled descriptionFormat:@"The %@ was cancelled", self.class];
     [self finishWithError:error];
 }
 
@@ -52,7 +54,7 @@
     }
     
     if(self.isExecuting || self.isFinished){
-        [NSException raise:NSInvalidArgumentException format:@"You can't restart an executing or finished operation"];
+        [NSException raise:NSInvalidArgumentException format:@"You can't restart an executing or finished %@", self.class];
     }
     
     [self willChangeValueForKey:@"isExecuting"];
@@ -61,7 +63,7 @@
     
     if(self.isCancelled){
         // Must move the operation to the finished state if it is canceled.
-        NSError* error = [NSError errorWithDomain:NSCocoaErrorDomain code:NSUserCancelledError userInfo:@{NSLocalizedDescriptionKey : @"The operation was cancelled before it started"}];
+        NSError* error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorOperationCancelled descriptionFormat:@"The %@ was cancelled before it started", self.class];
         [self finishWithError:error];
         return;
     }

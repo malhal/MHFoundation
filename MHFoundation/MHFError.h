@@ -6,10 +6,15 @@
 //  Copyright © 2016 Malcolm Hall. All rights reserved.
 //
 
-#import <MHFoundation/MHFoundationDefines.h>
+#import <MHFoundation/MHFDefines.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 MHFOUNDATION_EXTERN NSString * const MHFoundationErrorDomain;
+
+typedef NS_ENUM(NSInteger, MHFErrorCode) {
+    MHFErrorUnknown                = 1,  /* Unknown or generic error */
+    MHFErrorOperationCancelled     = 2,  /* A MHF operation was explicitly cancelled */
+};
 
 NS_ASSUME_NONNULL_END
