@@ -22,8 +22,7 @@ static NSString* kOperationCountChanged = @"kOperationCountChanged";
     if (self) {
         _operationQueue = [[NSOperationQueue alloc] init];
         _operationQueue.suspended = YES;
-        
-        [self.operationQueue addObserver:self
+        [_operationQueue addObserver:self
                               forKeyPath:@"operationCount"
                                  options:NSKeyValueObservingOptionNew
                                  context:&kOperationCountChanged];
@@ -55,7 +54,7 @@ static NSString* kOperationCountChanged = @"kOperationCountChanged";
 -(void)performAsyncOperation{
     // start the queue after the operations have been added by the subclass.
     [self performBlockOnCallbackQueue:^{
-        self.operationQueue.suspended = NO;
+        _operationQueue.suspended = NO;
     }];
 }
 
@@ -63,11 +62,11 @@ static NSString* kOperationCountChanged = @"kOperationCountChanged";
 - (void)cancel{
     [super cancel];
     _error = [NSError errorWithDomain:NSCocoaErrorDomain code:NSUserCancelledError userInfo:@{NSLocalizedDescriptionKey : @"The queue operation was cancelled"}];
-    [self.operationQueue cancelAllOperations];    
+    [_operationQueue cancelAllOperations];
 }
 
 -(void)addOperation:(NSOperation*)op{
-    [self.operationQueue mhf_addOperationAfterLast:op];
+    [_operationQueue mhf_addOperationAfterLast:op];
 }
 
 - (void)dealloc
