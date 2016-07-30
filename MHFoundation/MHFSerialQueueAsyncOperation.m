@@ -71,7 +71,7 @@ static NSString* kOperationCountChanged = @"kOperationCountChanged";
 
 - (void)dealloc
 {
-    [self removeObserver:self forKeyPath:@"operationCount"];
+    [_operationQueue removeObserver:self forKeyPath:@"operationCount"];
     //NSLog(@"queue dealloc");
 }
 
