@@ -1,9 +1,8 @@
 //
-//  MHFNamespaceDefines.h
+//  MHFDefines+Namespace.h
 //  MHFoundation
 //
-//  Auto-generated using script created by Malcolm Hall on 30/07/2016.
-//  Copyright © 2016 Malcolm Hall. All rights reserved.
+//  Generated using MHNamespaceGenerator on 31/07/2016
 //
 
 #if !defined(__MHFOUNDATION_NS_SYMBOL) && defined(MHFOUNDATION_NAMESPACE)
