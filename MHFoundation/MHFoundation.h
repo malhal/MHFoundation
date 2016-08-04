@@ -20,9 +20,9 @@ FOUNDATION_EXPORT const unsigned char MHFoundationVersionString[];
 
 #import <MHFoundation/NSDictionary+MHF.h>
 #import <MHFoundation/NSArray+MHF.h>
-#import <MHFoundation/NSOperationQueue+MHF.h>
+#import <MHFoundation/NSOperation+MHF.h>
 #import <MHFoundation/NSError+MHF.h>
 
-#import <MHFoundation/MHFSerialQueueAsyncOperation.h>
+#import <MHFoundation/MHFSerialQueueOperation.h>
 #import <MHFoundation/MHFRunLoopOperation.h>
 #import <MHFoundation/MHFAsyncOperation.h>

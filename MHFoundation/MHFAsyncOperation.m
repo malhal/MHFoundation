@@ -21,7 +21,6 @@
     self = [super init];
     if (self) {
         _callbackQueue = dispatch_queue_create(NULL, DISPATCH_QUEUE_SERIAL);
-        //dispatch_queue_set_specific(self.callbackQueue, (__bridge const void *)(self.callbackQueue), (__bridge void *)(self), NULL);
     }
     return self;
 }
@@ -82,21 +81,21 @@
     if([self asyncOperationShouldRun:&error]){
         [self performAsyncOperation];
     }else{
-        [self _finishOnCallbackQueueWithError:error];
+        [self finishOnCallbackQueueWithError:error];
     }
 }
 
-- (void)_finishInternalOnCallbackQueueWithError:(NSError *)error{
+- (void)finishInternalOnCallbackQueueWithError:(NSError *)error{
     // Prevents duplicate callbacks.
     if(self.isExecuting){
-        [self _finishOnCallbackQueueWithError:error];
+        [self finishOnCallbackQueueWithError:error];
     }
 }
 
 // overriden by subclasses.
 // on the call back queue
 //- (void)_finish{
-- (void)_finishOnCallbackQueueWithError:(NSError *)error{
+- (void)finishOnCallbackQueueWithError:(NSError *)error{
     if(self.asyncOperationCompletionBlock){
         self.asyncOperationCompletionBlock(error);
     }
@@ -118,13 +117,13 @@
 
 // overriden by subclasses to run the operation.
 -(void)performAsyncOperation{
-    [self _finishOnCallbackQueueWithError:nil];
+    [self finishOnCallbackQueueWithError:nil];
 }
 
 // called by subclasses to complete the operation
 - (void)finishWithError:(NSError*)error{ // _handleCompletionCallback
     [self performBlockOnCallbackQueue:^{
-        [self _finishInternalOnCallbackQueueWithError:error]; // using self here has side effect that operation is retained while it is working.
+        [self finishInternalOnCallbackQueueWithError:error]; // using self here has side effect that operation is retained while it is working.
     }];
 }
 

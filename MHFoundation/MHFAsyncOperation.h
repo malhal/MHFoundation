@@ -17,22 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)asyncOperationShouldRun:(NSError**)error;
 
 // Override to perform the async methods. Only called if asyncOperationShouldRun returns true.
+// Call finishWithError from the async methods completion handler.
 - (void)performAsyncOperation;
 
-// Call from async completion handlers to end the operation. Must not be called directly from performAsyncOperation.
-- (void)finishWithError:(NSError * __nullable)error;
-
-// Use for custom progress blocks.
-- (void)performBlockOnCallbackQueue:(dispatch_block_t)block;
-
 @property (nonatomic, copy, nullable) void (^asyncOperationCompletionBlock)(NSError * __nullable operationError);
-
-@end
-
-@interface MHFAsyncOperation (Private)
-
-// Override to call custom completion blocks then call super last.
-- (void)_finishOnCallbackQueueWithError:(NSError * __nullable)error NS_REQUIRES_SUPER;
 
 @end
 

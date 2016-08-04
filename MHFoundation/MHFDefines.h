@@ -6,7 +6,7 @@
 //
 //
 
-#import <MHFoundation/MHFDefines+Namespace.h>
+#import <MHFoundation/MHFNamespaceDefines.h>
 
 #ifndef MHFOUNDATION_EXTERN
     #ifdef __cplusplus
@@ -15,3 +15,7 @@
         #define MHFOUNDATION_EXTERN   extern __attribute__((visibility ("default")))
     #endif
 #endif
+
+#define MHFThrowMethodUnavailableException()  @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:@"method unavailable" userInfo:nil];
+
+#define MHFThrowInvalidArgumentExceptionIfNil(argument)  if (!argument) { @throw [NSException exceptionWithName:NSInvalidArgumentException reason:@#argument" cannot be nil." userInfo:nil]; }

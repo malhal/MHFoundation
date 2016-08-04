@@ -1,19 +1,20 @@
 //
-//  MHFQueueAsyncOperation.m
+//  MHFQueueOperation.m
 //  MHFoundation
 //
-//  Created by Malcolm Hall on 11/04/2016.
+//  Created by Malcolm Hall on 03/08/2016.
 //  Copyright © 2016 Malcolm Hall. All rights reserved.
 //
 
-#import "MHFSerialQueueAsyncOperation.h"
-#import "NSOperationQueue+MHF.h"
+#import "MHFQueueOperation.h"
+#import "NSOperation+MHF.h"
 #import "MHFError.h"
 #import "NSError+MHF.h"
+#import "MHFAsyncOperation_Private.h"
 
 static NSString* kOperationCountChanged = @"kOperationCountChanged";
 
-@implementation MHFSerialQueueAsyncOperation{
+@implementation MHFQueueOperation{
     NSOperationQueue* _operationQueue;
     NSError* _error;
 }
@@ -25,9 +26,9 @@ static NSString* kOperationCountChanged = @"kOperationCountChanged";
         _operationQueue = [[NSOperationQueue alloc] init];
         _operationQueue.suspended = YES;
         [_operationQueue addObserver:self
-                              forKeyPath:NSStringFromSelector(@selector(operationCount))
-                                 options:NSKeyValueObservingOptionNew
-                                 context:&kOperationCountChanged];
+                          forKeyPath:NSStringFromSelector(@selector(operationCount))
+                             options:NSKeyValueObservingOptionNew
+                             context:&kOperationCountChanged];
     }
     return self;
 }
@@ -67,14 +68,17 @@ static NSString* kOperationCountChanged = @"kOperationCountChanged";
     [_operationQueue cancelAllOperations];
 }
 
--(void)addOperation:(NSOperation*)op{
-    [_operationQueue mhf_addOperationAfterLast:op];
+- (void)finishWithError:(NSError *)error{
+    if(error){
+        // might already be cancelled if cancel was called but its ok to cancel again.
+        [_operationQueue cancelAllOperations];
+    }
+    [super finishWithError:error];
 }
-
+    
 - (void)dealloc
 {
     [_operationQueue removeObserver:self forKeyPath:NSStringFromSelector(@selector(operationCount))];
-    //NSLog(@"queue dealloc");
 }
 
 @end

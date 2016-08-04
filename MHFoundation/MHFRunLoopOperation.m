@@ -29,7 +29,6 @@
         self.isFinished = YES;
         return;
     }
-    
     // If the operation is not canceled, begin executing the task.
     [self willChangeValueForKey:@"isExecuting"];
     [NSThread detachNewThreadSelector:@selector(main) toTarget:self withObject:nil];
@@ -39,7 +38,6 @@
 
 - (void)main {
     @try {
-        
         // Do the main work of the operation here.
         [self willRun];
         CFRunLoopRun();
@@ -63,6 +61,5 @@
     [self didChangeValueForKey:@"isExecuting"];
     [self didChangeValueForKey:@"isFinished"];
 }
-
 
 @end

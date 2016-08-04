@@ -1,8 +1,8 @@
 //
-//  MHFDefines+Namespace.h
+//  MHFNamespaceDefines.h
 //  MHFoundation
 //
-//  Generated using MHNamespaceGenerator on 31/07/2016
+//  Generated using MHNamespaceGenerator on 04/08/2016
 //
 
 #if !defined(__MHFOUNDATION_NS_SYMBOL) && defined(MHFOUNDATION_NAMESPACE)
@@ -11,10 +11,11 @@
     #define __MHFOUNDATION_NS_SYMBOL(symbol) __MHFOUNDATION_NS_BRIDGE(MHFOUNDATION_NAMESPACE, symbol)
 // Classes
     #define MHFAsyncOperation __MHFOUNDATION_NS_SYMBOL(MHFAsyncOperation)
+    #define MHFQueueOperation __MHFOUNDATION_NS_SYMBOL(MHFQueueOperation)
     #define MHFRunLoopOperation __MHFOUNDATION_NS_SYMBOL(MHFRunLoopOperation)
-    #define MHFSerialQueueAsyncOperation __MHFOUNDATION_NS_SYMBOL(MHFSerialQueueAsyncOperation)
+    #define MHFSerialQueueOperation __MHFOUNDATION_NS_SYMBOL(MHFSerialQueueOperation)
 // Categories
-    #define mhf_addOperationAfterLast __MHFOUNDATION_NS_SYMBOL(mhf_addOperationAfterLast)
+    #define mhf_addDependencyOnLastInQueue __MHFOUNDATION_NS_SYMBOL(mhf_addDependencyOnLastInQueue)
     #define mhf_allKeysSet __MHFOUNDATION_NS_SYMBOL(mhf_allKeysSet)
     #define mhf_asyncEnumerateObjectsUsingBlock __MHFOUNDATION_NS_SYMBOL(mhf_asyncEnumerateObjectsUsingBlock)
     #define mhf_errorWithDomain __MHFOUNDATION_NS_SYMBOL(mhf_errorWithDomain)
