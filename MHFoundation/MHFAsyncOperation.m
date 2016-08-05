@@ -10,10 +10,15 @@
 #import "MHFError.h"
 #import "NSError+MHF.h"
 
+@interface MHFAsyncOperation()
+
+@property (strong, nonatomic) dispatch_queue_t callbackQueue;
+
+@end
+
 @implementation MHFAsyncOperation{
     BOOL _isFinished;
     BOOL _isExecuting;
-    dispatch_queue_t _callbackQueue;
 }
 
 - (instancetype)init
@@ -117,7 +122,6 @@
 
 // overriden by subclasses to run the operation.
 -(void)performAsyncOperation{
-    [self finishOnCallbackQueueWithError:nil];
 }
 
 // called by subclasses to complete the operation
@@ -128,11 +132,8 @@
 }
 
 - (void)performBlockOnCallbackQueue:(dispatch_block_t)block {
-    dispatch_async(_callbackQueue, block);
+    dispatch_async(self.callbackQueue, block);
 }
 
--(void)dealloc{
-    //NSLog(@"operation dealloc");
-}
 @end
 

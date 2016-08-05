@@ -6,23 +6,22 @@
 //  Copyright © 2016 Malcolm Hall. All rights reserved.
 //
 
-#import "MHFQueueOperation.h"
-#import "NSOperation+MHF.h"
+#import "MHFQueueOperation_Internal.h"
 #import "MHFError.h"
 #import "NSError+MHF.h"
-#import "MHFAsyncOperation_Private.h"
 
 static NSString* kOperationCountChanged = @"kOperationCountChanged";
 
-@implementation MHFQueueOperation{
-    NSOperationQueue* _operationQueue;
-    NSError* _error;
-}
+@interface MHFQueueOperation()
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
+@property (strong, nonatomic) NSError* error;
+
+@end
+
+@implementation MHFQueueOperation
+
+-(NSOperationQueue *)operationQueue{
+    if(!_operationQueue){
         _operationQueue = [[NSOperationQueue alloc] init];
         _operationQueue.suspended = YES;
         [_operationQueue addObserver:self
@@ -30,7 +29,7 @@ static NSString* kOperationCountChanged = @"kOperationCountChanged";
                              options:NSKeyValueObservingOptionNew
                              context:&kOperationCountChanged];
     }
-    return self;
+    return _operationQueue;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -40,7 +39,7 @@ static NSString* kOperationCountChanged = @"kOperationCountChanged";
     // if it was our observation
     if(context == &kOperationCountChanged){
         if([[change objectForKey:NSKeyValueChangeNewKey] isEqual:@0]){
-            [self finishWithError:_error];
+            [self finishWithError:self.error];
         }
     }
     else{
@@ -57,25 +56,29 @@ static NSString* kOperationCountChanged = @"kOperationCountChanged";
 -(void)performAsyncOperation{
     // start the queue after the operations have been added by the subclass.
     [self performBlockOnCallbackQueue:^{
-        _operationQueue.suspended = NO;
+        self.operationQueue.suspended = NO;
     }];
 }
 
 // also cancel any data task associated to this task
 - (void)cancel{
     [super cancel];
-    _error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorOperationCancelled descriptionFormat:@"The %@ was cancelled", NSStringFromClass(self.class)];
-    [_operationQueue cancelAllOperations];
+    self.error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorOperationCancelled descriptionFormat:@"The %@ was cancelled", NSStringFromClass(self.class)];
+    [self.operationQueue cancelAllOperations];
 }
 
 - (void)finishWithError:(NSError *)error{
     if(error){
         // might already be cancelled if cancel was called but its ok to cancel again.
-        [_operationQueue cancelAllOperations];
+        [self.operationQueue cancelAllOperations];
     }
     [super finishWithError:error];
 }
-    
+
+- (void)addOperation:(NSOperation *)operation{
+    [self.operationQueue addOperation:operation];
+}
+
 - (void)dealloc
 {
     [_operationQueue removeObserver:self forKeyPath:NSStringFromSelector(@selector(operationCount))];

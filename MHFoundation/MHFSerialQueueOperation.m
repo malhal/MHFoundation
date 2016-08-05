@@ -7,24 +7,17 @@
 //
 
 #import "MHFSerialQueueOperation.h"
-#import "NSOperation+MHF.h"
-#import "MHFError.h"
-#import "NSError+MHF.h"
+#import "MHFQueueOperation_Internal.h"
 
 @implementation MHFSerialQueueOperation
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        self.operationQueue.maxConcurrentOperationCount = 1;
+-(void)addOperation:(NSOperation*)op{
+    self.operationQueue.maxConcurrentOperationCount = 1;
+    NSOperation* lastOp = self.operationQueue.operations.lastObject;
+    if (lastOp){
+        [op addDependency: lastOp];
     }
-    return self;
-}
-
--(void)addSerialOperation:(NSOperation*)op{
-    [op mhf_addDependencyOnLastInQueue:self.operationQueue];
-    [self.operationQueue addOperation:op];
+    [super addOperation:op];
 }
 
 

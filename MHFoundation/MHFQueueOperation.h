@@ -10,10 +10,9 @@
 
 @interface MHFQueueOperation : MHFAsyncOperation
 
-// You can add directly to the queue if you want an operation to not be run after last.
-@property (strong, readonly) NSOperationQueue* operationQueue;
+- (void)addOperation:(NSOperation *)operation;
 
 // add your methods to the queue then call super to unsuspend the queue.
--(void)performAsyncOperation NS_REQUIRES_SUPER;
+- (void)performAsyncOperation NS_REQUIRES_SUPER;
 
 @end

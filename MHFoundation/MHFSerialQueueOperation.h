@@ -13,9 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MHFSerialQueueOperation : MHFQueueOperation
 
-// adds a dependency on the last operation in the queue and then adds it to the queue.
--(void)addSerialOperation:(NSOperation*)op;
-
 @end
 
 NS_ASSUME_NONNULL_END

@@ -16,12 +16,12 @@ FOUNDATION_EXPORT const unsigned char MHFoundationVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <MHFoundation/PublicHeader.h>
 #import <MHFoundation/MHFDefines.h>
-#import <MHFoundation/MHFoundationErrors.h>
+#import <MHFoundation/MHFError.h>
 
 #import <MHFoundation/NSDictionary+MHF.h>
 #import <MHFoundation/NSArray+MHF.h>
-#import <MHFoundation/NSOperation+MHF.h>
 #import <MHFoundation/NSError+MHF.h>
+#import <MHFoundation/NSDate+MHF.h>
 
 #import <MHFoundation/MHFSerialQueueOperation.h>
 #import <MHFoundation/MHFRunLoopOperation.h>
