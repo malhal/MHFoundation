@@ -55,9 +55,9 @@ static NSString* kOperationCountChanged = @"kOperationCountChanged";
 
 -(void)performAsyncOperation{
     // start the queue after the operations have been added by the subclass.
-    [self performBlockOnCallbackQueue:^{
-        self.operationQueue.suspended = NO;
-    }];
+    //[self performBlockOnCallbackQueue:^{
+    self.operationQueue.suspended = NO;
+    //}];
 }
 
 // also cancel any data task associated to this task
