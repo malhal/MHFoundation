@@ -11,8 +11,16 @@
 
 @implementation MHFSerialQueueOperation
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.operationQueue.maxConcurrentOperationCount = 1;
+    }
+    return self;
+}
+
 -(void)addOperation:(NSOperation*)op{
-    self.operationQueue.maxConcurrentOperationCount = 1;
     NSOperation* lastOp = self.operationQueue.operations.lastObject;
     if (lastOp){
         [op addDependency: lastOp];

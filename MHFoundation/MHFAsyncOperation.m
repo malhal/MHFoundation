@@ -12,14 +12,17 @@
 
 @interface MHFAsyncOperation()
 
+//@property (assign, nonatomic)
 @property (strong, nonatomic) dispatch_queue_t callbackQueue;
+@property (readwrite, getter=isExecuting) BOOL executing;
+@property (readwrite, getter=isFinished) BOOL finished;
 
 @end
 
-@implementation MHFAsyncOperation{
-    BOOL _isFinished;
-    BOOL _isExecuting;
-}
+@implementation MHFAsyncOperation
+
+@synthesize executing = _executing;
+@synthesize finished = _finished;
 
 - (instancetype)init
 {
@@ -32,14 +35,6 @@
 
 - (BOOL)isAsynchronous{
     return YES;
-}
-
-- (BOOL)isExecuting {
-    return _isExecuting;
-}
-
-- (BOOL)isFinished {
-    return _isFinished;
 }
 
 -(void)cancel{
@@ -60,10 +55,8 @@
     if(self.isExecuting || self.isFinished){
         [NSException raise:NSInvalidArgumentException format:@"You can't restart an executing or finished %@", self.class];
     }
-    
-    [self willChangeValueForKey:@"isExecuting"];
-    _isExecuting = YES;
-    [self didChangeValueForKey:@"isExecuting"];
+
+    self.executing = YES;
     
     if(self.isCancelled){
         // Must move the operation to the finished state if it is canceled.
@@ -108,8 +101,8 @@
     [self willChangeValueForKey:@"isFinished"];
     [self willChangeValueForKey:@"isExecuting"];
     
-    _isExecuting = NO;
-    _isFinished = YES;
+    _executing = NO;
+    _finished = YES;
     
     [self didChangeValueForKey:@"isExecuting"];
     [self didChangeValueForKey:@"isFinished"];

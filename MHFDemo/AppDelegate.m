@@ -9,8 +9,11 @@
 #import "AppDelegate.h"
 #import "DetailViewController.h"
 #import "MyOperation.h"
+#import <MHFoundation/MHFoundation.h>
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
+
+
 
 @end
 
@@ -24,13 +27,18 @@
     navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
     splitViewController.delegate = self;
     
+    
+    
     MyOperation* op = [[MyOperation alloc] init];
+
     [op setAsyncOperationCompletionBlock:^(NSError * _Nullable error) {
         NSLog(@"copmlete");
     }];
     [op start];
     return YES;
 }
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

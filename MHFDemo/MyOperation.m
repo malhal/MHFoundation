@@ -8,15 +8,26 @@
 
 #import "MyOperation.h"
 
+
+
 @implementation MyOperation
 
 -(void)performAsyncOperation{
+    
     [self performSelectorInBackground:@selector(background) withObject:nil];
 }
 
 -(void)background{
-    sleep(3);
+    sleep(1);
     [self finishWithError:nil];
+}
+
+-(void)malc{
+    NSLog(@"changed");
+}
+
+-(void)dealloc{
+    NSLog(@"dealloc");
 }
 
 @end

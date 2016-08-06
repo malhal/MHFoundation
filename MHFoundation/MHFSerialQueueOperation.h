@@ -11,6 +11,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ The serial queue sets the number of simultaneous operations to 1 and 
+ it adds a dependency on the last operation before adding to the queue.
+ */
 @interface MHFSerialQueueOperation : MHFQueueOperation
 
 @end

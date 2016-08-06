@@ -10,7 +10,7 @@
 #import "MHFError.h"
 #import "NSError+MHF.h"
 
-static NSString* kOperationCountChanged = @"kOperationCountChanged";
+static void * const MHFQueueOperationContext = (void *)&MHFQueueOperationContext;
 
 @interface MHFQueueOperation()
 
@@ -20,16 +20,18 @@ static NSString* kOperationCountChanged = @"kOperationCountChanged";
 
 @implementation MHFQueueOperation
 
--(NSOperationQueue *)operationQueue{
-    if(!_operationQueue){
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
         _operationQueue = [[NSOperationQueue alloc] init];
         _operationQueue.suspended = YES;
         [_operationQueue addObserver:self
                           forKeyPath:NSStringFromSelector(@selector(operationCount))
                              options:NSKeyValueObservingOptionNew
-                             context:&kOperationCountChanged];
+                             context:MHFQueueOperationContext];
     }
-    return _operationQueue;
+    return self;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -37,7 +39,7 @@ static NSString* kOperationCountChanged = @"kOperationCountChanged";
                         change:(NSDictionary *)change
                        context:(void *)context {
     // if it was our observation
-    if(context == &kOperationCountChanged){
+    if(context == MHFQueueOperationContext){
         if([[change objectForKey:NSKeyValueChangeNewKey] isEqual:@0]){
             [self finishWithError:self.error];
         }
@@ -54,10 +56,11 @@ static NSString* kOperationCountChanged = @"kOperationCountChanged";
 }
 
 -(void)performAsyncOperation{
-    // start the queue after the operations have been added by the subclass.
-    //[self performBlockOnCallbackQueue:^{
-    self.operationQueue.suspended = NO;
-    //}];
+    // start the queue and for safety delay until after the operations have been added by the subclass.
+    // means it doesn't matter if they call super at start or end of their method.
+    [self performBlockOnCallbackQueue:^{
+        self.operationQueue.suspended = NO;
+    }];
 }
 
 // also cancel any data task associated to this task

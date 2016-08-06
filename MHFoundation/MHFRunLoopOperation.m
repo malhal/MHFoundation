@@ -10,12 +10,15 @@
 
 @interface MHFRunLoopOperation()
 
-@property (nonatomic, assign) BOOL isExecuting;
-@property (nonatomic, assign) BOOL isFinished;
+@property (readwrite, getter=isExecuting) BOOL executing;
+@property (readwrite, getter=isFinished) BOOL finished;
 
 @end
 
 @implementation MHFRunLoopOperation
+
+@synthesize executing = _executing;
+@synthesize finished = _finished;
 
 - (BOOL)isAsynchronous {
     return YES;
@@ -26,13 +29,13 @@
     if (self.isCancelled)
     {
         // Must move the operation to the finished state if it is canceled.
-        self.isFinished = YES;
+        self.finished = YES;
         return;
     }
     // If the operation is not canceled, begin executing the task.
     [self willChangeValueForKey:@"isExecuting"];
     [NSThread detachNewThreadSelector:@selector(main) toTarget:self withObject:nil];
-    _isExecuting = YES;
+    _executing = YES;
     [self didChangeValueForKey:@"isExecuting"];
 }
 
@@ -55,8 +58,8 @@
     [self willChangeValueForKey:@"isFinished"];
     [self willChangeValueForKey:@"isExecuting"];
     
-    _isExecuting = NO;
-    _isFinished = YES;
+    _executing = NO;
+    _finished = YES;
     
     [self didChangeValueForKey:@"isExecuting"];
     [self didChangeValueForKey:@"isFinished"];
