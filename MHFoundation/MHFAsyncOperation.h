@@ -32,6 +32,9 @@ NS_ASSUME_NONNULL_BEGIN
 // Use for custom progress blocks.
 - (void)performBlockOnCallbackQueue:(dispatch_block_t)block;
 
+// The error returned when the operation is cancelled, override to provide a custom error domain and code.
++ (NSError*)cancelledError;
+
 @end
 
 NS_ASSUME_NONNULL_END

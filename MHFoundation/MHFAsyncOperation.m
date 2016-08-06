@@ -39,8 +39,12 @@
 
 -(void)cancel{
     [super cancel];
-    NSError* error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorOperationCancelled descriptionFormat:@"The %@ was cancelled", self.class];
+    NSError* error = [self.class cancelledError];
     [self finishWithError:error];
+}
+
++ (NSError*)cancelledError{
+    return [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorOperationCancelled descriptionFormat:@"The %@ was cancelled", self];
 }
 
 // called either manually or from an operation queue's background thread.
