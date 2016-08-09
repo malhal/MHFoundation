@@ -6,7 +6,9 @@
 //  Copyright © 2016 Malcolm Hall. All rights reserved.
 //
 
-#import "MHFAsyncOperation.h"
+#import <Foundation/Foundation.h>
+#import <MHFoundation/MHFDefines.h>
+#import <MHFoundation/MHFAsyncOperation.h>
 
 @interface MHFQueueOperation : MHFAsyncOperation
 
