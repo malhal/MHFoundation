@@ -11,27 +11,30 @@
 
 @implementation NSMutableURLRequest (MHF)
 
--(BOOL)mhf_setJSONObject:(id)JSONObject error:(NSError**)error{
+-(BOOL)mhf_setBodyJSONObject:(id)JSONObject error:(NSError**)error{
     NSData* data = [NSJSONSerialization dataWithJSONObject:JSONObject options:0 error:error];
     if(!data){
         return NO;
     }
     self.HTTPBody = data;
-    [self mhf_contentTypeJSON];
-    [self mhf_methodPOST];
+    [self mhf_setContentTypeJSON];
     return YES;
 }
 
--(void)mhf_acceptJSON{
+-(void)mhf_setAcceptJSON{
     [self setValue:@"application/json" forHTTPHeaderField:@"Accept"];
 }
 
--(void)mhf_contentTypeJSON{
+-(void)mhf_setContentTypeJSON{
     [self setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
 }
 
--(void)mhf_methodPOST{
+-(void)mhf_setMethodPOST{
     [self setHTTPMethod:@"POST"];
+}
+
+-(void)mhf_setMethodPUT{
+    [self setHTTPMethod:@"PUT"];
 }
 
 -(void)mhf_gzipBody{
