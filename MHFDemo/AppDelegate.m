@@ -11,6 +11,12 @@
 #import "MyOperation.h"
 #import <MHFoundation/MHFoundation.h>
 
+@interface NSData()
+
+-(NSData*)mhf_gzippedData;
+
+@end
+
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
 
@@ -27,7 +33,9 @@
     navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
     splitViewController.delegate = self;
     
+    NSData* data = [@"malc" dataUsingEncoding:NSUTF8StringEncoding];
     
+    [data mhf_gzippedData];
     
     MyOperation* op = [[MyOperation alloc] init];
 

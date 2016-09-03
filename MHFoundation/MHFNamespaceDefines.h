@@ -2,7 +2,7 @@
 //  MHFNamespaceDefines.h
 //  MHFoundation
 //
-//  Generated using MHNamespaceGenerator on 09/08/2016
+//  Generated using MHNamespaceGenerator on 03/09/2016
 //
 
 #if !defined(__MHFOUNDATION_NS_SYMBOL) && defined(MHFOUNDATION_NAMESPACE)
@@ -18,10 +18,13 @@
     #define mhf_allKeysSet __MHFOUNDATION_NS_SYMBOL(mhf_allKeysSet)
     #define mhf_asyncEnumerateObjectsUsingBlock __MHFOUNDATION_NS_SYMBOL(mhf_asyncEnumerateObjectsUsingBlock)
     #define mhf_errorWithDomain __MHFOUNDATION_NS_SYMBOL(mhf_errorWithDomain)
+    #define mhf_gzipBody __MHFOUNDATION_NS_SYMBOL(mhf_gzipBody)
     #define mhf_isEarlierThan __MHFOUNDATION_NS_SYMBOL(mhf_isEarlierThan)
     #define mhf_isEarlierThanOrEqualTo __MHFOUNDATION_NS_SYMBOL(mhf_isEarlierThanOrEqualTo)
     #define mhf_isLaterThan __MHFOUNDATION_NS_SYMBOL(mhf_isLaterThan)
     #define mhf_isLaterThanOrEqualTo __MHFOUNDATION_NS_SYMBOL(mhf_isLaterThanOrEqualTo)
+    #define mhf_postMethod __MHFOUNDATION_NS_SYMBOL(mhf_postMethod)
+    #define mhf_setJSONObject __MHFOUNDATION_NS_SYMBOL(mhf_setJSONObject)
     #define mhf_unflattenDictionary __MHFOUNDATION_NS_SYMBOL(mhf_unflattenDictionary)
 // Externs
     #define MHFoundationErrorDomain __MHFOUNDATION_NS_SYMBOL(MHFoundationErrorDomain)
