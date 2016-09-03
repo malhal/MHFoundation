@@ -13,7 +13,7 @@
 
 @interface NSData()
 
--(NSData*)mhf_gzippedData;
+-(NSData*)MHFoundation_gzippedData;
 
 @end
 
@@ -35,7 +35,7 @@
     
     NSData* data = [@"malc" dataUsingEncoding:NSUTF8StringEncoding];
     
-    [data mhf_gzippedData];
+    [data MHFoundation_gzippedData];
     
     MyOperation* op = [[MyOperation alloc] init];
 
