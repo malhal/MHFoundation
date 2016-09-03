@@ -11,11 +11,6 @@
 #import "MyOperation.h"
 #import <MHFoundation/MHFoundation.h>
 
-@interface NSData()
-
--(NSData*)MHFoundation_gzippedData;
-
-@end
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -32,20 +27,53 @@
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
     navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
     splitViewController.delegate = self;
-    
-    NSData* data = [@"malc" dataUsingEncoding:NSUTF8StringEncoding];
-    
-    [data MHFoundation_gzippedData];
-    
-    MyOperation* op = [[MyOperation alloc] init];
 
+    MyOperation* op = [[MyOperation alloc] init];
     [op setAsyncOperationCompletionBlock:^(NSError * _Nullable error) {
-        NSLog(@"copmlete");
+        NSLog(@"async complete");
     }];
-    [op start];
+    //[op start];
+    
+    NSDate* date = [NSDate date];
+    //NSData* d = [NSJSONSerialization dataWithJSONObject:@[date] options:0 error:nil];
+   // NSString* s = [[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding];
+    
+    [self jsonTest];
+
     return YES;
 }
 
+-(void)jsonTest{
+    NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost/~mh/wfff-passwords/api/venue?api_token=aaa"]];
+    NSError* error;
+    if(![req mhf_setJSONObject:@{@"name":@"malc"} error:&error]){
+        NSLog(@"error %@", error);
+        return;
+    }
+    
+    
+    NSURLSessionDataTask* task = [NSURLSessionDataTask mhf_stringTaskWithSession:[NSURLSession sharedSession] request:req completionHandler:^(NSString * _Nullable string, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if(error){
+            NSLog(@"error %@", error);
+            return;
+        }
+        NSLog(@"done %@", string);
+    }];
+    //[task resume];
+    
+    NSURLSessionDataTask* task2 = [NSURLSessionDataTask mhf_JSONTaskWithSession:[NSURLSession sharedSession] request:req completionHandler:^(id _Nullable JSONObject, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if(error){
+            NSLog(@"error %@", error);
+            return;
+        }
+        NSLog(@"done %@", JSONObject);
+        
+        NSDate* d = [NSDate mhf_dateFromMySQLString:JSONObject[@"created_at"]];
+        NSLog(@"%@", d);
+    }];
+    [task2 resume];
+    
+}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

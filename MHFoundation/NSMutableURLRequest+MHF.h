@@ -10,10 +10,17 @@
 
 @interface NSMutableURLRequest (MHF)
 
--(void)mhf_setJSONObject:(id)JSONObject error:(NSError**)error;
+// Sets the content type to application/json, json encodes the object, returning an error if fails, and sets it on the HTTPBody.
+-(BOOL)mhf_setJSONObject:(id)JSONObject error:(NSError**)error;
 
--(void)mhf_postMethod;
+-(void)mhf_methodPOST;
 
 -(void)mhf_gzipBody;
+
+-(void)mhf_acceptJSON;
+
+-(void)mhf_contentTypeJSON;
+
+-(void)mhf_setBasicAuthWithUsername:(NSString*)username password:(NSString*)password;
 
 @end
