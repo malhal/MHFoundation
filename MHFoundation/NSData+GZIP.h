@@ -7,9 +7,9 @@
 //
 //  Compile NSData+GZIP.m with -include$(SRCROOT)/MHFoundation/NSData+GZIP.h
 
-#define gzippedDataWithCompressionLevel mhf_gzippedDataWithCompressionLevel
-#define gzippedData mhf_gzippedData
-#define gunzippedData mhf_gunzippedData
-#define isGzippedData mhf_isGzippedData
+#define gzippedDataWithCompressionLevel MHFoundation_gzippedDataWithCompressionLevel
+#define gzippedData MHFoundation_gzippedData
+#define gunzippedData MHFoundation_gunzippedData
+#define isGzippedData MHFoundation_isGzippedData
 
 #import <GZIP/NSData+GZIP.h>
