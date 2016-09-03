@@ -19,4 +19,13 @@
 
 - (BOOL)mhf_isEarlierThan:(NSDate*)date;
 
+// e.g. "2014-11-14 17:47:33"
+- (NSString *)mhf_MySQLString;
+
+// for new MySQL TIMESTAMP(6) e.g. "2014-11-14 17:47:33.326594" that's 6 decimal places
+- (NSString *)mhf_fractionalMySQLString;
+
+// handles fractional and not e.g. "2014-11-14 17:47:33" and "2014-11-14 17:47:33.326594"
++ (NSDate *)mhf_dateFromMySQLString:(NSString *)utcString;
+
 @end

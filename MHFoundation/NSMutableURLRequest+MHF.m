@@ -11,16 +11,26 @@
 
 @implementation NSMutableURLRequest (MHF)
 
--(void)mhf_setJSONObject:(id)JSONObject error:(NSError**)error{
+-(BOOL)mhf_setJSONObject:(id)JSONObject error:(NSError**)error{
     NSData* data = [NSJSONSerialization dataWithJSONObject:JSONObject options:0 error:error];
     if(!data){
-        return;
+        return NO;
     }
-    [self setValue:@"text/json" forHTTPHeaderField:@"Content-Type"];
     self.HTTPBody = data;
+    [self mhf_contentTypeJSON];
+    [self mhf_methodPOST];
+    return YES;
 }
 
--(void)mhf_postMethod{
+-(void)mhf_acceptJSON{
+    [self setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+}
+
+-(void)mhf_contentTypeJSON{
+    [self setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+}
+
+-(void)mhf_methodPOST{
     [self setHTTPMethod:@"POST"];
 }
 
@@ -36,6 +46,13 @@
     NSLog(@"Compressed length %ld",(unsigned long)data.length);
 #endif
     self.HTTPBody = data;
+}
+
+-(void)mhf_setBasicAuthWithUsername:(NSString*)username password:(NSString*)password{
+    NSString *authStr = [NSString stringWithFormat:@"%@:%@",username,password];
+    NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *authValue = [NSString stringWithFormat: @"Basic %@",[authData base64EncodedStringWithOptions:0]];
+    [self setValue:authValue forHTTPHeaderField:@"Authorization"];
 }
 
 @end

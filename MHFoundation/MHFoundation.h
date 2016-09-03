@@ -23,6 +23,7 @@ FOUNDATION_EXPORT const unsigned char MHFoundationVersionString[];
 #import <MHFoundation/NSError+MHF.h>
 #import <MHFoundation/NSDate+MHF.h>
 #import <MHFoundation/NSMutableURLRequest+MHF.h>
+#import <MHFoundation/NSURLSessionDataTask+MHF.h>
 
 #import <MHFoundation/MHFSerialQueueOperation.h>
 #import <MHFoundation/MHFRunLoopOperation.h>
