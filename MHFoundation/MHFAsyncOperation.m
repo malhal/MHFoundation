@@ -12,7 +12,6 @@
 
 @interface MHFAsyncOperation()
 
-//@property (assign, nonatomic)
 @property (strong, nonatomic) dispatch_queue_t callbackQueue;
 @property (readwrite, getter=isExecuting) BOOL executing;
 @property (readwrite, getter=isFinished) BOOL finished;
@@ -66,8 +65,8 @@
     }
     
     // If the operation is not cancelled, begin executing the task.
-    // By using the callback queue not only do we get easy access to a thread to support non-queued operations,
-    // but also it allows us to finish with error if shouldn't run.
+    // By using the callback queue we get easy access to a thread to support non-queued operations,
+    // and also it allows us to finish with error if shouldn't run.
     [self performBlockOnCallbackQueue:^{
         [self main];
     }];

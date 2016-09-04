@@ -45,12 +45,12 @@
 
 -(void)cancel{
     [super cancel];
-    [self.task cancel]; // the completion handler is called with cancel.
+    [self.task cancel]; // the completion handler is called with a cancel error.
 }
 
 - (BOOL)asyncOperationShouldRun:(NSError**)error{
     if(!self.task){
-        *error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorInvalidArguments descriptionFormat:@"A task must be provided for %@ usually via a subclass", NSStringFromClass(self.class)];
+        *error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorInvalidArguments descriptionFormat:@"A task must be provided for %@ usually via a subclass", self.class];
         return NO;
     }
     
@@ -85,7 +85,7 @@
         self.task = [self.session dataTaskWithURL:self.url completionHandler:completionHandler];
     }
     else{
-        *error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorInvalidArguments descriptionFormat:@"Either a URL or request must be provided for %@", NSStringFromClass(self.class)];
+        *error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorInvalidArguments descriptionFormat:@"Either a URL or request must be provided for %@", self.class];
         return NO;
     }
 
@@ -133,7 +133,7 @@
         self.task = [self.session downloadTaskWithURL:self.url completionHandler:completionHandler];
     }
     else{
-        *error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorInvalidArguments descriptionFormat:@"Either a URL, request or resumeData must be provided for %@", NSStringFromClass(self.class)];
+        *error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorInvalidArguments descriptionFormat:@"Either a URL, request or resumeData must be provided for %@", self.class];
         return NO;
     }
     

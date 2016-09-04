@@ -66,7 +66,7 @@ static void * const MHFQueueOperationContext = (void *)&MHFQueueOperationContext
 // also cancel any data task associated to this task
 - (void)cancel{
     [super cancel];
-    self.error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorOperationCancelled descriptionFormat:@"The %@ was cancelled", NSStringFromClass(self.class)];
+    self.error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorOperationCancelled descriptionFormat:@"The %@ was cancelled", self.class];
     [self.operationQueue cancelAllOperations];
 }
 
