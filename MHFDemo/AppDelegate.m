@@ -38,8 +38,8 @@
     //NSData* d = [NSJSONSerialization dataWithJSONObject:@[date] options:0 error:nil];
    // NSString* s = [[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding];
     
-    //[self jsonTest];
-    [self jsonTest2];
+    [self jsonTest];
+    //[self jsonTest2];
     
     return YES;
 }
@@ -47,8 +47,8 @@
 -(NSURLSession*)session{
     if(!_session){
         NSURLSessionConfiguration* config = [NSURLSessionConfiguration ephemeralSessionConfiguration];
-        //config.HTTPMaximumConnectionsPerHost = 1;
-        _session = [NSURLSession sessionWithConfiguration:config delegate:nil delegateQueue:[[NSOperationQueue alloc] init]];
+        config.HTTPMaximumConnectionsPerHost = 1;
+        _session = [NSURLSession sessionWithConfiguration:config delegate:nil delegateQueue:nil];
         
     }
     return _session;
@@ -75,8 +75,12 @@
 //        NSLog(@"done %@", string);
 //    }];
     //[task resume];
+    NSMutableURLRequest* re = self.request;
     
-    NSURLSessionDataTask* task2 = [NSURLSessionDataTask mhf_JSONTaskWithSession:self.session request:self.request completionHandler:^(id _Nullable JSONObject, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    __block NSURLSessionDataTask* task2;
+    __block NSURLSessionDataTask* task3;
+    
+    task2 = [NSURLSessionDataTask mhf_JSONTaskWithSession:self.session request:re completionHandler:^(id _Nullable JSONObject, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if(error){
             NSLog(@"error2 %@", error);
             return;
@@ -86,20 +90,17 @@
         NSDate* d = [NSDate mhf_dateFromMySQLString:JSONObject[@"created_at"]];
         NSLog(@"2 %@", d);
         
-        
-        
-        
         //[self.session mhf_cancelAllTasks];
-        
+        [task3 resume];
         
     }];
-    [task2 resume];
     
-    [self.session.delegateQueue addOperationWithBlock:^{
-        NSLog(@"block");
-    }];
+//    
+//    [self.session.delegateQueue addOperationWithBlock:^{
+//        NSLog(@"block");
+//    }];
     
-    NSURLSessionDataTask* task3 = [NSURLSessionDataTask mhf_JSONTaskWithSession:self.session request:self.request completionHandler:^(id _Nullable JSONObject, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    task3 = [NSURLSessionDataTask mhf_JSONTaskWithSession:self.session request:self.request completionHandler:^(id _Nullable JSONObject, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if(error){
             NSLog(@"error3 %@", error);
             return;
@@ -109,7 +110,8 @@
         NSDate* d = [NSDate mhf_dateFromMySQLString:JSONObject[@"created_at"]];
         NSLog(@"3 %@", d);
     }];
-    [task3 resume];
+    
+    [task2 resume];
     
 }
 
@@ -117,16 +119,16 @@
     NSOperationQueue* queue = [[NSOperationQueue alloc] init];
     queue.maxConcurrentOperationCount = 1;
     __block NSData *data2;
-    MHFURLRequestOperation* op = [[MHFURLRequestOperation alloc] initWithURLRequest:self.request];
-    [op setRequestCompletionBlock:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    MHFURLSessionDataTaskOperation* op = [[MHFURLSessionDataTaskOperation alloc] initWithURLRequest:self.request];
+    [op setDataTaskCompletionBlock:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         NSLog(@"complete1");
         data2 = data;
         //[queue cancelAllOperations];
     }];
     [queue addOperation:op];
     
-    MHFURLRequestOperation* op2 = [[MHFURLRequestOperation alloc] initWithURLRequest:self.request];
-    [op2 setRequestCompletionBlock:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    MHFURLSessionDataTaskOperation* op2 = [[MHFURLSessionDataTaskOperation alloc] initWithURLRequest:self.request];
+    [op2 setDataTaskCompletionBlock:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         NSLog(@"complete2");
     }];
     [queue addOperation:op2];

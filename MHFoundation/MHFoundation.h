@@ -29,4 +29,4 @@ FOUNDATION_EXPORT const unsigned char MHFoundationVersionString[];
 #import <MHFoundation/MHFSerialQueueOperation.h>
 #import <MHFoundation/MHFRunLoopOperation.h>
 #import <MHFoundation/MHFAsyncOperation.h>
-#import <MHFoundation/MHFURLRequestOperation.h>
+#import <MHFoundation/MHFURLSessionTaskOperation.h>

@@ -36,8 +36,8 @@
 		ECFB0F6B1D7AD41000CC2BC3 /* NSData+GZIP.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFB0F6A1D7AD3B100CC2BC3 /* NSData+GZIP.h */; };
 		ECFB0F771D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFB0F751D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECFB0F781D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB0F761D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.m */; };
-		ECFB0F801D7B895F00CC2BC3 /* MHFURLRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFB0F7E1D7B895F00CC2BC3 /* MHFURLRequestOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ECFB0F811D7B895F00CC2BC3 /* MHFURLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB0F7F1D7B895F00CC2BC3 /* MHFURLRequestOperation.m */; };
+		ECFB0F801D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFB0F7E1D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ECFB0F811D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB0F7F1D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.m */; };
 		ECFB0F841D7B952900CC2BC3 /* NSURLSession+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFB0F821D7B952900CC2BC3 /* NSURLSession+MHF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECFB0F851D7B952900CC2BC3 /* NSURLSession+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB0F831D7B952900CC2BC3 /* NSURLSession+MHF.m */; };
 		ECFD7F721D44087000449373 /* NSDate+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD7F701D44087000449373 /* NSDate+MHF.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -87,8 +87,8 @@
 		ECFB0F6A1D7AD3B100CC2BC3 /* NSData+GZIP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+GZIP.h"; sourceTree = "<group>"; };
 		ECFB0F751D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSessionDataTask+MHF.h"; sourceTree = "<group>"; };
 		ECFB0F761D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSessionDataTask+MHF.m"; sourceTree = "<group>"; };
-		ECFB0F7E1D7B895F00CC2BC3 /* MHFURLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFURLRequestOperation.h; sourceTree = "<group>"; };
-		ECFB0F7F1D7B895F00CC2BC3 /* MHFURLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHFURLRequestOperation.m; sourceTree = "<group>"; };
+		ECFB0F7E1D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFURLSessionTaskOperation.h; sourceTree = "<group>"; };
+		ECFB0F7F1D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHFURLSessionTaskOperation.m; sourceTree = "<group>"; };
 		ECFB0F821D7B952900CC2BC3 /* NSURLSession+MHF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSession+MHF.h"; sourceTree = "<group>"; };
 		ECFB0F831D7B952900CC2BC3 /* NSURLSession+MHF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+MHF.m"; sourceTree = "<group>"; };
 		ECFD7F701D44087000449373 /* NSDate+MHF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+MHF.h"; sourceTree = "<group>"; };
@@ -137,8 +137,8 @@
 			children = (
 				ECFB0F6A1D7AD3B100CC2BC3 /* NSData+GZIP.h */,
 				ECC69E921D7A3B7700020DA1 /* dependencies */,
-				ECFB0F7E1D7B895F00CC2BC3 /* MHFURLRequestOperation.h */,
-				ECFB0F7F1D7B895F00CC2BC3 /* MHFURLRequestOperation.m */,
+				ECFB0F7E1D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.h */,
+				ECFB0F7F1D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.m */,
 				ECC69E8E1D7A33E100020DA1 /* NSMutableURLRequest+MHF.h */,
 				ECC69E8F1D7A33E100020DA1 /* NSMutableURLRequest+MHF.m */,
 				ECFB0F751D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.h */,
@@ -220,7 +220,7 @@
 				EC3144791D073AC10025F669 /* MHFRunLoopOperation.h in Headers */,
 				ECC991381D0D74FD000F5EFB /* MHFError.h in Headers */,
 				EC3144751D073AC10025F669 /* MHFAsyncOperation.h in Headers */,
-				ECFB0F801D7B895F00CC2BC3 /* MHFURLRequestOperation.h in Headers */,
+				ECFB0F801D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.h in Headers */,
 				ECFD7F721D44087000449373 /* NSDate+MHF.h in Headers */,
 				ECA372391D53703D00B9DA1B /* MHFQueueOperation_Internal.h in Headers */,
 				ECFB0F771D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.h in Headers */,
@@ -352,7 +352,7 @@
 				ECFB0F851D7B952900CC2BC3 /* NSURLSession+MHF.m in Sources */,
 				EC31447E1D073AC10025F669 /* NSArray+MHF.m in Sources */,
 				EC3144761D073AC10025F669 /* MHFAsyncOperation.m in Sources */,
-				ECFB0F811D7B895F00CC2BC3 /* MHFURLRequestOperation.m in Sources */,
+				ECFB0F811D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.m in Sources */,
 				EC31447A1D073AC10025F669 /* MHFRunLoopOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

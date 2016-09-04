@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MHFAsyncOperation : NSOperation
 
 // Override and return NO and set the error if custom initialization fails meaning the async operation cannot be performed.
+// Either call super before or after depending on how you would like to design your subclass inheritance.
 - (BOOL)asyncOperationShouldRun:(NSError**)error;
 
 // Override to perform the async methods. Only called if asyncOperationShouldRun returns true.

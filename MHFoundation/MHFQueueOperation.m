@@ -56,8 +56,8 @@ static void * const MHFQueueOperationContext = (void *)&MHFQueueOperationContext
 }
 
 -(void)performAsyncOperation{
-    // start the queue and for safety delay until after the operations have been added by the subclass.
-    // means it doesn't matter if they call super at start or end of their method.
+    // Start the queue and for safety delay until after the operations have been added by the subclass.
+    // This means it doesn't matter if they call super at start or end of their method.
     [self performBlockOnCallbackQueue:^{
         self.operationQueue.suspended = NO;
     }];

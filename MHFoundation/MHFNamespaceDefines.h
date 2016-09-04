@@ -14,7 +14,9 @@
     #define MHFQueueOperation __MHFOUNDATION_NS_SYMBOL(MHFQueueOperation)
     #define MHFRunLoopOperation __MHFOUNDATION_NS_SYMBOL(MHFRunLoopOperation)
     #define MHFSerialQueueOperation __MHFOUNDATION_NS_SYMBOL(MHFSerialQueueOperation)
-    #define MHFURLRequestOperation __MHFOUNDATION_NS_SYMBOL(MHFURLRequestOperation)
+    #define MHFURLSessionDataTaskOperation __MHFOUNDATION_NS_SYMBOL(MHFURLSessionDataTaskOperation)
+    #define MHFURLSessionDownloadTaskOperation __MHFOUNDATION_NS_SYMBOL(MHFURLSessionDownloadTaskOperation)
+    #define MHFURLSessionTaskOperation __MHFOUNDATION_NS_SYMBOL(MHFURLSessionTaskOperation)
 // Categories
     #define mhf_JSONTaskWithSession __MHFOUNDATION_NS_SYMBOL(mhf_JSONTaskWithSession)
     #define mhf_MySQLString __MHFOUNDATION_NS_SYMBOL(mhf_MySQLString)

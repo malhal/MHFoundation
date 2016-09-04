@@ -66,7 +66,8 @@
     }
     
     // If the operation is not cancelled, begin executing the task.
-
+    // By using the callback queue not only do we get easy access to a thread to support non-queued operations,
+    // but also it allows us to finish with error if shouldn't run.
     [self performBlockOnCallbackQueue:^{
         [self main];
     }];
@@ -110,6 +111,13 @@
 
 // can be overridden by subclasses
 -(BOOL)asyncOperationShouldRun:(NSError**)error{
+// If you want to make use of inheritance to build up your operation your call to super should look like this:
+//    if(![super asyncOperationShouldRun:error]){
+//        return NO;
+//    }
+//    // do additional work
+// Otheriwse just return the call to super last.
+    
     return YES;
 }
 
