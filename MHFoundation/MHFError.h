@@ -15,6 +15,7 @@ MHFOUNDATION_EXTERN NSString * const MHFoundationErrorDomain;
 typedef NS_ENUM(NSInteger, MHFErrorCode) {
     MHFErrorUnknown                = 1,  /* Unknown or generic error */
     MHFErrorOperationCancelled     = 2,  /* A MHF operation was explicitly cancelled */
+    MHFErrorInvalidArguments       = 3,
 };
 
 NS_ASSUME_NONNULL_END

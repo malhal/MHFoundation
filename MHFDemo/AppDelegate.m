@@ -14,7 +14,7 @@
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
-
+@property (nonatomic, strong) NSURLSession *session;
 
 @end
 
@@ -38,43 +38,105 @@
     //NSData* d = [NSJSONSerialization dataWithJSONObject:@[date] options:0 error:nil];
    // NSString* s = [[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding];
     
-    [self jsonTest];
-
+    //[self jsonTest];
+    [self jsonTest2];
+    
     return YES;
 }
 
--(void)jsonTest{
+-(NSURLSession*)session{
+    if(!_session){
+        NSURLSessionConfiguration* config = [NSURLSessionConfiguration ephemeralSessionConfiguration];
+        //config.HTTPMaximumConnectionsPerHost = 1;
+        _session = [NSURLSession sessionWithConfiguration:config delegate:nil delegateQueue:[[NSOperationQueue alloc] init]];
+        
+    }
+    return _session;
+}
+
+- (NSMutableURLRequest*)request{
     NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost/~mh/wfff-passwords/api/venue?api_token=aaa"]];
     NSError* error;
-    if(![req mhf_setJSONObject:@{@"name":@"malc"} error:&error]){
+    [req mhf_setMethodPOST];
+    if(![req mhf_setBodyJSONObject:@{@"name":@"malc"} error:&error]){
         NSLog(@"error %@", error);
-        return;
+        return nil;
     }
-    
-    
-    NSURLSessionDataTask* task = [NSURLSessionDataTask mhf_stringTaskWithSession:[NSURLSession sharedSession] request:req completionHandler:^(NSString * _Nullable string, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        if(error){
-            NSLog(@"error %@", error);
-            return;
-        }
-        NSLog(@"done %@", string);
-    }];
+    return req;
+}
+
+-(void)jsonTest{
+
+//    NSURLSessionDataTask* task = [NSURLSessionDataTask mhf_stringTaskWithSession:self.session request:req completionHandler:^(NSString * _Nullable string, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+//        if(error){
+//            NSLog(@"error %@", error);
+//            return;
+//        }
+//        NSLog(@"done %@", string);
+//    }];
     //[task resume];
     
-    NSURLSessionDataTask* task2 = [NSURLSessionDataTask mhf_JSONTaskWithSession:[NSURLSession sharedSession] request:req completionHandler:^(id _Nullable JSONObject, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    NSURLSessionDataTask* task2 = [NSURLSessionDataTask mhf_JSONTaskWithSession:self.session request:self.request completionHandler:^(id _Nullable JSONObject, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if(error){
-            NSLog(@"error %@", error);
+            NSLog(@"error2 %@", error);
             return;
         }
-        NSLog(@"done %@", JSONObject);
+        NSLog(@"done2 %@", JSONObject);
         
         NSDate* d = [NSDate mhf_dateFromMySQLString:JSONObject[@"created_at"]];
-        NSLog(@"%@", d);
+        NSLog(@"2 %@", d);
+        
+        
+        
+        
+        //[self.session mhf_cancelAllTasks];
+        
+        
     }];
     [task2 resume];
     
+    [self.session.delegateQueue addOperationWithBlock:^{
+        NSLog(@"block");
+    }];
+    
+    NSURLSessionDataTask* task3 = [NSURLSessionDataTask mhf_JSONTaskWithSession:self.session request:self.request completionHandler:^(id _Nullable JSONObject, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if(error){
+            NSLog(@"error3 %@", error);
+            return;
+        }
+        NSLog(@"done3 %@", JSONObject);
+        
+        NSDate* d = [NSDate mhf_dateFromMySQLString:JSONObject[@"created_at"]];
+        NSLog(@"3 %@", d);
+    }];
+    [task3 resume];
+    
 }
 
+-(void)jsonTest2{
+    NSOperationQueue* queue = [[NSOperationQueue alloc] init];
+    queue.maxConcurrentOperationCount = 1;
+    __block NSData *data2;
+    MHFURLRequestOperation* op = [[MHFURLRequestOperation alloc] initWithURLRequest:self.request];
+    [op setRequestCompletionBlock:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSLog(@"complete1");
+        data2 = data;
+        //[queue cancelAllOperations];
+    }];
+    [queue addOperation:op];
+    
+    MHFURLRequestOperation* op2 = [[MHFURLRequestOperation alloc] initWithURLRequest:self.request];
+    [op2 setRequestCompletionBlock:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSLog(@"complete2");
+    }];
+    [queue addOperation:op2];
+    
+    [queue addOperationWithBlock:^{
+        NSString* s = [[NSString alloc] initWithData:data2 encoding:NSUTF8StringEncoding];
+        NSLog(@"%@", s);
+        return;
+    }];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
