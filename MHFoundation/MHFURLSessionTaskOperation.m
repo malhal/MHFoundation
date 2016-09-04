@@ -18,14 +18,9 @@
 
 @implementation MHFURLSessionTaskOperation
 
-- (instancetype)init
-{
-    return [super init];
-}
-
 - (instancetype)initWithURLRequest:(NSURLRequest *)request
 {
-    self = [self init];
+    self = [super init];
     if (self) {
         _request = request.copy;
     }
@@ -34,7 +29,7 @@
 
 - (instancetype)initWithURL:(NSURL *)url
 {
-    self = [self init];
+    self = [super init];
     if (self) {
         _url = url.copy;
     }
@@ -115,7 +110,7 @@
 @implementation MHFURLSessionDownloadTaskOperation
 
 - (instancetype)initWithResumeData:(NSData *)resumeData{
-    self = [self init];
+    self = [super init];
     if (self) {
         _resumeData = resumeData.copy;
     }

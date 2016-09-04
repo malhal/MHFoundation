@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MHFURLSessionTaskOperation : MHFAsyncOperation
 
-- (instancetype)init NS_DESIGNATED_INITIALIZER;
+//- (instancetype)init NS_DESIGNATED_INITIALIZER; // not needed yet
 
 - (instancetype)initWithURLRequest:(NSURLRequest *)request;
 
