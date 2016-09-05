@@ -57,7 +57,7 @@
 - (NSMutableURLRequest*)request{
     NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost/~mh/wfff-passwords/api/venue?api_token=aaa"]];
     NSError* error;
-    [req mhf_setMethodPOST];
+    //[req mhf_setPOST];
     if(![req mhf_setJSONObject:@{@"name":@"malc"} error:&error]){
         NSLog(@"error %@", error);
         return nil;
