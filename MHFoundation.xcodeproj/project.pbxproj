@@ -40,7 +40,7 @@
 		ECFB0F811D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB0F7F1D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.m */; };
 		ECFB0F841D7B952900CC2BC3 /* NSURLSession+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFB0F821D7B952900CC2BC3 /* NSURLSession+MHF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECFB0F851D7B952900CC2BC3 /* NSURLSession+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB0F831D7B952900CC2BC3 /* NSURLSession+MHF.m */; };
-		ECFB0F931D7CF2E100CC2BC3 /* NSUUID+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFB0F911D7CF2E100CC2BC3 /* NSUUID+MHF.h */; };
+		ECFB0F931D7CF2E100CC2BC3 /* NSUUID+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFB0F911D7CF2E100CC2BC3 /* NSUUID+MHF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECFB0F941D7CF2E100CC2BC3 /* NSUUID+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB0F921D7CF2E100CC2BC3 /* NSUUID+MHF.m */; };
 		ECFD7F721D44087000449373 /* NSDate+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFD7F701D44087000449373 /* NSDate+MHF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECFD7F731D44087000449373 /* NSDate+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFD7F711D44087000449373 /* NSDate+MHF.m */; };
