@@ -11,6 +11,6 @@
 
 @interface NSUUID (MHF)
 
-- (NSString *)mhf_base64String;
+- (NSString *)mhf_URLSafeBase64String;
 
 @end

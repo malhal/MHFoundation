@@ -10,7 +10,7 @@
 
 @implementation NSUUID (MHF)
 
-- (NSString *)mhf_base64String{
+- (NSString *)mhf_URLSafeBase64String{
     uuid_t bytes;
     [self getUUIDBytes:bytes];
     NSData *data = [NSData dataWithBytes:bytes length:sizeof(bytes)];
