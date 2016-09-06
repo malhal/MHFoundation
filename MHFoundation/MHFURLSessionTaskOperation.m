@@ -73,6 +73,15 @@
 @implementation MHFURLSessionDataTaskOperation
 
 - (BOOL)asyncOperationShouldRun:(NSError**)error{
+    
+    // enforce understanding of delegate skipping behavior of the task with completion handler convenience method.
+    // i.e. if they didn't set completion they might be expecting the NSURLSession delegate methods to be called,
+    // which will not happen even we are supplying an internal completion handler to the task.
+    if(!self.dataTaskCompletionBlock){
+        *error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorInvalidArguments descriptionFormat:@"A dataTaskCompletionBlock must be provided for %@", self.class];
+        return NO;
+    }
+    
     void(^completionHandler)(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) = ^void(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error){
         self.data = data;
         [self finishWithError:error];
@@ -118,6 +127,12 @@
 }
 
 - (BOOL)asyncOperationShouldRun:(NSError**)error{
+    
+    if(!self.downloadTaskCompletionBlock){
+        *error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorInvalidArguments descriptionFormat:@"A downloadTaskCompletionBlock must be provided for %@", self.class];
+        return NO;
+    }
+    
     void(^completionHandler)(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) = ^void(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error){
         self.location = location;
         [self finishWithError:error];
