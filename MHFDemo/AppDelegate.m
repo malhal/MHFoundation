@@ -38,7 +38,7 @@
     //NSData* d = [NSJSONSerialization dataWithJSONObject:@[date] options:0 error:nil];
    // NSString* s = [[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding];
     
-    [self jsonTest];
+    [self jsonTest3];
     //[self jsonTest2];
     
     return YES;
@@ -79,21 +79,7 @@
     
     __block NSURLSessionDataTask* task2;
     __block NSURLSessionDataTask* task3;
-    
-    task2 = [NSURLSessionDataTask mhf_JSONTaskWithSession:self.session request:re completionHandler:^(id _Nullable JSONObject, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        if(error){
-            NSLog(@"error2 %@", error);
-            return;
-        }
-        NSLog(@"done2 %@", JSONObject);
-        
-        NSDate* d = [NSDate mhf_dateFromMySQLString:JSONObject[@"created_at"]];
-        NSLog(@"2 %@", d);
-        
-        //[self.session mhf_cancelAllTasks];
-        [task3 resume];
-        
-    }];
+
     
 //    
 //    [self.session.delegateQueue addOperationWithBlock:^{
@@ -138,6 +124,21 @@
         NSLog(@"%@", s);
         return;
     }];
+}
+
+-(void)jsonTest3{
+    NSMutableURLRequest* re = self.request;
+    re.HTTPBody = nil;
+    MHFRESTOperation* op = [[MHFRESTOperation alloc] initWithURLRequest:re bodyJSONDictionary:@{@"name2":@"malc"}];
+    [op setRESTCompletionBlock:^(NSDictionary * _Nullable responseJSONDictionary, NSHTTPURLResponse * _Nullable response, NSError * _Nullable error) {
+        if(error){
+            NSLog(@"error %@", error);
+            return;
+        }
+        NSLog(@"success %@", responseJSONDictionary);
+    }];
+    [op start];
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

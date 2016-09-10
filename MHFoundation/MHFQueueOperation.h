@@ -14,7 +14,7 @@
 
 - (void)addOperation:(NSOperation *)operation;
 
-// add your methods to the queue then call super to unsuspend the queue.
+// add your methods to the queue then call super to asynchronously unsuspend the queue, thus it does not matter if you call super first or last.
 - (void)performAsyncOperation NS_REQUIRES_SUPER;
 
 @end

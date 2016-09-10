@@ -15,12 +15,14 @@
 {
     self = [super init];
     if (self) {
+        // this makes one operation run at a time but it does not ensure order.
         self.operationQueue.maxConcurrentOperationCount = 1;
     }
     return self;
 }
 
 -(void)addOperation:(NSOperation*)op{
+    // ensure the operation will not start until the previous has finished.
     NSOperation* lastOp = self.operationQueue.operations.lastObject;
     if (lastOp){
         [op addDependency: lastOp];

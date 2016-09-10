@@ -53,12 +53,10 @@
         *error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorInvalidArguments descriptionFormat:@"A task must be provided for %@ usually via a subclass", self.class];
         return NO;
     }
-    
     return [super asyncOperationShouldRun:error];
 }
 
 -(void)performAsyncOperation{
-    [super performAsyncOperation];
     [self.task resume];
 }
 

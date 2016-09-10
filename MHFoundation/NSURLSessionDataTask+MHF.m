@@ -7,6 +7,8 @@
 //
 
 #import "NSURLSessionDataTask+MHF.h"
+#import "NSError+MHF.h"
+#import "MHFError.h"
 
 @implementation NSURLSessionDataTask (MHF)
 
