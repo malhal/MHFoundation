@@ -11,6 +11,7 @@
 #import "NSError+MHF.h"
 #import "MHFURLSessionTaskOperation.h"
 #import "NSHTTPURLResponse+MHF.h"
+#import "NSMutableURLRequest+MHF.h"
 
 @interface MHFRESTOperation()
 
@@ -83,6 +84,9 @@
     
     NSMutableURLRequest* request = self.request.mutableCopy;
     request.HTTPBody = self.HTTPBody;
+    [request mhf_setContentTypeJSON];
+    [request mhf_setAcceptJSON];
+    
     MHFURLSessionDataTaskOperation* dataTask = [[MHFURLSessionDataTaskOperation alloc] initWithURLRequest:request];
     dataTask.session = self.session;
     
