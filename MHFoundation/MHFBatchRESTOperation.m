@@ -63,7 +63,7 @@
 -(void)performAsyncOperation{
     [super performAsyncOperation];
     
-    NSBlockOperation* op = [NSBlockOperation blockOperationWithBlock:^{
+    NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
         NSArray* responses = self.responseJSON[@"responses"];
         if(!responses){
             return [self finishWithError:[NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorUnknown descriptionFormat:@"responses key was not contained in the response for %@", self.class]];
@@ -73,11 +73,11 @@
         }
         [responses enumerateObjectsUsingBlock:^(NSDictionary *rd, NSUInteger idx, BOOL *stop)
          {
-             NSURLRequest* request = self.batchRequests[idx];
-             NSNumber* status = rd[@"status"];
-             NSDictionary* JSON = rd[@"body"];
-             NSHTTPURLResponse* HTTPURLResponse = [[NSHTTPURLResponse alloc] initWithURL:request.URL statusCode:status.integerValue HTTPVersion:nil headerFields:nil];
-             NSError* error;
+             NSURLRequest *request = self.batchRequests[idx];
+             NSNumber *status = rd[@"status"];
+             NSDictionary *JSON = rd[@"body"];
+             NSHTTPURLResponse *HTTPURLResponse = [[NSHTTPURLResponse alloc] initWithURL:request.URL statusCode:status.integerValue HTTPVersion:nil headerFields:nil];
+             NSError *error;
              [self validateResponse:HTTPURLResponse JSON:JSON error:&error];
              if(self.perResponseBlock){
                  self.perResponseBlock(JSON, HTTPURLResponse, error);
