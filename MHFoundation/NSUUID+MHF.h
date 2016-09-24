@@ -11,6 +11,7 @@
 
 @interface NSUUID (MHF)
 
+// note this requires a case-sensitive database column.
 - (NSString *)mhf_URLSafeBase64String;
 
 @end

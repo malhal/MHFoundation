@@ -15,16 +15,25 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MHFRESTOperation : MHFSerialQueueOperation
 
-- (instancetype)initWithURLRequest:(nullable NSURLRequest *)request bodyJSONDictionary:(nullable NSDictionary *)bodyJSONDictionary;
+// Supply a request that has a URL and a method.
+// The request must have a JSONBody set using the category, it must only contain
+// items that can be converted to JSON otherwise it will complete with error if cannot encode.
+// The request will have contents and accept set to JSON.
+- (instancetype)initWithURLRequest:(nullable NSURLRequest *)request;
 
-@property (nonatomic, copy, nullable) NSDictionary *bodyJSONDictionary;
 @property (nonatomic, copy, nullable) NSURLRequest *request;
 // if no session is set, a new epheremal session is created.
 @property (nonatomic, strong, nullable) NSURLSession* session;
 
 // responseJSONDictionary is nil if there is an error.
-// if there is a error http status code then the error will contain the JSONDictionary.
-@property (nonatomic, copy, nullable) void (^RESTCompletionBlock)(NSDictionary * __nullable responseJSONDictionary, NSHTTPURLResponse * __nullable response, NSError * __nullable error);
+// If there is a http status error then the error will contain the error dictionary as the userInfo.
+@property (nonatomic, copy, nullable) void (^RESTCompletionBlock)(NSDictionary* __nullable JSON, NSHTTPURLResponse * __nullable response, NSError * __nullable error);
+
+@end
+
+@interface NSURLRequest (MHFRESTOperation)
+
+@property (nullable, copy, setter=mhf_setJSONBody:) id mhf_JSONBody;
 
 @end
 

@@ -34,3 +34,4 @@ FOUNDATION_EXPORT const unsigned char MHFoundationVersionString[];
 #import <MHFoundation/MHFAsyncOperation.h>
 #import <MHFoundation/MHFURLSessionTaskOperation.h>
 #import <MHFoundation/MHFRESTOperation.h>
+#import <MHFoundation/MHFBatchRESTOperation.h>
