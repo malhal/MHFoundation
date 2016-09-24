@@ -26,4 +26,6 @@
 
 -(void)mhf_setBasicAuthUsername:(NSString*)username password:(NSString*)password;
 
+-(void)mhf_setAcceptGzip;
+
 @end

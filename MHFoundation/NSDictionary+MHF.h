@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 //- (NSArray<ObjectType> *)mhf_objectsForKnownKeys:(NSArray<KeyType> *)keys;
 
+- (instancetype)mhf_dictionaryByAddingEntriesFromDictionary:(NSDictionary *)dictionary;
+
 @end
 
 NS_ASSUME_NONNULL_END

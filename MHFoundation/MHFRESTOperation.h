@@ -27,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 // responseJSONDictionary is nil if there is an error.
 // If there is a http status error then the error will contain the error dictionary as the userInfo.
+// If the error is MHFErrorPartialFailure, the error's userInfo dictionary contains
+// a dictionary of requests to errors keyed off of MHFPartialErrorsByItemIDKey.
 @property (nonatomic, copy, nullable) void (^RESTCompletionBlock)(NSDictionary* __nullable JSON, NSHTTPURLResponse * __nullable response, NSError * __nullable error);
 
 @end

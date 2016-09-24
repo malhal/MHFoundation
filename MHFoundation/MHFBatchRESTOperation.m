@@ -8,14 +8,17 @@
 
 #import "MHFBatchRESTOperation.h"
 #import "MHFRESTOperation_Internal.h"
-#import "MHFError.h"
+#import "MHFError_Internal.h"
 #import "NSError+MHF.h"
 #import "MHFHTTPError.h"
 #import "NSHTTPURLResponse+MHF.h"
+#import <objc/runtime.h>
 
 @interface MHFBatchRESTOperation()
 
 //@property (nonatomic, strong) NSArray<NSDictionary *> *responseJSONDictionaries;
+
+@property (nonatomic, strong) NSDictionary<NSURLRequest *, NSError *> *partialErrors;
 
 @end
 
@@ -71,20 +74,48 @@
         else if(![responses isKindOfClass:[NSArray class]]){
             return [self finishWithError:[NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorUnknown descriptionFormat:@"responses must be an array for %@", self.class]];
         }
+        NSMutableDictionary* partialErrors = [NSMutableDictionary dictionary];
         [responses enumerateObjectsUsingBlock:^(NSDictionary *rd, NSUInteger idx, BOOL *stop)
-         {
+        {
              NSURLRequest *request = self.batchRequests[idx];
              NSNumber *status = rd[@"status"];
              NSDictionary *JSON = rd[@"body"];
              NSHTTPURLResponse *HTTPURLResponse = [[NSHTTPURLResponse alloc] initWithURL:request.URL statusCode:status.integerValue HTTPVersion:nil headerFields:nil];
              NSError *error;
-             [self validateResponse:HTTPURLResponse JSON:JSON error:&error];
+            if(![self validateResponse:HTTPURLResponse JSON:JSON error:&error]){
+                partialErrors[request] = error;
+            }
              if(self.perResponseBlock){
                  self.perResponseBlock(JSON, HTTPURLResponse, error);
              }
          }];
+         self.partialErrors = partialErrors.copy;
     }];
     [self addOperation:op];
 }
 
+- (void)finishOnCallbackQueueWithError:(NSError*)error{
+    if(!error){
+        if(self.partialErrors.count){
+            error = [MHFError errorWithCode:MHFErrorPartialFailure userInfo:@{MHFPartialErrorsByItemIDKey : self.partialErrors}];
+        }
+    }
+    if(self.batchCompletionBlock){
+        self.batchCompletionBlock(error);
+    }
+    [super finishOnCallbackQueueWithError:error];
+}
+
 @end
+
+//@implementation NSMutableURLRequest (MHFBatchRESTOperation)
+//
+//-(id)mhf_identifier{
+//    return objc_getAssociatedObject(self, @selector(mhf_identifier));
+//}
+//
+//-(void)mhf_setIdentifier:(NSString *)identifier{
+//    objc_setAssociatedObject(self, @selector(identifier), identifier, OBJC_ASSOCIATION_COPY_NONATOMIC);
+//}
+//
+//@end

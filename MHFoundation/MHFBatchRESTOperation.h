@@ -25,9 +25,17 @@ NS_ASSUME_NONNULL_BEGIN
 // Determines whether the batch should fail atomically or not. YES by default.
 @property (nonatomic, assign) BOOL atomic;
 
-/* Called on success or failure for each response in the batch. */
+/* Called on success or failure for each response of the batch. The callback is called in order of the requests */
 @property (nonatomic, copy, nullable) void (^perResponseBlock)(NSDictionary * __nullable JSON, NSHTTPURLResponse * __nullable response, NSError * __nullable error);
 
+@property (nonatomic, copy, nullable) void (^batchCompletionBlock)(NSError * __nullable error);
+
 @end
+
+//@interface NSURLRequest (MHFBatchRESTOperation)
+//
+//@property (nullable, copy, setter=mhf_setIdentifier:) id mhf_identifier;
+//
+//@end
 
 NS_ASSUME_NONNULL_END

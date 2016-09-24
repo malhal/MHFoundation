@@ -39,4 +39,10 @@
     return d;
 }
 
+ - (instancetype)mhf_dictionaryByAddingEntriesFromDictionary:(NSDictionary *)dictionary{
+     NSMutableDictionary *combinedDictionary = self.mutableCopy;
+     [combinedDictionary addEntriesFromDictionary:dictionary];
+     return combinedDictionary;
+ }
+
 @end

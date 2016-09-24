@@ -61,4 +61,7 @@
     [self setValue:authValue forHTTPHeaderField:@"Authorization"];
 }
 
+-(void)mhf_setAcceptGzip{
+    [self addValue:@"gzip" forHTTPHeaderField:@"Accept-Encoding"];
+}
 @end

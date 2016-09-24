@@ -12,10 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 MHFOUNDATION_EXTERN NSString * const MHFoundationErrorDomain;
 
+MHFOUNDATION_EXTERN NSString * const MHFPartialErrorsByItemIDKey;
+
 typedef NS_ENUM(NSInteger, MHFErrorCode) {
     MHFErrorUnknown                = 1,  /* Unknown or generic error */
     MHFErrorOperationCancelled     = 2,  /* A MHF operation was explicitly cancelled */
-    MHFErrorInvalidArguments       = 3
+    MHFErrorInvalidArguments       = 3,  /* Things needed were not set */
+    MHFErrorPartialFailure         = 4   /* Some items failed, but the operation succeeded overall */
 };
 
 NS_ASSUME_NONNULL_END
