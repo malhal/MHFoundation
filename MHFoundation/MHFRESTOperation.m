@@ -20,9 +20,15 @@
 {
     self = [super init];
     if (self) {
-        _request = request.copy;
+        // need to use the setter
+        self.request = request;
     }
     return self;
+}
+
+- (void)setRequest:(NSURLRequest *)request{
+    _request = request.copy;
+    _request.mhf_JSONBody = request.mhf_JSONBody;
 }
 
 - (NSURLSession *)session{

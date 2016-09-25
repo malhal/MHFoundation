@@ -85,8 +85,8 @@
             if(![self validateResponse:HTTPURLResponse JSON:JSON error:&error]){
                 partialErrors[request] = error;
             }
-             if(self.perResponseBlock){
-                 self.perResponseBlock(JSON, HTTPURLResponse, error);
+             if(self.perRequestCompletionBlock){
+                 self.perRequestCompletionBlock(request, JSON, HTTPURLResponse, error);
              }
          }];
          self.partialErrors = partialErrors.copy;
