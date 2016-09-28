@@ -8,6 +8,7 @@
 
 #import "NSMutableURLRequest+MHF.h"
 #import "NSData+GZIP.h"
+#import "MHFHTTP.h"
 
 @implementation NSMutableURLRequest (MHF)
 
@@ -33,11 +34,11 @@
 }
 
 -(void)mhf_setPOST{
-    [self setHTTPMethod:@"POST"];
+    [self setHTTPMethod:MHFHTTPMethodPOST];
 }
 
 -(void)mhf_setPUT{
-    [self setHTTPMethod:@"PUT"];
+    [self setHTTPMethod:MHFHTTPMethodPUT];
 }
 
 -(void)mhf_gzipBody{

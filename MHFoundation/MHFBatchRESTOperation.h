@@ -1,6 +1,6 @@
 //
 //  MHFBatchRESTOperation.h
-//  WiFiFoFum-Passwords
+//  MHFoundation
 //
 //  Created by Malcolm Hall on 23/09/2016.
 //  Copyright © 2016 Malcolm Hall. All rights reserved.

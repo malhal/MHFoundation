@@ -18,6 +18,7 @@ FOUNDATION_EXPORT const unsigned char MHFoundationVersionString[];
 #import <MHFoundation/MHFDefines.h>
 #import <MHFoundation/MHFError.h>
 #import <MHFoundation/MHFHTTPError.h>
+#import <MHFoundation/MHFHTTP.h>
 
 #import <MHFoundation/NSDictionary+MHF.h>
 #import <MHFoundation/NSArray+MHF.h>
