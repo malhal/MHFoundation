@@ -13,6 +13,7 @@
 #import "NSHTTPURLResponse+MHF.h"
 #import "NSMutableURLRequest+MHF.h"
 #import <objc/runtime.h>
+#import "NSDictionary+MHF.h"
 
 @implementation MHFRESTOperation
 
@@ -101,31 +102,43 @@
     NSBlockOperation *decodeOperation = [NSBlockOperation blockOperationWithBlock:^{
         // we parse the json regardless of if there is an error code or not.
         NSError *error;
-        NSDictionary *JSON;
+        id JSONObject;
         if(taskData.length){
-            JSON = (NSDictionary *)[NSJSONSerialization JSONObjectWithData:taskData options:0 error:&error];
-            if(!JSON){
+            JSONObject = [NSJSONSerialization JSONObjectWithData:taskData options:0 error:&error]; // options 0 only allows dictionary and array.
+            if(!JSONObject){
                 // todo wrap error
                 return [self finishWithError:error];
             }
         }
-        if(![self validateResponse:self.response JSON:JSON error:&error]){
+        if(![self validateResponse:self.response JSONObject:JSONObject error:&error]){
             return [self finishWithError:error];
         }
         
-        self.responseJSON = JSON;
+        self.JSONObject = JSONObject;
     }];
     
     [self addOperation:decodeOperation];
 }
 
-- (BOOL)validateResponse:(NSHTTPURLResponse *)response JSON:(NSDictionary*)JSON error:(NSError **)error{
-    if(JSON && ![JSON isKindOfClass:[NSDictionary class]]){
-        *error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorUnknown descriptionFormat:@"The response body JSON was not a dictionary for %@", self.class];
-        return NO;
-    }
-    else if(!response.mhf_isSuccessful){
-        *error = [response mhf_HTTPErrorWithUserInfo:JSON];
+- (BOOL)validateResponse:(NSHTTPURLResponse *)response JSONObject:(id)JSONObject error:(NSError **)error{
+    if(!response.mhf_isSuccessful){
+        
+        NSMutableDictionary* errorDictionary;
+        if([JSONObject isKindOfClass:[NSDictionary class]]){
+            errorDictionary = ((NSDictionary *)JSONObject).mutableCopy;
+            
+            NSString* error = errorDictionary[@"error"];
+            NSString* reason = errorDictionary[@"reason"];
+            
+            errorDictionary[NSLocalizedDescriptionKey] = error;
+            errorDictionary[NSLocalizedFailureReasonErrorKey] = reason;
+            
+            // tidy up user info.
+            [errorDictionary removeObjectForKey:@"error"];
+            [errorDictionary removeObjectForKey:@"reason"];
+
+        }
+        *error = [response mhf_HTTPErrorWithUserInfo:errorDictionary];
         return NO;
     }
     return YES;
@@ -133,7 +146,7 @@
 
 - (void)finishOnCallbackQueueWithError:(NSError*)error{
     if(self.RESTCompletionBlock){
-        self.RESTCompletionBlock(self.responseJSON, self.response, error);
+        self.RESTCompletionBlock(self.JSONObject, self.response, error);
     }
     [super finishOnCallbackQueueWithError:error];
 }

@@ -24,15 +24,6 @@
 
 @implementation MHFBatchRESTOperation
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        _atomic = YES;
-    }
-    return self;
-}
-
 - (instancetype)initWithURLRequest:(nullable NSURLRequest *)request batchRequests:(nullable NSArray <NSURLRequest *> *)batchRequests{
     
     self = [self initWithURLRequest:request];
@@ -56,9 +47,7 @@
                               @"body" : batchRequest.mhf_JSONBody}];
     }
     
-    self.request.mhf_JSONBody = @{@"atomic" : @(self.atomic),
-                                  @"requests" : requests
-                                  };
+    self.request.mhf_JSONBody = requests;
     
     return [super asyncOperationShouldRun:error];
 }
@@ -67,26 +56,28 @@
     [super performAsyncOperation];
     
     NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
-        NSArray* responses = self.responseJSON[@"responses"];
-        if(!responses){
-            return [self finishWithError:[NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorUnknown descriptionFormat:@"responses key was not contained in the response for %@", self.class]];
+        NSArray* responses = (NSArray *)self.JSONObject;
+        
+        if(![responses isKindOfClass:[NSArray class]]){
+            return [self finishWithError:[NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorUnknown descriptionFormat:@"An array of responses was not received for %@", self.class]];
         }
-        else if(![responses isKindOfClass:[NSArray class]]){
-            return [self finishWithError:[NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorUnknown descriptionFormat:@"responses must be an array for %@", self.class]];
-        }
+        
         NSMutableDictionary* partialErrors = [NSMutableDictionary dictionary];
         [responses enumerateObjectsUsingBlock:^(NSDictionary *rd, NSUInteger idx, BOOL *stop)
         {
              NSURLRequest *request = self.batchRequests[idx];
              NSNumber *status = rd[@"status"];
-             NSDictionary *JSON = rd[@"body"];
+             id JSONObject = rd[@"body"];
              NSHTTPURLResponse *HTTPURLResponse = [[NSHTTPURLResponse alloc] initWithURL:request.URL statusCode:status.integerValue HTTPVersion:nil headerFields:nil];
              NSError *error;
-            if(![self validateResponse:HTTPURLResponse JSON:JSON error:&error]){
+             if(!([JSONObject isKindOfClass:[NSDictionary class]] || [JSONObject isKindOfClass:[NSArray class]])){
+                error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorUnknown descriptionFormat:@"The response body JSON was not a dictionary or an array for %@", self.class];
+             }
+             else if(![self validateResponse:HTTPURLResponse JSONObject:JSONObject error:&error]){
                 partialErrors[request] = error;
-            }
+             }
              if(self.perRequestCompletionBlock){
-                 self.perRequestCompletionBlock(request, JSON, HTTPURLResponse, error);
+                 self.perRequestCompletionBlock(request, JSONObject, HTTPURLResponse, error);
              }
          }];
          self.partialErrors = partialErrors.copy;

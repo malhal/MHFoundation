@@ -14,19 +14,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MHFBatchRESTOperation : MHFRESTOperation
 
-- (instancetype)init NS_DESIGNATED_INITIALIZER;
-
 // each request in the batch should have a mhf_JSONBody that is an NSDictionary
 // the url should be the path under http://host/api/ e.g. venue
 - (instancetype)initWithURLRequest:(nullable NSURLRequest *)request batchRequests:(nullable NSArray <NSURLRequest *> *)batchRequests;
 
 @property (nonatomic, copy, nullable) NSArray <NSURLRequest *> *batchRequests;
 
-// Determines whether the batch should fail atomically or not. YES by default.
-@property (nonatomic, assign) BOOL atomic;
-
 /* Called on success or failure for each request in the batch. The callback is called in order of the batch requests. */
-@property (nonatomic, copy, nullable) void (^perRequestCompletionBlock)(NSURLRequest *request, NSDictionary * __nullable JSON, NSHTTPURLResponse * __nullable response, NSError * __nullable error);
+@property (nonatomic, copy, nullable) void (^perRequestCompletionBlock)(NSURLRequest *request, id __nullable JSONObject, NSHTTPURLResponse * __nullable response, NSError * __nullable error);
 
 @property (nonatomic, copy, nullable) void (^batchCompletionBlock)(NSError * __nullable error);
 

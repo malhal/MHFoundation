@@ -12,10 +12,10 @@
 
 @property (nonatomic, strong) NSData *HTTPBody;
 
-@property (nonatomic, strong) NSDictionary *responseJSON;
+@property (nonatomic, strong) id JSONObject;
 
 @property (nonatomic, strong) NSHTTPURLResponse *response;
 
-- (BOOL)validateResponse:(NSHTTPURLResponse *)response JSON:(NSDictionary*)JSON error:(NSError **)error;
+- (BOOL)validateResponse:(NSHTTPURLResponse *)response JSONObject:(id)JSONObject error:(NSError **)error;
 
 @end
