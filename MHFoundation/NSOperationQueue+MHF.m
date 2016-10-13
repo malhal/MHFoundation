@@ -19,4 +19,13 @@
     [self addOperation:op];
 }
 
++ (NSOperationQueue *)mhf_sharedOperationQueue{
+    static NSOperationQueue* sharedOperationQueue = nil;
+    static dispatch_once_t once;
+    dispatch_once(&once, ^{
+        sharedOperationQueue = [[NSOperationQueue alloc] init];
+    });
+    return sharedOperationQueue;
+}
+
 @end

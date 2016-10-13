@@ -50,6 +50,7 @@
     #define mhf_setJSONObject __MHFOUNDATION_NS_SYMBOL(mhf_setJSONObject)
     #define mhf_setPOST __MHFOUNDATION_NS_SYMBOL(mhf_setPOST)
     #define mhf_setPUT __MHFOUNDATION_NS_SYMBOL(mhf_setPUT)
+    #define mhf_sharedOperationQueue __MHFOUNDATION_NS_SYMBOL(mhf_sharedOperationQueue)
     #define mhf_sharedSessionMainQueue __MHFOUNDATION_NS_SYMBOL(mhf_sharedSessionMainQueue)
     #define mhf_sharedSessionMainQueueAllowInvalidSSL __MHFOUNDATION_NS_SYMBOL(mhf_sharedSessionMainQueueAllowInvalidSSL)
     #define mhf_stringTaskWithSession __MHFOUNDATION_NS_SYMBOL(mhf_stringTaskWithSession)
