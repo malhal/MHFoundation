@@ -18,7 +18,7 @@
 //    return [self objectsForKeys:keys notFoundMarker:[NSNull null]];
 //}
 
--(NSDictionary*)mhf_unflattenDictionary{
+- (NSDictionary *)mhf_unflattenDictionary{
     // create the new dict we will fill
     NSMutableDictionary* d = [NSMutableDictionary dictionary];
     for(NSString* key in self.allKeys){ // app.name, app.date etc.
@@ -44,5 +44,13 @@
      [combinedDictionary addEntriesFromDictionary:dictionary];
      return combinedDictionary;
  }
+
+- (id)mhf_nilIfNSNullObjectForKey:(id)aKey{
+    id obj = [self objectForKey:aKey];
+    if(obj == [NSNull null]){
+        return nil;
+    }
+    return obj;
+}
 
 @end

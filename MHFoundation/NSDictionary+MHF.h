@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)mhf_dictionaryByAddingEntriesFromDictionary:(NSDictionary *)dictionary;
 
+- (nullable ObjectType)mhf_nilIfNSNullObjectForKey:(id)aKey;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -12,28 +12,20 @@
 
 static void * const MHFQueueOperationContext = (void *)&MHFQueueOperationContext;
 
-@interface MHFQueueOperation()
-
-@property (strong, nonatomic) NSError* error;
-
-@end
-
 @implementation MHFQueueOperation
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
+        // we init here rather than shouldPerform so that it can be used before or after a subclasses call to super.
         _operationQueue = [[NSOperationQueue alloc] init];
         _operationQueue.suspended = YES;
-        [_operationQueue addObserver:self
-                          forKeyPath:NSStringFromSelector(@selector(operationCount))
-                             options:NSKeyValueObservingOptionNew
-                             context:MHFQueueOperationContext];
     }
     return self;
 }
 
+// could be called from any thread.
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary *)change
@@ -41,7 +33,11 @@ static void * const MHFQueueOperationContext = (void *)&MHFQueueOperationContext
     // if it was our observation
     if(context == MHFQueueOperationContext){
         if([[change objectForKey:NSKeyValueChangeNewKey] isEqual:@0]){
-            [self finishWithError:self.error];
+            NSError *error;
+            if(self.isCancelled){
+                error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorOperationCancelled descriptionFormat:@"The %@ was cancelled", self.class];
+            }
+            [self finishWithError:error];
         }
     }
     else{
@@ -59,14 +55,17 @@ static void * const MHFQueueOperationContext = (void *)&MHFQueueOperationContext
     // Start the queue and for safety delay until after the operations have been added by the subclass.
     // This means it doesn't matter if they call super at start or end of their method.
     [self performBlockOnCallbackQueue:^{
+        [self.operationQueue addObserver:self
+                          forKeyPath:NSStringFromSelector(@selector(operationCount))
+                             options:NSKeyValueObservingOptionNew
+                             context:MHFQueueOperationContext];
         self.operationQueue.suspended = NO;
     }];
 }
 
-// also cancel any data task associated to this task
+// also cancel any data task associated to this task.
 - (void)cancel{
     [super cancel];
-    self.error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorOperationCancelled descriptionFormat:@"The %@ was cancelled", self.class];
     [self.operationQueue cancelAllOperations];
 }
 
@@ -82,9 +81,10 @@ static void * const MHFQueueOperationContext = (void *)&MHFQueueOperationContext
     [self.operationQueue addOperation:operation];
 }
 
-- (void)dealloc
+- (void)finishOnCallbackQueueWithError:(NSError *)error
 {
-    [_operationQueue removeObserver:self forKeyPath:NSStringFromSelector(@selector(operationCount))];
+    [self.operationQueue removeObserver:self forKeyPath:NSStringFromSelector(@selector(operationCount))];
+    [super finishOnCallbackQueueWithError:error];
 }
 
 @end
