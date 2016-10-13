@@ -23,11 +23,13 @@
 		EC31447E1D073AC10025F669 /* NSArray+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3144701D073AC10025F669 /* NSArray+MHF.m */; };
 		EC31447F1D073AC10025F669 /* NSDictionary+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3144711D073AC10025F669 /* NSDictionary+MHF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC3144801D073AC10025F669 /* NSDictionary+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3144721D073AC10025F669 /* NSDictionary+MHF.m */; };
+		EC67583F1DAF0DD300838798 /* MHFHTTP.h in Headers */ = {isa = PBXBuildFile; fileRef = EC67583D1DAF0DD300838798 /* MHFHTTP.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC6758401DAF0DD300838798 /* MHFHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = EC67583E1DAF0DD300838798 /* MHFHTTP.m */; };
 		ECA372041D5279D900B9DA1B /* MHFQueueOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA372021D5279D900B9DA1B /* MHFQueueOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECA372051D5279D900B9DA1B /* MHFQueueOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA372031D5279D900B9DA1B /* MHFQueueOperation.m */; };
 		ECA372391D53703D00B9DA1B /* MHFQueueOperation_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA372381D536FC300B9DA1B /* MHFQueueOperation_Internal.h */; };
 		ECB16F751D96A95A003F987D /* MHFBatchRESTOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB16F731D96A95A003F987D /* MHFBatchRESTOperation.m */; };
-		ECB16F761D96A95A003F987D /* MHFBatchRESTOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = ECB16F741D96A95A003F987D /* MHFBatchRESTOperation.h */; };
+		ECB16F761D96A95A003F987D /* MHFBatchRESTOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = ECB16F741D96A95A003F987D /* MHFBatchRESTOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECB16F791D97373C003F987D /* MHFError_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = ECB16F781D97373C003F987D /* MHFError_Internal.h */; };
 		ECB213571D846A9600246A1F /* NSHTTPURLResponse+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = ECB213551D846A9600246A1F /* NSHTTPURLResponse+MHF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECB213581D846A9600246A1F /* NSHTTPURLResponse+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB213561D846A9600246A1F /* NSHTTPURLResponse+MHF.m */; };
@@ -37,12 +39,12 @@
 		ECB213631D84B40A00246A1F /* MHFHTTPError.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB213611D84B40A00246A1F /* MHFHTTPError.m */; };
 		ECC69E901D7A33E100020DA1 /* NSMutableURLRequest+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC69E8E1D7A33E100020DA1 /* NSMutableURLRequest+MHF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECC69E911D7A33E100020DA1 /* NSMutableURLRequest+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC69E8F1D7A33E100020DA1 /* NSMutableURLRequest+MHF.m */; };
-		ECC69EA01D7A56A900020DA1 /* NSData+GZIP.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC69E971D7A3BB800020DA1 /* NSData+GZIP.m */; settings = {COMPILER_FLAGS = "-include$(SRCROOT)/MHFoundation/NSData+GZIP.h"; }; };
+		ECC69EA01D7A56A900020DA1 /* NSData+GZIP.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC69E971D7A3BB800020DA1 /* NSData+GZIP.m */; settings = {COMPILER_FLAGS = "-include$(SRCROOT)/MHFoundation/NSData+MHF_Internal.h"; }; };
 		ECC991341D0D54A4000F5EFB /* MHFDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC991321D0D54A4000F5EFB /* MHFDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECC991381D0D74FD000F5EFB /* MHFError.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC991361D0D74FD000F5EFB /* MHFError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECC991391D0D74FD000F5EFB /* MHFError.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC991371D0D74FD000F5EFB /* MHFError.m */; };
 		ECFB0F691D7ACA5300CC2BC3 /* NSData+GZIP.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFB0F681D7ACA5300CC2BC3 /* NSData+GZIP.h */; };
-		ECFB0F6B1D7AD41000CC2BC3 /* NSData+GZIP.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFB0F6A1D7AD3B100CC2BC3 /* NSData+GZIP.h */; };
+		ECFB0F6B1D7AD41000CC2BC3 /* NSData+MHF_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFB0F6A1D7AD3B100CC2BC3 /* NSData+MHF_Internal.h */; };
 		ECFB0F771D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFB0F751D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECFB0F781D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB0F761D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.m */; };
 		ECFB0F801D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFB0F7E1D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -85,6 +87,8 @@
 		EC3144701D073AC10025F669 /* NSArray+MHF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MHF.m"; sourceTree = "<group>"; };
 		EC3144711D073AC10025F669 /* NSDictionary+MHF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+MHF.h"; sourceTree = "<group>"; };
 		EC3144721D073AC10025F669 /* NSDictionary+MHF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+MHF.m"; sourceTree = "<group>"; };
+		EC67583D1DAF0DD300838798 /* MHFHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFHTTP.h; sourceTree = "<group>"; };
+		EC67583E1DAF0DD300838798 /* MHFHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHFHTTP.m; sourceTree = "<group>"; };
 		ECA372021D5279D900B9DA1B /* MHFQueueOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFQueueOperation.h; sourceTree = "<group>"; };
 		ECA372031D5279D900B9DA1B /* MHFQueueOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHFQueueOperation.m; sourceTree = "<group>"; };
 		ECA372381D536FC300B9DA1B /* MHFQueueOperation_Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHFQueueOperation_Internal.h; sourceTree = "<group>"; };
@@ -104,7 +108,7 @@
 		ECC991361D0D74FD000F5EFB /* MHFError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFError.h; sourceTree = "<group>"; };
 		ECC991371D0D74FD000F5EFB /* MHFError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHFError.m; sourceTree = "<group>"; };
 		ECFB0F681D7ACA5300CC2BC3 /* NSData+GZIP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+GZIP.h"; path = "dependencies/GZIP/GZIP/NSData+GZIP.h"; sourceTree = SOURCE_ROOT; };
-		ECFB0F6A1D7AD3B100CC2BC3 /* NSData+GZIP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+GZIP.h"; sourceTree = "<group>"; };
+		ECFB0F6A1D7AD3B100CC2BC3 /* NSData+MHF_Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+MHF_Internal.h"; sourceTree = "<group>"; };
 		ECFB0F751D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSessionDataTask+MHF.h"; sourceTree = "<group>"; };
 		ECFB0F761D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSessionDataTask+MHF.m"; sourceTree = "<group>"; };
 		ECFB0F7E1D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFURLSessionTaskOperation.h; sourceTree = "<group>"; };
@@ -157,14 +161,14 @@
 		EC31444F1D073A1A0025F669 /* MHFoundation */ = {
 			isa = PBXGroup;
 			children = (
-				ECFB0F6A1D7AD3B100CC2BC3 /* NSData+GZIP.h */,
+				ECFB0F6A1D7AD3B100CC2BC3 /* NSData+MHF_Internal.h */,
 				ECC69E921D7A3B7700020DA1 /* dependencies */,
 				ECFB0F7E1D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.h */,
 				ECFB0F7F1D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.m */,
 				ECB213591D847E9700246A1F /* MHFRESTOperation.h */,
 				ECB2135A1D847E9700246A1F /* MHFRESTOperation.m */,
-				ECB16F731D96A95A003F987D /* MHFBatchRESTOperation.m */,
 				ECB16F741D96A95A003F987D /* MHFBatchRESTOperation.h */,
+				ECB16F731D96A95A003F987D /* MHFBatchRESTOperation.m */,
 				ECC69E8E1D7A33E100020DA1 /* NSMutableURLRequest+MHF.h */,
 				ECC69E8F1D7A33E100020DA1 /* NSMutableURLRequest+MHF.m */,
 				ECFB0F751D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.h */,
@@ -201,6 +205,8 @@
 				ECFB0F921D7CF2E100CC2BC3 /* NSUUID+MHF.m */,
 				ECB213551D846A9600246A1F /* NSHTTPURLResponse+MHF.h */,
 				ECB213561D846A9600246A1F /* NSHTTPURLResponse+MHF.m */,
+				EC67583D1DAF0DD300838798 /* MHFHTTP.h */,
+				EC67583E1DAF0DD300838798 /* MHFHTTP.m */,
 			);
 			path = MHFoundation;
 			sourceTree = "<group>";
@@ -242,8 +248,9 @@
 				EC31447F1D073AC10025F669 /* NSDictionary+MHF.h in Headers */,
 				ECA372041D5279D900B9DA1B /* MHFQueueOperation.h in Headers */,
 				ECB213621D84B40A00246A1F /* MHFHTTPError.h in Headers */,
+				EC67583F1DAF0DD300838798 /* MHFHTTP.h in Headers */,
 				ECC991341D0D54A4000F5EFB /* MHFDefines.h in Headers */,
-				ECFB0F6B1D7AD41000CC2BC3 /* NSData+GZIP.h in Headers */,
+				ECFB0F6B1D7AD41000CC2BC3 /* NSData+MHF_Internal.h in Headers */,
 				ECFB0F691D7ACA5300CC2BC3 /* NSData+GZIP.h in Headers */,
 				EC07F1571D4CDEC800A28610 /* NSError+MHF.h in Headers */,
 				EC07F1C81D4E54CA00A28610 /* MHFNamespaceDefines.h in Headers */,
@@ -390,6 +397,7 @@
 				ECB2135C1D847E9700246A1F /* MHFRESTOperation.m in Sources */,
 				EC31447C1D073AC10025F669 /* MHFSerialQueueOperation.m in Sources */,
 				ECFD7F731D44087000449373 /* NSDate+MHF.m in Sources */,
+				EC6758401DAF0DD300838798 /* MHFHTTP.m in Sources */,
 				ECB213631D84B40A00246A1F /* MHFHTTPError.m in Sources */,
 				EC07F1581D4CDEC800A28610 /* NSError+MHF.m in Sources */,
 				ECFB0F851D7B952900CC2BC3 /* NSURLSession+MHF.m in Sources */,

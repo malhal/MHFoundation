@@ -2,7 +2,7 @@
 //  MHFNamespaceDefines.h
 //  MHFoundation
 //
-//  Generated using MHNamespaceGenerator on 24/09/2016
+//  Generated using MHNamespaceGenerator on 13/10/2016
 //
 
 #if !defined(__MHFOUNDATION_NS_SYMBOL) && defined(MHFOUNDATION_NAMESPACE)
@@ -39,6 +39,7 @@
     #define mhf_isLaterThan __MHFOUNDATION_NS_SYMBOL(mhf_isLaterThan)
     #define mhf_isLaterThanOrEqualTo __MHFOUNDATION_NS_SYMBOL(mhf_isLaterThanOrEqualTo)
     #define mhf_isSuccessful __MHFOUNDATION_NS_SYMBOL(mhf_isSuccessful)
+    #define mhf_nilIfNSNullObjectForKey __MHFOUNDATION_NS_SYMBOL(mhf_nilIfNSNullObjectForKey)
     #define mhf_setAcceptGzip __MHFOUNDATION_NS_SYMBOL(mhf_setAcceptGzip)
     #define mhf_setAcceptJSON __MHFOUNDATION_NS_SYMBOL(mhf_setAcceptJSON)
     #define mhf_setBasicAuthUsername __MHFOUNDATION_NS_SYMBOL(mhf_setBasicAuthUsername)
@@ -50,6 +51,15 @@
     #define mhf_unflattenDictionary __MHFOUNDATION_NS_SYMBOL(mhf_unflattenDictionary)
 // Externs
     #define MHFHTTPErrorDomain __MHFOUNDATION_NS_SYMBOL(MHFHTTPErrorDomain)
+    #define MHFHTTPMethodCOPY __MHFOUNDATION_NS_SYMBOL(MHFHTTPMethodCOPY)
+    #define MHFHTTPMethodDELETE __MHFOUNDATION_NS_SYMBOL(MHFHTTPMethodDELETE)
+    #define MHFHTTPMethodGET __MHFOUNDATION_NS_SYMBOL(MHFHTTPMethodGET)
+    #define MHFHTTPMethodHEAD __MHFOUNDATION_NS_SYMBOL(MHFHTTPMethodHEAD)
+    #define MHFHTTPMethodOPTIONS __MHFOUNDATION_NS_SYMBOL(MHFHTTPMethodOPTIONS)
+    #define MHFHTTPMethodPATCH __MHFOUNDATION_NS_SYMBOL(MHFHTTPMethodPATCH)
+    #define MHFHTTPMethodPOST __MHFOUNDATION_NS_SYMBOL(MHFHTTPMethodPOST)
+    #define MHFHTTPMethodPUT __MHFOUNDATION_NS_SYMBOL(MHFHTTPMethodPUT)
+    #define MHFHTTPMethodSEARCH __MHFOUNDATION_NS_SYMBOL(MHFHTTPMethodSEARCH)
     #define MHFPartialErrorsByItemIDKey __MHFOUNDATION_NS_SYMBOL(MHFPartialErrorsByItemIDKey)
     #define MHFoundationErrorDomain __MHFOUNDATION_NS_SYMBOL(MHFoundationErrorDomain)
     #define MHFoundationVersionNumber __MHFOUNDATION_NS_SYMBOL(MHFoundationVersionNumber)

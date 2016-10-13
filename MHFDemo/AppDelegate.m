@@ -128,8 +128,9 @@
 
 -(void)jsonTest3{
     NSMutableURLRequest* re = self.request;
+    re.mhf_JSONBody = @{@"name2":@"malc"};
     re.HTTPBody = nil;
-    MHFRESTOperation* op = [[MHFRESTOperation alloc] initWithURLRequest:re bodyJSONDictionary:@{@"name2":@"malc"}];
+    MHFRESTOperation* op = [[MHFRESTOperation alloc] initWithURLRequest:re];
     [op setRESTCompletionBlock:^(NSDictionary * _Nullable responseJSONDictionary, NSHTTPURLResponse * _Nullable response, NSError * _Nullable error) {
         if(error){
             NSLog(@"error %@", error);
