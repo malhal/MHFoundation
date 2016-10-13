@@ -27,7 +27,7 @@
 		EC6758401DAF0DD300838798 /* MHFHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = EC67583E1DAF0DD300838798 /* MHFHTTP.m */; };
 		EC67589F1DB02AEE00838798 /* NSString+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = EC67589D1DB02AEE00838798 /* NSString+MHF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC6758A01DB02AEE00838798 /* NSString+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = EC67589E1DB02AEE00838798 /* NSString+MHF.m */; };
-		EC6758E91DB0376900838798 /* NSOperationQueue+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6758E71DB0376900838798 /* NSOperationQueue+MHF.h */; };
+		EC6758E91DB0376900838798 /* NSOperationQueue+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6758E71DB0376900838798 /* NSOperationQueue+MHF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC6758EA1DB0376900838798 /* NSOperationQueue+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6758E81DB0376900838798 /* NSOperationQueue+MHF.m */; };
 		ECA372041D5279D900B9DA1B /* MHFQueueOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA372021D5279D900B9DA1B /* MHFQueueOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECA372051D5279D900B9DA1B /* MHFQueueOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA372031D5279D900B9DA1B /* MHFQueueOperation.m */; };
