@@ -20,6 +20,7 @@
 #import <MHFoundation/MHFRESTOperation.h>
 #import <MHFoundation/MHFBatchRESTOperation.h>
 
+#import <MHFoundation/NSString+MHF.h>
 #import <MHFoundation/NSDictionary+MHF.h>
 #import <MHFoundation/NSArray+MHF.h>
 #import <MHFoundation/NSError+MHF.h>

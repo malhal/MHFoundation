@@ -25,6 +25,7 @@
     #define mhf_HTTPErrorWithUserInfo __MHFOUNDATION_NS_SYMBOL(mhf_HTTPErrorWithUserInfo)
     #define mhf_JSONTaskWithSession __MHFOUNDATION_NS_SYMBOL(mhf_JSONTaskWithSession)
     #define mhf_MySQLString __MHFOUNDATION_NS_SYMBOL(mhf_MySQLString)
+    #define mhf_URLEncodedString __MHFOUNDATION_NS_SYMBOL(mhf_URLEncodedString)
     #define mhf_URLSafeBase __MHFOUNDATION_NS_SYMBOL(mhf_URLSafeBase)
     #define mhf_allKeysSet __MHFOUNDATION_NS_SYMBOL(mhf_allKeysSet)
     #define mhf_asyncEnumerateObjectsUsingBlock __MHFOUNDATION_NS_SYMBOL(mhf_asyncEnumerateObjectsUsingBlock)

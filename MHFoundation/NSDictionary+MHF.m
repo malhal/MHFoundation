@@ -7,6 +7,7 @@
 //
 
 #import "NSDictionary+MHF.h"
+#import "NSString+MHF.h"
 
 @implementation NSDictionary (MHF)
 
@@ -51,6 +52,16 @@
         return nil;
     }
     return obj;
+}
+
+-(NSString*)mhf_URLEncodedString{
+    NSMutableArray* params = [NSMutableArray array];
+    for(NSDictionary* key in self.allKeys){
+        NSString* val = [self[key] description]; // description in case NSNumber
+        //ecode the val so that equals can be in it.
+        [params addObject:[NSString stringWithFormat:@"%@=%@", key, val.mhf_URLEncodedString]];
+    }
+    return [params componentsJoinedByString:@"&"];
 }
 
 @end
