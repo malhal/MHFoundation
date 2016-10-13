@@ -7,7 +7,7 @@
 //
 
 #import "NSMutableURLRequest+MHF.h"
-#import "NSData+GZIP.h"
+#import "NSData+MHF_Internal.h"
 #import "MHFHTTP.h"
 
 @implementation NSMutableURLRequest (MHF)

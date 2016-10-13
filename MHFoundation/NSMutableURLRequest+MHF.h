@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MHFoundation/MHFDefines.h>
 
 @interface NSMutableURLRequest (MHF)
 
