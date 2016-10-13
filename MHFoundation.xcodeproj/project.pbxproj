@@ -143,6 +143,7 @@
 		EC3144431D073A1A0025F669 = {
 			isa = PBXGroup;
 			children = (
+				ECC69E921D7A3B7700020DA1 /* dependencies */,
 				EC31444F1D073A1A0025F669 /* MHFoundation */,
 				EC31445B1D073A1A0025F669 /* MHFoundationTests */,
 				EC31444E1D073A1A0025F669 /* Products */,
@@ -161,8 +162,9 @@
 		EC31444F1D073A1A0025F669 /* MHFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				EC3144501D073A1A0025F669 /* MHFoundation.h */,
+				ECC991321D0D54A4000F5EFB /* MHFDefines.h */,
 				ECFB0F6A1D7AD3B100CC2BC3 /* NSData+MHF_Internal.h */,
-				ECC69E921D7A3B7700020DA1 /* dependencies */,
 				ECFB0F7E1D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.h */,
 				ECFB0F7F1D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.m */,
 				ECB213591D847E9700246A1F /* MHFRESTOperation.h */,
@@ -173,8 +175,6 @@
 				ECC69E8F1D7A33E100020DA1 /* NSMutableURLRequest+MHF.m */,
 				ECFB0F751D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.h */,
 				ECFB0F761D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.m */,
-				EC3144501D073A1A0025F669 /* MHFoundation.h */,
-				ECC991321D0D54A4000F5EFB /* MHFDefines.h */,
 				EC07F1C71D4E54CA00A28610 /* MHFNamespaceDefines.h */,
 				EC31446B1D073AC10025F669 /* MHFRunLoopOperation.h */,
 				EC31446C1D073AC10025F669 /* MHFRunLoopOperation.m */,
@@ -226,6 +226,7 @@
 				ECC69E9E1D7A466600020DA1 /* GZIP */,
 			);
 			name = dependencies;
+			path = MHFoundation;
 			sourceTree = "<group>";
 		};
 		ECC69E9E1D7A466600020DA1 /* GZIP */ = {
@@ -448,7 +449,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -471,8 +471,6 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
@@ -496,7 +494,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -513,8 +510,6 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};

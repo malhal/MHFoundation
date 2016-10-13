@@ -62,6 +62,4 @@
     #define MHFHTTPMethodSEARCH __MHFOUNDATION_NS_SYMBOL(MHFHTTPMethodSEARCH)
     #define MHFPartialErrorsByItemIDKey __MHFOUNDATION_NS_SYMBOL(MHFPartialErrorsByItemIDKey)
     #define MHFoundationErrorDomain __MHFOUNDATION_NS_SYMBOL(MHFoundationErrorDomain)
-    #define MHFoundationVersionNumber __MHFOUNDATION_NS_SYMBOL(MHFoundationVersionNumber)
-    #define MHFoundationVersionString __MHFOUNDATION_NS_SYMBOL(MHFoundationVersionString)
 #endif
