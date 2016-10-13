@@ -1,5 +1,5 @@
 //
-//  NSString+MHF.h
+//  NSOperationQueue+MHF.h
 //  MHFoundation
 //
 //  Created by Malcolm Hall on 13/10/2016.
@@ -11,9 +11,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSString (MHF)
+@interface NSOperationQueue (MHF)
 
-- (NSString *)mhf_URLEncodedString;
+// adds and makes dependendent on the last on the queue.
+- (void)mhf_addSerialOperation:(NSOperation *)op;
 
 @end
 

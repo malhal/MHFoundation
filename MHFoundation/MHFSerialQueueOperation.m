@@ -8,6 +8,7 @@
 
 #import "MHFSerialQueueOperation.h"
 #import "MHFQueueOperation_Internal.h"
+#import "NSOperationQueue+MHF.h"
 
 @implementation MHFSerialQueueOperation
 
@@ -22,12 +23,7 @@
 }
 
 -(void)addOperation:(NSOperation*)op{
-    // ensure the operation will not start until the previous has finished.
-    NSOperation* lastOp = self.operationQueue.operations.lastObject;
-    if (lastOp){
-        [op addDependency: lastOp];
-    }
-    [super addOperation:op];
+    [self.operationQueue mhf_addSerialOperation:op];
 }
 
 @end

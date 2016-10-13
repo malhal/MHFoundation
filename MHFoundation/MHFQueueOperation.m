@@ -19,6 +19,7 @@ static void * const MHFQueueOperationContext = (void *)&MHFQueueOperationContext
     self = [super init];
     if (self) {
         // we init here rather than shouldPerform so that it can be used before or after a subclasses call to super.
+        // furthermore this object is definately required so no point in lazy loading.
         _operationQueue = [[NSOperationQueue alloc] init];
         _operationQueue.suspended = YES;
     }

@@ -10,6 +10,6 @@
 
 @interface MHFQueueOperation()
 
-@property (strong, nonatomic) NSOperationQueue *operationQueue;
+@property (nonatomic, strong) NSOperationQueue *operationQueue;
 
 @end

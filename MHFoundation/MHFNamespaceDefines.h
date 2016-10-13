@@ -28,6 +28,7 @@
     #define mhf_MySQLString __MHFOUNDATION_NS_SYMBOL(mhf_MySQLString)
     #define mhf_URLEncodedString __MHFOUNDATION_NS_SYMBOL(mhf_URLEncodedString)
     #define mhf_URLSafeBase __MHFOUNDATION_NS_SYMBOL(mhf_URLSafeBase)
+    #define mhf_addSerialOperation __MHFOUNDATION_NS_SYMBOL(mhf_addSerialOperation)
     #define mhf_allKeysSet __MHFOUNDATION_NS_SYMBOL(mhf_allKeysSet)
     #define mhf_asyncEnumerateObjectsUsingBlock __MHFOUNDATION_NS_SYMBOL(mhf_asyncEnumerateObjectsUsingBlock)
     #define mhf_cancelAllTasks __MHFOUNDATION_NS_SYMBOL(mhf_cancelAllTasks)
