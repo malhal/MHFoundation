@@ -24,4 +24,32 @@
     }];
 }
 
++ (NSURLSession *)mhf_sharedSessionMainQueueAllowInvalidSSL{
+    static NSURLSession* sharedSessionMainQueueAllowInvalidSSL;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedSessionMainQueueAllowInvalidSSL = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:[[MHFURLSessionAllowInvalidSSLDelegate alloc] init] delegateQueue:[NSOperationQueue mainQueue]];
+    });
+    return sharedSessionMainQueueAllowInvalidSSL;
+}
+
++ (NSURLSession *)mhf_sharedSessionMainQueue{
+    static NSURLSession *sharedSessionMainQueue;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedSessionMainQueue = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+    });
+    return sharedSessionMainQueue;
+}
+
+@end
+
+@implementation MHFURLSessionAllowInvalidSSLDelegate
+
+- (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
+ completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential *credential))completionHandler{
+    //this is how you accept anything, I believe.
+    completionHandler(NSURLSessionAuthChallengeUseCredential, [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust]);
+}
+
 @end
