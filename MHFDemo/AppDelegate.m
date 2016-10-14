@@ -28,6 +28,9 @@
     navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
     splitViewController.delegate = self;
 
+    
+    
+    
     MyOperation* op = [[MyOperation alloc] init];
     [op setAsyncOperationCompletionBlock:^(NSError * _Nullable error) {
         NSLog(@"async complete");

@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MHFAsyncOperation()
 
 // Override to call custom completion blocks, then call super last since this is tearing down.
-- (void)finishOnCallbackQueueWithError:(NSError * __nullable)error NS_REQUIRES_SUPER;
+- (void)finishOnCallbackQueueWithError:(nullable NSError *)error NS_REQUIRES_SUPER;
 
 // Use for custom progress blocks.
 - (void)performBlockOnCallbackQueue:(dispatch_block_t)block;
