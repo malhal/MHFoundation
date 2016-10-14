@@ -9,7 +9,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MHFoundation/MHFDefines.h>
-#import <MHFoundation/MHFSerialQueueOperation.h>
+#import <MHFoundation/MHFQueueOperation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -30,6 +30,13 @@ NS_ASSUME_NONNULL_BEGIN
 // If the error is MHFErrorPartialFailure, the error's userInfo dictionary contains
 // a dictionary of requests to errors keyed off of MHFPartialErrorsByItemIDKey.
 @property (nonatomic, copy, nullable) void (^RESTCompletionBlock)(id __nullable JSONObject, NSHTTPURLResponse * __nullable response, NSError * __nullable error);
+
+// override to parse the error from the JSON when the response code was a fail.
+- (NSError *)errorFromJSONObject:(id)JSONObject response:(NSHTTPURLResponse *)response;
+
+@property (nonatomic, copy) NSString *errorKeyPath; // error
+
+@property (nonatomic, copy) NSString *errorReasonKeyPath; // reason
 
 @end
 

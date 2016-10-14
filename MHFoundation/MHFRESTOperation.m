@@ -6,7 +6,8 @@
 //  Copyright © 2016 Malcolm Hall. All rights reserved.
 //
 
-#import "MHFRESTOperation_Internal.h"
+#import "MHFRESTOperation_Private.h"
+#import "MHFAsyncOperation_Private.h"
 #import "MHFError.h"
 #import "NSError+MHF.h"
 #import "MHFURLSessionTaskOperation.h"
@@ -14,6 +15,12 @@
 #import "NSMutableURLRequest+MHF.h"
 #import <objc/runtime.h>
 #import "NSDictionary+MHF.h"
+
+@interface MHFRESTOperation()
+
+@property (nonatomic, strong) NSData *HTTPBody;
+
+@end
 
 @implementation MHFRESTOperation
 
@@ -23,12 +30,15 @@
     if (self) {
         // need to use the setter
         self.request = request;
+        self.errorKeyPath = @"error";
+        self.errorReasonKeyPath = @"reason";
     }
     return self;
 }
 
 - (void)setRequest:(NSURLRequest *)request{
     _request = request.copy;
+    // only mutable requests will have a JSONBody.
     _request.mhf_JSONBody = request.mhf_JSONBody;
 }
 
@@ -110,7 +120,8 @@
                 return [self finishWithError:error];
             }
         }
-        if(![self validateResponse:self.response JSONObject:JSONObject error:&error]){
+        if(!self.response.mhf_isSuccessful){
+            error = [self errorFromJSONObject:JSONObject response:self.response];
             return [self finishWithError:error];
         }
         
@@ -120,28 +131,18 @@
     [self addOperation:decodeOperation];
 }
 
-- (BOOL)validateResponse:(NSHTTPURLResponse *)response JSONObject:(id)JSONObject error:(NSError **)error{
-    if(!response.mhf_isSuccessful){
+- (NSError *)errorFromJSONObject:(id)JSONObject response:(NSHTTPURLResponse *)response{
+    NSMutableDictionary* errorDictionary;
+    if([JSONObject isKindOfClass:[NSDictionary class]]){
+        errorDictionary = ((NSDictionary *)JSONObject).mutableCopy;
         
-        NSMutableDictionary* errorDictionary;
-        if([JSONObject isKindOfClass:[NSDictionary class]]){
-            errorDictionary = ((NSDictionary *)JSONObject).mutableCopy;
-            
-            NSString* error = errorDictionary[@"error"];
-            NSString* reason = errorDictionary[@"reason"];
-            
-            errorDictionary[NSLocalizedDescriptionKey] = error;
-            errorDictionary[NSLocalizedFailureReasonErrorKey] = reason;
-            
-            // tidy up user info.
-            [errorDictionary removeObjectForKey:@"error"];
-            [errorDictionary removeObjectForKey:@"reason"];
-
-        }
-        *error = [response mhf_HTTPErrorWithUserInfo:errorDictionary];
-        return NO;
+        NSString* error = [errorDictionary valueForKeyPath:self.errorKeyPath];
+        NSString* reason = [errorDictionary valueForKeyPath:self.errorReasonKeyPath];
+        
+        errorDictionary[NSLocalizedDescriptionKey] = error;
+        errorDictionary[NSLocalizedFailureReasonErrorKey] = reason;
     }
-    return YES;
+    return [response mhf_HTTPErrorWithUserInfo:errorDictionary];
 }
 
 - (void)finishOnCallbackQueueWithError:(NSError*)error{
@@ -153,7 +154,7 @@
 
 @end
 
-@implementation NSMutableURLRequest (MHFRESTOperation)
+@implementation NSURLRequest (MHFRESTOperation)
                                      
 -(id)mhf_JSONBody{
     return objc_getAssociatedObject(self, @selector(mhf_JSONBody));

@@ -13,7 +13,7 @@
 #import <MHFoundation/MHFError.h>
 #import <MHFoundation/MHFHTTPError.h>
 #import <MHFoundation/MHFHTTP.h>
-#import <MHFoundation/MHFSerialQueueOperation.h>
+#import <MHFoundation/MHFQueueOperation.h>
 #import <MHFoundation/MHFRunLoopOperation.h>
 #import <MHFoundation/MHFAsyncOperation.h>
 #import <MHFoundation/MHFURLSessionTaskOperation.h>

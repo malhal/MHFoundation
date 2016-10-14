@@ -7,7 +7,8 @@
 //
 
 #import "MHFBatchRESTOperation.h"
-#import "MHFRESTOperation_Internal.h"
+#import "MHFRESTOperation_Private.h"
+#import "MHFAsyncOperation_Private.h"
 #import "MHFError_Internal.h"
 #import "NSError+MHF.h"
 #import "MHFHTTPError.h"
@@ -73,8 +74,8 @@
              if(!([JSONObject isKindOfClass:[NSDictionary class]] || [JSONObject isKindOfClass:[NSArray class]])){
                 error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorUnknown descriptionFormat:@"The response body JSON was not a dictionary or an array for %@", self.class];
              }
-             else if(![self validateResponse:HTTPURLResponse JSONObject:JSONObject error:&error]){
-                partialErrors[request] = error;
+             else if(!HTTPURLResponse.mhf_isSuccessful){
+                 partialErrors[request] = [self errorFromJSONObject:JSONObject response:HTTPURLResponse];
              }
              if(self.perRequestCompletionBlock){
                  self.perRequestCompletionBlock(request, JSONObject, HTTPURLResponse, error);

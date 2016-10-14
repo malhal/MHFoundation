@@ -1,5 +1,5 @@
 //
-//  MHFRESTOperation_Internal.h
+//  MHFRESTOperation_Private.h
 //  WiFiFoFum-Passwords
 //
 //  Created by Malcolm Hall on 23/09/2016.
@@ -10,12 +10,8 @@
 
 @interface MHFRESTOperation()
 
-@property (nonatomic, strong) NSData *HTTPBody;
-
 @property (nonatomic, strong) id JSONObject;
 
 @property (nonatomic, strong) NSHTTPURLResponse *response;
-
-- (BOOL)validateResponse:(NSHTTPURLResponse *)response JSONObject:(id)JSONObject error:(NSError **)error;
 
 @end

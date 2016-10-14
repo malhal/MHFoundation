@@ -6,11 +6,19 @@
 //  Copyright © 2016 Malcolm Hall. All rights reserved.
 //
 
-#import "MHFQueueOperation_Internal.h"
+#import "MHFQueueOperation.h"
+#import "MHFAsyncOperation_Private.h"
 #import "MHFError.h"
 #import "NSError+MHF.h"
+#import "NSOperationQueue+MHF.h"
 
 static void * const MHFQueueOperationContext = (void *)&MHFQueueOperationContext;
+
+@interface MHFQueueOperation()
+
+@property (nonatomic, strong) NSOperationQueue *operationQueue;
+
+@end
 
 @implementation MHFQueueOperation
 
@@ -86,6 +94,24 @@ static void * const MHFQueueOperationContext = (void *)&MHFQueueOperationContext
 {
     [self.operationQueue removeObserver:self forKeyPath:NSStringFromSelector(@selector(operationCount))];
     [super finishOnCallbackQueueWithError:error];
+}
+
+@end
+
+@implementation MHFSerialQueueOperation
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        // this makes one operation run at a time but it does not ensure order.
+        self.operationQueue.maxConcurrentOperationCount = 1;
+    }
+    return self;
+}
+
+-(void)addOperation:(NSOperation*)op{
+    [self.operationQueue mhf_addSerialOperation:op];
 }
 
 @end

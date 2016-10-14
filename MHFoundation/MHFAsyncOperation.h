@@ -27,12 +27,6 @@ NS_ASSUME_NONNULL_BEGIN
 // Override to do any custom clean-up, then call super.
 - (void)finishWithError:(NSError * __nullable)error NS_REQUIRES_SUPER;
 
-// Override to call custom completion blocks, then call super.
-- (void)finishOnCallbackQueueWithError:(NSError * __nullable)error NS_REQUIRES_SUPER;
-
-// Use for custom progress blocks.
-- (void)performBlockOnCallbackQueue:(dispatch_block_t)block;
-
 @end
 
 NS_ASSUME_NONNULL_END
