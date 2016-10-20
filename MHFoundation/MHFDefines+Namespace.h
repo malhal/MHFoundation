@@ -1,8 +1,8 @@
 //
-//  MHFNamespaceDefines.h
+//  MHFDefines+Namespace.h
 //  MHFoundation
 //
-//  Generated using MHNamespaceGenerator on 14/10/2016
+//  Generated using MHNamespaceGenerator on 20/10/2016
 //
 
 #if !defined(__MHFOUNDATION_NS_SYMBOL) && defined(MHFOUNDATION_NAMESPACE)
