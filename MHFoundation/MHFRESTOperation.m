@@ -67,7 +67,8 @@
 //        }
         
         @try {
-            self.HTTPBody = [NSJSONSerialization dataWithJSONObject:self.request.mhf_JSONBody options:0 error:error]; // todo wrap this error
+            id JSON = self.request.mhf_JSONBody;
+            self.HTTPBody = [NSJSONSerialization dataWithJSONObject:JSON options:0 error:error]; // todo wrap this error
         }
         @catch (NSException *exception) {
             NSDictionary* userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:@"The bodyJSONDictionary must be JSON compatible for %@", self.class],
