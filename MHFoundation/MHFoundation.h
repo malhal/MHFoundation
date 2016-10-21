@@ -20,7 +20,6 @@
 #import <MHFoundation/MHFRESTOperation.h>
 #import <MHFoundation/MHFBatchRESTOperation.h>
 
-#import <MHFoundation/NSString+MHF.h>
 #import <MHFoundation/NSDictionary+MHF.h>
 #import <MHFoundation/NSArray+MHF.h>
 #import <MHFoundation/NSError+MHF.h>
@@ -28,6 +27,7 @@
 #import <MHFoundation/NSMutableURLRequest+MHF.h>
 #import <MHFoundation/NSURLSessionDataTask+MHF.h>
 #import <MHFoundation/NSURLSession+MHF.h>
+#import <MHFoundation/NSURL+MHF.h>
 #import <MHFoundation/NSUUID+MHF.h>
 #import <MHFoundation/NSHTTPURLResponse+MHF.h>
 #import <MHFoundation/NSOperationQueue+MHF.h>

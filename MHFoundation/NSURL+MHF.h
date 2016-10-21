@@ -1,8 +1,8 @@
 //
-//  NSString+MHF.h
+//  NSURL+MHF.h
 //  MHFoundation
 //
-//  Created by Malcolm Hall on 13/10/2016.
+//  Created by Malcolm Hall on 21/10/2016.
 //  Copyright © 2016 Malcolm Hall. All rights reserved.
 //
 
@@ -11,9 +11,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSString (MHF)
+@interface NSURL (MHF)
 
-- (NSString *)mhf_URLEncodedString;
++ (NSURL *)mhf_URLWithString:(NSString *)URLString query:(NSDictionary<NSString *, NSString *> *)query;
 
 @end
 

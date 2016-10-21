@@ -26,8 +26,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (nullable ObjectType)mhf_nilIfNSNullObjectForKey:(id)aKey;
 
-- (NSString *)mhf_URLEncodedString;
-
 @end
 
 NS_ASSUME_NONNULL_END
