@@ -7,7 +7,6 @@
 //
 
 #import "NSMutableURLRequest+MHF.h"
-#import "NSData+MHF_Internal.h"
 #import "MHFHTTP.h"
 
 @implementation NSMutableURLRequest (MHF)
@@ -41,18 +40,8 @@
     [self setHTTPMethod:MHFHTTPMethodPUT];
 }
 
--(void)mhf_gzipBody{
-    NSData* data = self.HTTPBody;
+-(void)mhf_contentEncodingGZIP{
     [self setValue:@"gzip" forHTTPHeaderField:@"Content-Encoding"];
-#ifdef DEBUG
-    NSLog(@"Original length %ld",(unsigned long)data.length);
-    NSLog(@"Compressing...");
-#endif
-    data = data.gzippedData;
-#ifdef DEBUG
-    NSLog(@"Compressed length %ld",(unsigned long)data.length);
-#endif
-    self.HTTPBody = data;
 }
 
 -(void)mhf_setBasicAuthUsername:(NSString*)username password:(NSString*)password{

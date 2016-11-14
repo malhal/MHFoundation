@@ -19,7 +19,8 @@
 
 -(void)mhf_setPUT;
 
--(void)mhf_gzipBody;
+// you must gzip the body too.
+-(void)mhf_contentEncodingGZIP;
 
 -(void)mhf_setAcceptJSON;
 

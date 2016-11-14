@@ -1,6 +1,3 @@
 [submodule "dependencies/MHNamespaceGenerator"]
 	path = dependencies/MHNamespaceGenerator
 	url = https://github.com/malhal/MHNamespaceGenerator.git
-[submodule "dependencies/GZIP"]
-	path = dependencies/GZIP
-	url = https://github.com/nicklockwood/GZIP
