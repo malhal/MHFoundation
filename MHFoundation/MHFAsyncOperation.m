@@ -6,7 +6,7 @@
 //  Copyright © 2016 Malcolm Hall. All rights reserved.
 //
 
-#import "MHFAsyncOperation_Private.h"
+#import "MHFAsyncOperation.h"
 #import "MHFError.h"
 #import "NSError+MHF.h"
 
