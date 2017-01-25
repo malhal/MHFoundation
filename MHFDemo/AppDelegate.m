@@ -35,13 +35,13 @@
     [op setAsyncOperationCompletionBlock:^(NSError * _Nullable error) {
         NSLog(@"async complete");
     }];
-    //[op start];
+    [op start];
     
     NSDate* date = [NSDate date];
     //NSData* d = [NSJSONSerialization dataWithJSONObject:@[date] options:0 error:nil];
    // NSString* s = [[NSString alloc] initWithData:d encoding:NSUTF8StringEncoding];
     
-    [self jsonTest3];
+    //[self jsonTest3];
     //[self jsonTest2];
     
     return YES;

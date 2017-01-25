@@ -6,15 +6,15 @@
 //  Copyright © 2016 Malcolm Hall. All rights reserved.
 //
 
-#import "MHFAsyncOperation_Private.h"
+#import "MHFAsyncOperationSubclass.h"
 #import "MHFError.h"
 #import "NSError+MHF.h"
 
 @interface MHFAsyncOperation()
 
-@property (strong, nonatomic) dispatch_queue_t callbackQueue;
-@property (readwrite, getter=isExecuting) BOOL executing;
-@property (readwrite, getter=isFinished) BOOL finished;
+@property (readonly, strong) dispatch_queue_t callbackQueue;
+@property (readwrite, assign, getter=isExecuting) BOOL executing;
+@property (readwrite, assign, getter=isFinished) BOOL finished;
 
 @end
 
@@ -22,24 +22,10 @@
 
 @synthesize executing = _executing;
 @synthesize finished = _finished;
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        _callbackQueue = dispatch_queue_create(NULL, DISPATCH_QUEUE_SERIAL);
-    }
-    return self;
-}
+@synthesize callbackQueue = _callbackQueue;
 
 - (BOOL)isAsynchronous{
     return YES;
-}
-
--(void)cancel{
-    [super cancel];
-    NSError* error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorOperationCancelled descriptionFormat:@"The %@ was cancelled", self.class];
-    [self finishWithError:error];
 }
 
 // called either manually or from an operation queue's background thread.
@@ -72,27 +58,41 @@
     }];
 }
 
+- (void)performBlockOnCallbackQueue:(dispatch_block_t)block {
+    dispatch_async(self.callbackQueue, block);
+}
+
+- (dispatch_queue_t)callbackQueue{
+    @synchronized (self) {
+        if(!_callbackQueue){
+            _callbackQueue = dispatch_queue_create(NULL, DISPATCH_QUEUE_SERIAL);
+        }
+    }
+    return _callbackQueue;
+}
 
 // on the call back queue
 -(void)main{
-    NSError* error = nil;
-    if([self asyncOperationShouldRun:&error]){
-        [self performAsyncOperation];
-    }else{
-        [self finishOnCallbackQueueWithError:error];
+    if(self.isCancelled){
+        return;
     }
+    
+    NSError* error = nil;
+    if(![self asyncOperationShouldRun:&error]){
+        [self finishOnCallbackQueueWithError:error];
+        return;
+    }
+    
+    [self performAsyncOperation];
 }
 
-- (void)finishInternalOnCallbackQueueWithError:(NSError *)error{
-    // Prevents duplicate callbacks.
-    if(self.isExecuting){
-        [self finishOnCallbackQueueWithError:error];
-    }
+// Overridden by subclasses for property validation
+-(BOOL)asyncOperationShouldRun:(NSError**)error{
+    return YES;
 }
 
 // overriden by subclasses.
 // on the call back queue
-//- (void)_finish{
 - (void)finishOnCallbackQueueWithError:(NSError *)error{
     if(self.asyncOperationCompletionBlock){
         self.asyncOperationCompletionBlock(error);
@@ -108,31 +108,36 @@
     [self didChangeValueForKey:@"isFinished"];
 }
 
-// can be overridden by subclasses
--(BOOL)asyncOperationShouldRun:(NSError**)error{
-// If you want to make use of inheritance to build up your operation your call to super should look like this:
-//    if(![super asyncOperationShouldRun:error]){
-//        return NO;
-//    }
-//    // do additional work
-// Otheriwse just return the call to super last.
-    
-    return YES;
-}
-
 // overriden by subclasses to run the operation.
 -(void)performAsyncOperation{
 }
 
-// called by subclasses to complete the operation
+// may be called from any thread, either from subclasses in async results, or from cancel
 - (void)finishWithError:(NSError*)error{ // _handleCompletionCallback
     [self performBlockOnCallbackQueue:^{
         [self finishInternalOnCallbackQueueWithError:error]; // using self here has side effect that operation is retained while it is working.
     }];
 }
 
-- (void)performBlockOnCallbackQueue:(dispatch_block_t)block {
-    dispatch_async(self.callbackQueue, block);
+- (void)finishInternalOnCallbackQueueWithError:(NSError *)error{
+    // Prevents duplicate callbacks.
+    if(!self.isExecuting){
+        return;
+    }
+    
+    if(!self.isFinished){
+        [self finishOnCallbackQueueWithError:error];
+        return;
+    }
+    
+    NSLog(@"The operation operation %@ didn't start or is already finished", self);
+}
+
+-(void)cancel{
+    [super cancel];
+    
+    NSError* error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorOperationCancelled descriptionFormat:@"The %@ was cancelled", self.class];
+    [self finishWithError:error];
 }
 
 @end

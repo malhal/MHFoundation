@@ -41,7 +41,7 @@
 		EC6758401DAF0DD300838798 /* MHFHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = EC67583E1DAF0DD300838798 /* MHFHTTP.m */; };
 		EC6758E91DB0376900838798 /* NSOperationQueue+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6758E71DB0376900838798 /* NSOperationQueue+MHF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC6758EA1DB0376900838798 /* NSOperationQueue+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6758E81DB0376900838798 /* NSOperationQueue+MHF.m */; };
-		EC6758FB1DB0637000838798 /* MHFAsyncOperation_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6758F91DB0637000838798 /* MHFAsyncOperation_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		EC6758FB1DB0637000838798 /* MHFAsyncOperationSubclass.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6758F91DB0637000838798 /* MHFAsyncOperationSubclass.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		EC6758FC1DB0637000838798 /* MHFRESTOperation_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6758FA1DB0637000838798 /* MHFRESTOperation_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		EC6758FE1DB063A400838798 /* MHFoundation_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6758FD1DB063A400838798 /* MHFoundation_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		ECA372041D5279D900B9DA1B /* MHFQueueOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA372021D5279D900B9DA1B /* MHFQueueOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -113,7 +113,7 @@
 		EC67583E1DAF0DD300838798 /* MHFHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHFHTTP.m; sourceTree = "<group>"; };
 		EC6758E71DB0376900838798 /* NSOperationQueue+MHF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOperationQueue+MHF.h"; sourceTree = "<group>"; };
 		EC6758E81DB0376900838798 /* NSOperationQueue+MHF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperationQueue+MHF.m"; sourceTree = "<group>"; };
-		EC6758F91DB0637000838798 /* MHFAsyncOperation_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFAsyncOperation_Private.h; sourceTree = "<group>"; };
+		EC6758F91DB0637000838798 /* MHFAsyncOperationSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFAsyncOperationSubclass.h; sourceTree = "<group>"; };
 		EC6758FA1DB0637000838798 /* MHFRESTOperation_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFRESTOperation_Private.h; sourceTree = "<group>"; };
 		EC6758FD1DB063A400838798 /* MHFoundation_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFoundation_Private.h; sourceTree = "<group>"; };
 		ECA372021D5279D900B9DA1B /* MHFQueueOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFQueueOperation.h; sourceTree = "<group>"; };
@@ -203,7 +203,7 @@
 				EC31446B1D073AC10025F669 /* MHFRunLoopOperation.h */,
 				EC31446C1D073AC10025F669 /* MHFRunLoopOperation.m */,
 				EC3144671D073AC10025F669 /* MHFAsyncOperation.h */,
-				EC6758F91DB0637000838798 /* MHFAsyncOperation_Private.h */,
+				EC6758F91DB0637000838798 /* MHFAsyncOperationSubclass.h */,
 				EC3144681D073AC10025F669 /* MHFAsyncOperation.m */,
 				ECA372021D5279D900B9DA1B /* MHFQueueOperation.h */,
 				ECA372031D5279D900B9DA1B /* MHFQueueOperation.m */,
@@ -263,7 +263,7 @@
 				EC6408D31DBAA6CC00AF9016 /* NSURL+MHF.h in Headers */,
 				EC07F1571D4CDEC800A28610 /* NSError+MHF.h in Headers */,
 				ECFB0F841D7B952900CC2BC3 /* NSURLSession+MHF.h in Headers */,
-				EC6758FB1DB0637000838798 /* MHFAsyncOperation_Private.h in Headers */,
+				EC6758FB1DB0637000838798 /* MHFAsyncOperationSubclass.h in Headers */,
 				ECC69E901D7A33E100020DA1 /* NSMutableURLRequest+MHF.h in Headers */,
 				EC3144511D073A1A0025F669 /* MHFoundation.h in Headers */,
 				EC31447D1D073AC10025F669 /* NSArray+MHF.h in Headers */,

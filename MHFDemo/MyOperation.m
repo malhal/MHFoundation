@@ -7,7 +7,7 @@
 //
 
 #import "MyOperation.h"
-
+#import <MHFoundation/MHFAsyncOperationSubclass.h>
 
 
 @implementation MyOperation

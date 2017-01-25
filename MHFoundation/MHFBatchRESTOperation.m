@@ -8,7 +8,7 @@
 
 #import "MHFBatchRESTOperation.h"
 #import "MHFRESTOperation_Private.h"
-#import "MHFAsyncOperation_Private.h"
+#import "MHFAsyncOperationSubclass.h"
 #import "MHFError_Internal.h"
 #import "NSError+MHF.h"
 #import "MHFHTTPError.h"

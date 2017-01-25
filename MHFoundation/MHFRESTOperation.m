@@ -7,7 +7,7 @@
 //
 
 #import "MHFRESTOperation_Private.h"
-#import "MHFAsyncOperation_Private.h"
+#import "MHFAsyncOperationSubclass.h"
 #import "MHFError.h"
 #import "NSError+MHF.h"
 #import "MHFURLSessionTaskOperation.h"
