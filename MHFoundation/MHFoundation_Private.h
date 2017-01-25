@@ -8,5 +8,5 @@
 
 #import <MHFoundation/MHFoundation.h>
 
-#import <MHFoundation/MHFRESTOperation_Private.h>
-#import <MHFoundation/MHFAsyncOperation_Private.h>
+//#import <MHFoundation/MHFRESTOperation_Private.h>
+//#import <MHFoundation/MHFAsyncOperation_Private.h>

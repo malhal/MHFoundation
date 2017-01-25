@@ -10,11 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MHFRESTOperation()
+@interface MHFRESTOperation (MHFRESTOperationProtected)
 
 @property (nonatomic, strong) id JSONObject;
 
 @property (nonatomic, strong) NSHTTPURLResponse *response;
+
+// override to parse the error from the JSON when the response code was a fail.
+- (NSError *)errorFromJSONObject:(id)JSONObject response:(NSHTTPURLResponse *)response;
 
 @end
 

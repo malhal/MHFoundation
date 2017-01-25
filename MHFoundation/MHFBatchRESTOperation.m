@@ -7,8 +7,8 @@
 //
 
 #import "MHFBatchRESTOperation.h"
-#import "MHFRESTOperation_Private.h"
 #import "MHFAsyncOperationSubclass.h"
+#import "MHFRESTOperationSubclass.h"
 #import "MHFError_Internal.h"
 #import "NSError+MHF.h"
 #import "MHFHTTPError.h"
@@ -25,7 +25,7 @@
 
 @implementation MHFBatchRESTOperation
 
-- (instancetype)initWithURLRequest:(nullable NSURLRequest *)request batchRequests:(nullable NSArray <NSURLRequest *> *)batchRequests{
+- (instancetype)initWithURLRequest:(nullable NSMutableURLRequest *)request batchRequests:(nullable NSArray <NSMutableURLRequest *> *)batchRequests{
     
     self = [self initWithURLRequest:request];
     if (self) {
@@ -42,7 +42,7 @@
     
     
     NSMutableArray* requests = [NSMutableArray array];
-    for(NSURLRequest* batchRequest in self.batchRequests){
+    for(NSMutableURLRequest* batchRequest in self.batchRequests){
         [requests addObject:@{@"path" : batchRequest.URL.absoluteString,
                               @"method" : batchRequest.HTTPMethod,
                               @"body" : batchRequest.mhf_JSONBody}];
@@ -66,7 +66,7 @@
         NSMutableDictionary* partialErrors = [NSMutableDictionary dictionary];
         [responses enumerateObjectsUsingBlock:^(NSDictionary *rd, NSUInteger idx, BOOL *stop)
         {
-             NSURLRequest *request = self.batchRequests[idx];
+             NSMutableURLRequest *request = self.batchRequests[idx];
              NSNumber *status = rd[@"status"];
              id JSONObject = rd[@"body"];
              NSHTTPURLResponse *HTTPURLResponse = [[NSHTTPURLResponse alloc] initWithURL:request.URL statusCode:status.integerValue HTTPVersion:nil headerFields:nil];

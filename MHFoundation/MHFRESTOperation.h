@@ -5,7 +5,6 @@
 //  Created by Malcolm Hall on 10/09/2016.
 //  Copyright © 2016 Malcolm Hall. All rights reserved.
 //
-//  Best practice is to use dictionaries with REST so we enforce that here.
 
 #import <Foundation/Foundation.h>
 #import <MHFoundation/MHFDefines.h>
@@ -19,9 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 // The request must have a JSONBody set using the category, it must only contain
 // items that can be converted to JSON otherwise it will complete with error if cannot encode.
 // The request will have contents and accept set to JSON.
-- (instancetype)initWithURLRequest:(nullable NSURLRequest *)request;
+- (instancetype)initWithURLRequest:(nullable NSMutableURLRequest *)request;
 
-@property (nonatomic, copy, nullable) NSURLRequest *request;
+@property (nonatomic, copy, nullable) NSMutableURLRequest *request;
 // if no session is set, a new epheremal session is created.
 @property (nonatomic, strong, nullable) NSURLSession* session;
 
@@ -31,16 +30,13 @@ NS_ASSUME_NONNULL_BEGIN
 // a dictionary of requests to errors keyed off of MHFPartialErrorsByItemIDKey.
 @property (nonatomic, copy, nullable) void (^RESTCompletionBlock)(id __nullable JSONObject, NSHTTPURLResponse * __nullable response, NSError * __nullable error);
 
-// override to parse the error from the JSON when the response code was a fail.
-- (NSError *)errorFromJSONObject:(id)JSONObject response:(NSHTTPURLResponse *)response;
-
 @property (nonatomic, copy) NSString *errorKeyPath; // error
 
 @property (nonatomic, copy) NSString *errorReasonKeyPath; // reason
 
 @end
 
-@interface NSURLRequest (MHFRESTOperation)
+@interface NSMutableURLRequest (MHFRESTOperation)
 
 @property (nullable, copy, setter=mhf_setJSONBody:) id mhf_JSONBody;
 
