@@ -6,8 +6,6 @@
 //  Copyright © 2016 Malcolm Hall. All rights reserved.
 //
 
-
-#import "MHFAsyncOperationSubclass.h"
 #import "MHFRESTOperationSubclass.h"
 #import "MHFError.h"
 #import "NSError+MHF.h"

@@ -7,7 +7,6 @@
 //
 
 #import "MHFQueueOperation.h"
-#import "MHFAsyncOperationSubclass.h"
 #import "MHFError.h"
 #import "NSError+MHF.h"
 #import "NSOperationQueue+MHF.h"

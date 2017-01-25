@@ -7,7 +7,6 @@
 //
 
 #import "MHFBatchRESTOperation.h"
-#import "MHFAsyncOperationSubclass.h"
 #import "MHFRESTOperationSubclass.h"
 #import "MHFError_Internal.h"
 #import "NSError+MHF.h"

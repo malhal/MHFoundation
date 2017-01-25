@@ -9,7 +9,6 @@
 #import "MHFURLSessionTaskOperation.h"
 #import "MHFError.h"
 #import "NSError+MHF.h"
-#import "MHFAsyncOperationSubclass.h"
 
 @interface MHFURLSessionTaskOperation()
 

@@ -10,6 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+// the extensions in this header are to be used only by subclasses of MHFRESTOperation
+// code that uses MHFRESTOperation must never call these
+
 @interface MHFRESTOperation (MHFRESTOperationProtected)
 
 @property (nonatomic, strong) id JSONObject;
