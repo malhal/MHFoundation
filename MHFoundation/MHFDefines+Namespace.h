@@ -2,7 +2,7 @@
 //  MHFDefines+Namespace.h
 //  MHFoundation
 //
-//  Generated using MHNamespaceGenerator on 20/10/2016
+//  Generated using MHNamespaceGenerator on 18/09/2017
 //
 
 #if !defined(__MHFOUNDATION_NS_SYMBOL) && defined(MHFOUNDATION_NAMESPACE)
@@ -26,23 +26,25 @@
     #define mhf_HTTPErrorWithUserInfo __MHFOUNDATION_NS_SYMBOL(mhf_HTTPErrorWithUserInfo)
     #define mhf_JSONTaskWithSession __MHFOUNDATION_NS_SYMBOL(mhf_JSONTaskWithSession)
     #define mhf_MySQLString __MHFOUNDATION_NS_SYMBOL(mhf_MySQLString)
-    #define mhf_URLEncodedString __MHFOUNDATION_NS_SYMBOL(mhf_URLEncodedString)
     #define mhf_URLSafeBase __MHFOUNDATION_NS_SYMBOL(mhf_URLSafeBase)
+    #define mhf_URLWithString __MHFOUNDATION_NS_SYMBOL(mhf_URLWithString)
+    #define mhf_abstractException __MHFOUNDATION_NS_SYMBOL(mhf_abstractException)
     #define mhf_addSerialOperation __MHFOUNDATION_NS_SYMBOL(mhf_addSerialOperation)
     #define mhf_allKeysSet __MHFOUNDATION_NS_SYMBOL(mhf_allKeysSet)
     #define mhf_asyncEnumerateObjectsUsingBlock __MHFOUNDATION_NS_SYMBOL(mhf_asyncEnumerateObjectsUsingBlock)
     #define mhf_cancelAllTasks __MHFOUNDATION_NS_SYMBOL(mhf_cancelAllTasks)
+    #define mhf_contentEncodingGZIP __MHFOUNDATION_NS_SYMBOL(mhf_contentEncodingGZIP)
     #define mhf_dateFromMySQLString __MHFOUNDATION_NS_SYMBOL(mhf_dateFromMySQLString)
     #define mhf_dictionaryByAddingEntriesFromDictionary __MHFOUNDATION_NS_SYMBOL(mhf_dictionaryByAddingEntriesFromDictionary)
     #define mhf_errorWithDomain __MHFOUNDATION_NS_SYMBOL(mhf_errorWithDomain)
     #define mhf_fractionalMySQLString __MHFOUNDATION_NS_SYMBOL(mhf_fractionalMySQLString)
-    #define mhf_gzipBody __MHFOUNDATION_NS_SYMBOL(mhf_gzipBody)
     #define mhf_isEarlierThan __MHFOUNDATION_NS_SYMBOL(mhf_isEarlierThan)
     #define mhf_isEarlierThanOrEqualTo __MHFOUNDATION_NS_SYMBOL(mhf_isEarlierThanOrEqualTo)
     #define mhf_isLaterThan __MHFOUNDATION_NS_SYMBOL(mhf_isLaterThan)
     #define mhf_isLaterThanOrEqualTo __MHFOUNDATION_NS_SYMBOL(mhf_isLaterThanOrEqualTo)
     #define mhf_isSuccessful __MHFOUNDATION_NS_SYMBOL(mhf_isSuccessful)
     #define mhf_nilIfNSNullObjectForKey __MHFOUNDATION_NS_SYMBOL(mhf_nilIfNSNullObjectForKey)
+    #define mhf_notImplementedException __MHFOUNDATION_NS_SYMBOL(mhf_notImplementedException)
     #define mhf_setAcceptGzip __MHFOUNDATION_NS_SYMBOL(mhf_setAcceptGzip)
     #define mhf_setAcceptJSON __MHFOUNDATION_NS_SYMBOL(mhf_setAcceptJSON)
     #define mhf_setBasicAuthUsername __MHFOUNDATION_NS_SYMBOL(mhf_setBasicAuthUsername)
