@@ -24,6 +24,7 @@
     #define MHFURLSessionDownloadTaskOperation __MHFOUNDATION_NAMESPACE_APPLY(MHFURLSessionDownloadTaskOperation)
     #define MHFURLSessionTaskOperation __MHFOUNDATION_NAMESPACE_APPLY(MHFURLSessionTaskOperation)
 // Categories
+    #define MHF __MHFOUNDATION_NAMESPACE_APPLY(MHF)
     #define mhf_HTTPErrorWithUserInfo __MHFOUNDATION_NAMESPACE_APPLY_LOWER(mhf_HTTPErrorWithUserInfo)
     #define mhf_JSONTaskWithSession __MHFOUNDATION_NAMESPACE_APPLY_LOWER(mhf_JSONTaskWithSession)
     #define mhf_MySQLString __MHFOUNDATION_NAMESPACE_APPLY_LOWER(mhf_MySQLString)
