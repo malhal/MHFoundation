@@ -69,6 +69,7 @@
     #define mhf_unflattenDictionary __MHFOUNDATION_NAMESPACE_APPLY_LOWER(mhf_unflattenDictionary)
     #define mhf_whitespaceAndNewlineCoalescedString __MHFOUNDATION_NAMESPACE_APPLY_LOWER(mhf_whitespaceAndNewlineCoalescedString)
 // Externs
+    #define MHFDynamicCast __MHFOUNDATION_NAMESPACE_APPLY(MHFDynamicCast)
     #define MHFHTTPErrorDomain __MHFOUNDATION_NAMESPACE_APPLY(MHFHTTPErrorDomain)
     #define MHFHTTPMethodCOPY __MHFOUNDATION_NAMESPACE_APPLY(MHFHTTPMethodCOPY)
     #define MHFHTTPMethodDELETE __MHFOUNDATION_NAMESPACE_APPLY(MHFHTTPMethodDELETE)
