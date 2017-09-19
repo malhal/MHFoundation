@@ -10,19 +10,21 @@
 
 @implementation NSDate (MHF)
 
-- (BOOL)mhf_isLaterThanOrEqualTo:(NSDate*)date {
-    return !([self compare:date] == NSOrderedAscending);
+- (BOOL)mhf_isLaterThanOrEqualToDate:(NSDate*)date {
+    return [self compare:date] != NSOrderedAscending;
 }
 
-- (BOOL)mhf_isEarlierThanOrEqualTo:(NSDate*)date {
-    return !([self compare:date] == NSOrderedDescending);
+- (BOOL)mhf_isEarlierThanOrEqualToDate:(NSDate*)date {
+    return [self compare:date] != NSOrderedDescending;
 }
-- (BOOL)mhf_isLaterThan:(NSDate*)date {
-    return ([self compare:date] == NSOrderedDescending);
+
+- (BOOL)mhf_isLaterThanDate:(NSDate*)date {
+    return [self compare:date] == NSOrderedDescending;
     
 }
-- (BOOL)mhf_isEarlierThan:(NSDate*)date {
-    return ([self compare:date] == NSOrderedAscending);
+
+- (BOOL)mhf_isEarlierThanDate:(NSDate*)date {
+    return [self compare:date] == NSOrderedAscending;
 }
 
 //used to send a utc date to the server.

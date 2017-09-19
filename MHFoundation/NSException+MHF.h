@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-//MHFOUNDATION_EXTERN NSString * const MHFNotImplementedException;
+//MHF_EXTERN NSString * const MHFNotImplementedException;
 
 @interface NSException (MHF)
 

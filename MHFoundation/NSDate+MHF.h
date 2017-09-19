@@ -11,13 +11,13 @@
 
 @interface NSDate (MHF)
 
-- (BOOL)mhf_isLaterThanOrEqualTo:(NSDate*)date;
+- (BOOL)mhf_isLaterThanOrEqualToDate:(NSDate*)date;
 
-- (BOOL)mhf_isEarlierThanOrEqualTo:(NSDate*)date;
+- (BOOL)mhf_isEarlierThanOrEqualToDate:(NSDate*)date;
 
-- (BOOL)mhf_isLaterThan:(NSDate*)date;
+- (BOOL)mhf_isLaterThanDate:(NSDate*)date;
 
-- (BOOL)mhf_isEarlierThan:(NSDate*)date;
+- (BOOL)mhf_isEarlierThanDate:(NSDate*)date;
 
 // e.g. "2014-11-14 17:47:33"
 - (NSString *)mhf_MySQLString;

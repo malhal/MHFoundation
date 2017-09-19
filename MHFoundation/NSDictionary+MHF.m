@@ -7,6 +7,7 @@
 //
 
 #import "NSDictionary+MHF.h"
+#import "MHFUtilities.h"
 
 @implementation NSDictionary (MHF)
 
@@ -51,6 +52,26 @@
         return nil;
     }
     return obj;
+}
+
+- (NSString *)mhf_prettyDescriptionWithTabLevel:(NSUInteger)level{
+    NSMutableString *s = [NSMutableString stringWithString:@"{\n"];
+    NSMutableString *tabs = NSMutableString.new;
+    for(NSInteger i=0;i<=level;i++){
+        [tabs appendString:@"\t"];
+    }
+    NSString *format = @"%@%@ = %@\n";
+    [self enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        
+        NSDictionary *dict = MHFDynamicCast([NSDictionary class], obj);
+        if(dict){
+            [s appendFormat:format, tabs, key, [dict mhf_prettyDescriptionWithTabLevel:level + 1]];
+            return;
+        }
+        [s appendFormat:format, tabs, key, obj];
+    }];
+    
+    return s;
 }
 
 @end

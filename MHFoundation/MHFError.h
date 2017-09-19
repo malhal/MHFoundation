@@ -10,9 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-MHFOUNDATION_EXTERN NSString * const MHFoundationErrorDomain;
+MHF_EXTERN NSString * const MHFoundationErrorDomain;
 
-MHFOUNDATION_EXTERN NSString * const MHFPartialErrorsByItemIDKey;
+MHF_EXTERN NSString * const MHFPartialErrorsByItemIDKey;
 
 typedef NS_ENUM(NSInteger, MHFErrorCode) {
     MHFErrorUnknown                = 1,  /* Unknown or generic error */

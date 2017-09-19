@@ -6,11 +6,11 @@
 //
 //
 
-#ifndef MHFOUNDATION_EXTERN
+#ifndef MHF_EXTERN
     #ifdef __cplusplus
-        #define MHFOUNDATION_EXTERN   extern "C" __attribute__((visibility ("default")))
+        #define MHF_EXTERN   extern "C" __attribute__((visibility ("default")))
     #else
-        #define MHFOUNDATION_EXTERN   extern __attribute__((visibility ("default")))
+        #define MHF_EXTERN   extern __attribute__((visibility ("default")))
     #endif
 #endif
 

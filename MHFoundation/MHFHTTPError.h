@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-MHFOUNDATION_EXTERN NSString * const MHFHTTPErrorDomain;
+MHF_EXTERN NSString * const MHFHTTPErrorDomain;
 
 @interface MHFHTTPError : NSError
 

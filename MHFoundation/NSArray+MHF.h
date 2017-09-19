@@ -21,6 +21,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 //- (void)mhf_asyncEnumerateBatchesUsingBlock:(void (^)(NSArray<ObjectType> *batch, NSUInteger idx, BOOL isLast, void (^nextBatch)(NSUInteger count)))block;
 
+- (NSArray *)mhf_arrayByGroupingIntoArraysWithMaxCount:(NSUInteger)maxCount;
+
+- (BOOL)mhf_containsObjectPassingTest:(BOOL (NS_NOESCAPE ^)(id obj, NSUInteger idx, BOOL *stop))predicate;
+
+- (BOOL)mhf_indexIsValid:(NSUInteger)index;
+
+//- (NSUInteger)mhf_indexOfSortedObject:(id)object insertionIndex:(out NSUInteger *)insertionIndex usingComparator:(NSComparator NS_NOESCAPE)cmptr;
+
+- (id)mhf_objectPassingTest:(BOOL (NS_NOESCAPE ^)(id obj, NSUInteger idx, BOOL *stop))predicate;
+
+//- (id)mhf_objectsOfClass:(Class)aClass;
+
+- (NSArray *)mhf_objectsPassingTest:(BOOL (NS_NOESCAPE ^)(id obj, NSUInteger idx, BOOL *stop))predicate;
+
 @end
 
 NS_ASSUME_NONNULL_END
