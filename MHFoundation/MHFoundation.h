@@ -21,8 +21,10 @@
 #import <MHFoundation/MHFBatchRESTOperation.h>
 
 #import <MHFoundation/NSDictionary+MHF.h>
+#import <MHFoundation/NSSet+MHF.h>
 #import <MHFoundation/NSArray+MHF.h>
 #import <MHFoundation/NSError+MHF.h>
+#import <MHFoundation/NSException+MHF.h>
 #import <MHFoundation/NSDate+MHF.h>
 #import <MHFoundation/NSMutableURLRequest+MHF.h>
 #import <MHFoundation/NSURLSessionDataTask+MHF.h>

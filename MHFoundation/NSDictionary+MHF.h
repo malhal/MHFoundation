@@ -2,8 +2,8 @@
 //  NSDictionary+MHF.h
 //  MHFoundation
 //
-//  Created by Malcolm Hall on 23/01/2016.
-//  Copyright © 2016 Malcolm Hall. All rights reserved.
+//  Created by Malcolm Hall on 18/09/2017.
+//  Copyright © 2017 Malcolm Hall. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

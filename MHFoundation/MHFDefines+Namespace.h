@@ -52,6 +52,7 @@
     #define mhf_nilIfNSNullObjectForKey __MHFOUNDATION_NAMESPACE_APPLY_LOWER(mhf_nilIfNSNullObjectForKey)
     #define mhf_notImplementedException __MHFOUNDATION_NAMESPACE_APPLY_LOWER(mhf_notImplementedException)
     #define mhf_objectPassingTest __MHFOUNDATION_NAMESPACE_APPLY_LOWER(mhf_objectPassingTest)
+    #define mhf_objectsOfClass __MHFOUNDATION_NAMESPACE_APPLY_LOWER(mhf_objectsOfClass)
     #define mhf_objectsPassingTest __MHFOUNDATION_NAMESPACE_APPLY_LOWER(mhf_objectsPassingTest)
     #define mhf_prettyDescriptionWithTabLevel __MHFOUNDATION_NAMESPACE_APPLY_LOWER(mhf_prettyDescriptionWithTabLevel)
     #define mhf_setAcceptGzip __MHFOUNDATION_NAMESPACE_APPLY_LOWER(mhf_setAcceptGzip)
