@@ -8,8 +8,12 @@
 #import <Foundation/Foundation.h>
 #import <MHFoundation/MHFDefines.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 MHF_EXTERN id MHFDynamicCast(Class aClass, id object);
 
 @interface MHFUtilities : NSObject
 
 @end
+
+NS_ASSUME_NONNULL_END
