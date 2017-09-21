@@ -17,6 +17,16 @@ id MHFDynamicCast(Class aClass, id object){
     return nil;
 }
 
+id MHFCheckedDynamicCast(Class aClass, id object){
+    if([object isKindOfClass:aClass]){
+        return object;
+    }
+    else if(object){
+        NSLog(@"Unexpected object type in checked dynamic cast %@ expects %@", [object class], aClass);
+    }
+    return nil;
+}
+
 float MHFDispatchMainAfterDelay(dispatch_block_t block){
     float f = dispatch_time(DISPATCH_TIME_NOW, 0);
     dispatch_after(f, dispatch_get_main_queue(), block);
@@ -30,6 +40,8 @@ void MHFPerformBlockOnMainThread(dispatch_block_t block){
         dispatch_sync(dispatch_get_main_queue(), block);
     }
 }
+
+
 
 @implementation MHFUtilities
 

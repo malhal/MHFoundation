@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 MHF_EXTERN id MHFDynamicCast(Class aClass, id object);
 MHF_EXTERN float MHFDispatchMainAfterDelay(dispatch_block_t block);
 MHF_EXTERN void MHFPerformBlockOnMainThread(dispatch_block_t block);
+MHF_EXTERN id MHFCheckedDynamicCast(Class aClass, id object);
 
 @interface MHFUtilities : NSObject
 
