@@ -27,6 +27,14 @@ id MHFCheckedDynamicCast(Class aClass, id object){
     return nil;
 }
 
+id MHFProtocolCast(Protocol *protocol, id object){
+    if(protocol && [object conformsToProtocol:protocol]){
+        return object;
+    }
+    return nil;
+}
+
+
 float MHFDispatchMainAfterDelay(dispatch_block_t block){
     float f = dispatch_time(DISPATCH_TIME_NOW, 0);
     dispatch_after(f, dispatch_get_main_queue(), block);
