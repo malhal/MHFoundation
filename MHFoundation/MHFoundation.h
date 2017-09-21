@@ -26,6 +26,7 @@
 #import <MHFoundation/NSError+MHF.h>
 #import <MHFoundation/NSException+MHF.h>
 #import <MHFoundation/NSDate+MHF.h>
+#import <MHFoundation/NSString+MHF.h>
 #import <MHFoundation/NSMutableURLRequest+MHF.h>
 #import <MHFoundation/NSURLSessionDataTask+MHF.h>
 #import <MHFoundation/NSURLSession+MHF.h>
