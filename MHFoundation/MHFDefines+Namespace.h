@@ -2,7 +2,7 @@
 //  MHFDefines+Namespace.h
 //  MHFoundation
 //
-//  Generated using MHNamespaceGenerator on 21/09/2017
+//  Generated using MHNamespaceGenerator on 22/09/2017
 //
 
 #if !defined(__MHFOUNDATION_NAMESPACE_APPLY) && defined(MHFOUNDATION_NAMESPACE) && defined(MHFOUNDATION_NAMESPACE_LOWER)
@@ -18,6 +18,7 @@
     #define MHFQueueOperation __MHFOUNDATION_NAMESPACE_APPLY(MHFQueueOperation)
     #define MHFRESTOperation __MHFOUNDATION_NAMESPACE_APPLY(MHFRESTOperation)
     #define MHFRunLoopOperation __MHFOUNDATION_NAMESPACE_APPLY(MHFRunLoopOperation)
+    #define MHFSelectorDelayer __MHFOUNDATION_NAMESPACE_APPLY(MHFSelectorDelayer)
     #define MHFSerialQueueOperation __MHFOUNDATION_NAMESPACE_APPLY(MHFSerialQueueOperation)
     #define MHFURLSessionAllowInvalidSSLDelegate __MHFOUNDATION_NAMESPACE_APPLY(MHFURLSessionAllowInvalidSSLDelegate)
     #define MHFURLSessionDataTaskOperation __MHFOUNDATION_NAMESPACE_APPLY(MHFURLSessionDataTaskOperation)
@@ -70,6 +71,7 @@
     #define mhf_unflattenDictionary __MHFOUNDATION_NAMESPACE_APPLY_LOWER(mhf_unflattenDictionary)
     #define mhf_whitespaceAndNewlineCoalescedString __MHFOUNDATION_NAMESPACE_APPLY_LOWER(mhf_whitespaceAndNewlineCoalescedString)
 // Externs
+    #define MHFCheckedDynamicCast __MHFOUNDATION_NAMESPACE_APPLY(MHFCheckedDynamicCast)
     #define MHFDispatchMainAfterDelay __MHFOUNDATION_NAMESPACE_APPLY(MHFDispatchMainAfterDelay)
     #define MHFDynamicCast __MHFOUNDATION_NAMESPACE_APPLY(MHFDynamicCast)
     #define MHFHTTPErrorDomain __MHFOUNDATION_NAMESPACE_APPLY(MHFHTTPErrorDomain)
@@ -84,6 +86,7 @@
     #define MHFHTTPMethodSEARCH __MHFOUNDATION_NAMESPACE_APPLY(MHFHTTPMethodSEARCH)
     #define MHFPartialErrorsByItemIDKey __MHFOUNDATION_NAMESPACE_APPLY(MHFPartialErrorsByItemIDKey)
     #define MHFPerformBlockOnMainThread __MHFOUNDATION_NAMESPACE_APPLY(MHFPerformBlockOnMainThread)
+    #define MHFProtocolCast __MHFOUNDATION_NAMESPACE_APPLY(MHFProtocolCast)
     #define MHFReachabilityChangedNotification __MHFOUNDATION_NAMESPACE_APPLY(MHFReachabilityChangedNotification)
     #define MHFoundationErrorDomain __MHFOUNDATION_NAMESPACE_APPLY(MHFoundationErrorDomain)
 #endif
