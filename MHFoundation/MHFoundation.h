@@ -33,3 +33,6 @@
 #import <MHFoundation/NSUUID+MHF.h>
 #import <MHFoundation/NSHTTPURLResponse+MHF.h>
 #import <MHFoundation/NSOperationQueue+MHF.h>
+
+#import <MHFoundation/MHFUtilities.h>
+#import <MHFoundation/MHFReachability.h>

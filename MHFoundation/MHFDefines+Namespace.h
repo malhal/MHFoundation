@@ -2,7 +2,7 @@
 //  MHFDefines+Namespace.h
 //  MHFoundation
 //
-//  Generated using MHNamespaceGenerator on 19/09/2017
+//  Generated using MHNamespaceGenerator on 21/09/2017
 //
 
 #if !defined(__MHFOUNDATION_NAMESPACE_APPLY) && defined(MHFOUNDATION_NAMESPACE) && defined(MHFOUNDATION_NAMESPACE_LOWER)
@@ -70,6 +70,7 @@
     #define mhf_unflattenDictionary __MHFOUNDATION_NAMESPACE_APPLY_LOWER(mhf_unflattenDictionary)
     #define mhf_whitespaceAndNewlineCoalescedString __MHFOUNDATION_NAMESPACE_APPLY_LOWER(mhf_whitespaceAndNewlineCoalescedString)
 // Externs
+    #define MHFDispatchMainAfterDelay __MHFOUNDATION_NAMESPACE_APPLY(MHFDispatchMainAfterDelay)
     #define MHFDynamicCast __MHFOUNDATION_NAMESPACE_APPLY(MHFDynamicCast)
     #define MHFHTTPErrorDomain __MHFOUNDATION_NAMESPACE_APPLY(MHFHTTPErrorDomain)
     #define MHFHTTPMethodCOPY __MHFOUNDATION_NAMESPACE_APPLY(MHFHTTPMethodCOPY)
@@ -82,5 +83,7 @@
     #define MHFHTTPMethodPUT __MHFOUNDATION_NAMESPACE_APPLY(MHFHTTPMethodPUT)
     #define MHFHTTPMethodSEARCH __MHFOUNDATION_NAMESPACE_APPLY(MHFHTTPMethodSEARCH)
     #define MHFPartialErrorsByItemIDKey __MHFOUNDATION_NAMESPACE_APPLY(MHFPartialErrorsByItemIDKey)
+    #define MHFPerformBlockOnMainThread __MHFOUNDATION_NAMESPACE_APPLY(MHFPerformBlockOnMainThread)
+    #define MHFReachabilityChangedNotification __MHFOUNDATION_NAMESPACE_APPLY(MHFReachabilityChangedNotification)
     #define MHFoundationErrorDomain __MHFOUNDATION_NAMESPACE_APPLY(MHFoundationErrorDomain)
 #endif

@@ -1,5 +1,5 @@
 //
-//  NSString+MHF.h
+//  NSString+MHF.m
 //  MHFoundation
 //
 //  Created by Malcolm Hall on 19/09/2017.

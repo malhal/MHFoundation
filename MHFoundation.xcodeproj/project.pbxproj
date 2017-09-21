@@ -41,6 +41,7 @@
 		EC31447E1D073AC10025F669 /* NSArray+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3144701D073AC10025F669 /* NSArray+MHF.m */; };
 		EC31447F1D073AC10025F669 /* NSDictionary+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3144711D073AC10025F669 /* NSDictionary+MHF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC3144801D073AC10025F669 /* NSDictionary+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3144721D073AC10025F669 /* NSDictionary+MHF.m */; };
+		EC5D1BF11F7476CB008BC02E /* MHFReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5D1BF01F7476CB008BC02E /* MHFReachability.m */; };
 		EC6408D31DBAA6CC00AF9016 /* NSURL+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6408D11DBAA6CC00AF9016 /* NSURL+MHF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC6408D41DBAA6CC00AF9016 /* NSURL+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6408D21DBAA6CC00AF9016 /* NSURL+MHF.m */; };
 		EC67583F1DAF0DD300838798 /* MHFHTTP.h in Headers */ = {isa = PBXBuildFile; fileRef = EC67583D1DAF0DD300838798 /* MHFHTTP.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -120,6 +121,8 @@
 		EC3144701D073AC10025F669 /* NSArray+MHF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MHF.m"; sourceTree = "<group>"; };
 		EC3144711D073AC10025F669 /* NSDictionary+MHF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+MHF.h"; sourceTree = "<group>"; };
 		EC3144721D073AC10025F669 /* NSDictionary+MHF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+MHF.m"; sourceTree = "<group>"; };
+		EC5D1BEF1F7476CB008BC02E /* MHFReachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHFReachability.h; sourceTree = "<group>"; };
+		EC5D1BF01F7476CB008BC02E /* MHFReachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHFReachability.m; sourceTree = "<group>"; };
 		EC6408D11DBAA6CC00AF9016 /* NSURL+MHF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+MHF.h"; sourceTree = "<group>"; };
 		EC6408D21DBAA6CC00AF9016 /* NSURL+MHF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+MHF.m"; sourceTree = "<group>"; };
 		EC67583D1DAF0DD300838798 /* MHFHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFHTTP.h; sourceTree = "<group>"; };
@@ -252,6 +255,8 @@
 				EC0CA8571F707BBD009DBC57 /* NSException+MHF.m */,
 				EC0CA87F1F70A954009DBC57 /* MHFUtilities.h */,
 				EC0CA8801F70A954009DBC57 /* MHFUtilities.m */,
+				EC5D1BEF1F7476CB008BC02E /* MHFReachability.h */,
+				EC5D1BF01F7476CB008BC02E /* MHFReachability.m */,
 				EC0CA8841F70AAB5009DBC57 /* NSString+MHF.h */,
 				EC0CA8831F70AAB5009DBC57 /* NSString+MHF.m */,
 			);
@@ -352,7 +357,7 @@
 		EC3144441D073A1A0025F669 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Malcolm Hall";
 				TargetAttributes = {
 					EC31444C1D073A1A0025F669 = {
@@ -428,6 +433,7 @@
 				ECB16F751D96A95A003F987D /* MHFBatchRESTOperation.m in Sources */,
 				EC3144801D073AC10025F669 /* NSDictionary+MHF.m in Sources */,
 				ECC69E911D7A33E100020DA1 /* NSMutableURLRequest+MHF.m in Sources */,
+				EC5D1BF11F7476CB008BC02E /* MHFReachability.m in Sources */,
 				EC0CA8821F70A954009DBC57 /* MHFUtilities.m in Sources */,
 				EC0CA8591F707BBD009DBC57 /* NSException+MHF.m in Sources */,
 				ECFB0F781D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.m in Sources */,
@@ -483,13 +489,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -528,13 +542,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -561,6 +583,7 @@
 		EC3144621D073A1A0025F669 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -578,6 +601,7 @@
 		EC3144631D073A1A0025F669 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;

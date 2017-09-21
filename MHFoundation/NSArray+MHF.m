@@ -12,11 +12,10 @@
 
 - (void)mhf_asyncEnumerateObjectsUsingBlock:(void (^)(id obj, NSUInteger idx, BOOL isLast, dispatch_block_t next))block{
     __block NSUInteger index = 0;
-    
-    void (^next)();
+    void (^next)(void);
     __block __weak typeof(next) weakNext;
     weakNext = next = ^void() {
-        void (^strongNext)() = weakNext;
+        void (^strongNext)(void) = weakNext;
         // check if finished
         if(index == self.count){
             return;
