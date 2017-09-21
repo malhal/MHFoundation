@@ -20,7 +20,6 @@ MHF_EXTERN void MHFPerformBlockOnMainThread(dispatch_block_t block);
 
 @interface MHFUtilities : NSObject
 
-+ (BOOL)isInternetReachable;
 + (struct _NSRange)range:(struct _NSRange)arg1 liesWithinRange:(struct _NSRange)arg2 assert:(BOOL)arg3;
 
 @end

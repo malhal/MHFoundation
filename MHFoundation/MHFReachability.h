@@ -40,6 +40,7 @@ MHF_EXTERN NSString * const MHFReachabilityChangedNotification;
  */
 + (instancetype)reachabilityForInternetConnection;
 
++ (BOOL)isInternetReachable;
 
 #pragma mark reachabilityForLocalWiFi
 //reachabilityForLocalWiFi has been removed from the sample.  See ReadMe.md for more information.

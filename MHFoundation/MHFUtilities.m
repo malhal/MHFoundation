@@ -49,18 +49,7 @@ void MHFPerformBlockOnMainThread(dispatch_block_t block){
     }
 }
 
-
-
 @implementation MHFUtilities
-
-// missing reachability
-+ (BOOL)isInternetReachable{
-    NetworkStatus status = ICReachability.sharedReachabilityForInternetConnection.currentReachabilityStatus;
-    if(status > 2){
-        return NO;
-    }
-    return 0x6 >> (status & 0x7) & 0x1;
-}
 
 + (struct _NSRange)range:(struct _NSRange)arg1 liesWithinRange:(struct _NSRange)arg2 assert:(BOOL)arg3{
     @throw [NSException mhf_notImplementedException];

@@ -121,6 +121,14 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
     return [self reachabilityWithAddress: (const struct sockaddr *) &zeroAddress];
 }
 
++ (BOOL)isInternetReachable{
+    NetworkStatus status = ICReachability.sharedReachabilityForInternetConnection.currentReachabilityStatus;
+    if(status > 2){
+        return NO;
+    }
+    return 0x6 >> (status & 0x7) & 0x1; // check
+}
+
 #pragma mark reachabilityForLocalWiFi
 //reachabilityForLocalWiFi has been removed from the sample.  See ReadMe.md for more information.
 //+ (instancetype)reachabilityForLocalWiFi
