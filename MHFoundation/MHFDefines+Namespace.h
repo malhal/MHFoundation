@@ -50,6 +50,7 @@
     #define mhf_isLaterThanDate __MHFOUNDATION_NAMESPACE_APPLY_LOWER(mhf_isLaterThanDate)
     #define mhf_isLaterThanOrEqualToDate __MHFOUNDATION_NAMESPACE_APPLY_LOWER(mhf_isLaterThanOrEqualToDate)
     #define mhf_isSuccessful __MHFOUNDATION_NAMESPACE_APPLY_LOWER(mhf_isSuccessful)
+    #define mhf_isUndoingOrRedoing __MHFOUNDATION_NAMESPACE_APPLY_LOWER(mhf_isUndoingOrRedoing)
     #define mhf_nilIfNSNullObjectForKey __MHFOUNDATION_NAMESPACE_APPLY_LOWER(mhf_nilIfNSNullObjectForKey)
     #define mhf_notImplementedException __MHFOUNDATION_NAMESPACE_APPLY_LOWER(mhf_notImplementedException)
     #define mhf_objectPassingTest __MHFOUNDATION_NAMESPACE_APPLY_LOWER(mhf_objectPassingTest)

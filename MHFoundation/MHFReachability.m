@@ -12,6 +12,7 @@
 #import <sys/socket.h>
 #import <netinet/in.h>
 #import <CoreFoundation/CoreFoundation.h>
+#import <SystemConfiguration/SystemConfiguration.h>
 
 #pragma mark IPv6 Support
 //Reachability fully support IPv6.  For full details, see ReadMe.md.

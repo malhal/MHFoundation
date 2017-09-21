@@ -38,3 +38,4 @@
 #import <MHFoundation/MHFUtilities.h>
 #import <MHFoundation/MHFReachability.h>
 #import <MHFoundation/MHFSelectorDelayer.h>
+#import <MHFoundation/NSUndoManager+MHF.h>

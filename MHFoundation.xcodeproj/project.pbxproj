@@ -45,6 +45,8 @@
 		EC5D1BF61F747E65008BC02E /* MHFSelectorDelayer.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5D1BF41F747E64008BC02E /* MHFSelectorDelayer.m */; };
 		EC5D1BF71F747EEA008BC02E /* MHFSelectorDelayer.h in Headers */ = {isa = PBXBuildFile; fileRef = EC5D1BF51F747E65008BC02E /* MHFSelectorDelayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC5D1BF81F747EF3008BC02E /* MHFReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = EC5D1BEF1F7476CB008BC02E /* MHFReachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC5D1C041F7482BC008BC02E /* NSUndoManager+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5D1C031F7482BC008BC02E /* NSUndoManager+MHF.m */; };
+		EC5D1C051F7482BF008BC02E /* NSUndoManager+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = EC5D1C021F7482BC008BC02E /* NSUndoManager+MHF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC6408D31DBAA6CC00AF9016 /* NSURL+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6408D11DBAA6CC00AF9016 /* NSURL+MHF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC6408D41DBAA6CC00AF9016 /* NSURL+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6408D21DBAA6CC00AF9016 /* NSURL+MHF.m */; };
 		EC67583F1DAF0DD300838798 /* MHFHTTP.h in Headers */ = {isa = PBXBuildFile; fileRef = EC67583D1DAF0DD300838798 /* MHFHTTP.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -128,6 +130,8 @@
 		EC5D1BF01F7476CB008BC02E /* MHFReachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHFReachability.m; sourceTree = "<group>"; };
 		EC5D1BF41F747E64008BC02E /* MHFSelectorDelayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHFSelectorDelayer.m; sourceTree = "<group>"; };
 		EC5D1BF51F747E65008BC02E /* MHFSelectorDelayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHFSelectorDelayer.h; sourceTree = "<group>"; };
+		EC5D1C021F7482BC008BC02E /* NSUndoManager+MHF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSUndoManager+MHF.h"; sourceTree = "<group>"; };
+		EC5D1C031F7482BC008BC02E /* NSUndoManager+MHF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSUndoManager+MHF.m"; sourceTree = "<group>"; };
 		EC6408D11DBAA6CC00AF9016 /* NSURL+MHF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+MHF.h"; sourceTree = "<group>"; };
 		EC6408D21DBAA6CC00AF9016 /* NSURL+MHF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+MHF.m"; sourceTree = "<group>"; };
 		EC67583D1DAF0DD300838798 /* MHFHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFHTTP.h; sourceTree = "<group>"; };
@@ -266,6 +270,8 @@
 				EC0CA8831F70AAB5009DBC57 /* NSString+MHF.m */,
 				EC5D1BF51F747E65008BC02E /* MHFSelectorDelayer.h */,
 				EC5D1BF41F747E64008BC02E /* MHFSelectorDelayer.m */,
+				EC5D1C021F7482BC008BC02E /* NSUndoManager+MHF.h */,
+				EC5D1C031F7482BC008BC02E /* NSUndoManager+MHF.m */,
 			);
 			path = MHFoundation;
 			sourceTree = "<group>";
@@ -304,6 +310,7 @@
 				EC3144791D073AC10025F669 /* MHFRunLoopOperation.h in Headers */,
 				ECC991381D0D74FD000F5EFB /* MHFError.h in Headers */,
 				EC3144751D073AC10025F669 /* MHFAsyncOperation.h in Headers */,
+				EC5D1C051F7482BF008BC02E /* NSUndoManager+MHF.h in Headers */,
 				EC5D1BF81F747EF3008BC02E /* MHFReachability.h in Headers */,
 				ECD142CE1DB92287000B38AC /* MHFDefines+Namespace.h in Headers */,
 				EC5D1BF71F747EEA008BC02E /* MHFSelectorDelayer.h in Headers */,
@@ -453,6 +460,7 @@
 				EC5D1BF61F747E65008BC02E /* MHFSelectorDelayer.m in Sources */,
 				ECFD7F731D44087000449373 /* NSDate+MHF.m in Sources */,
 				EC6758401DAF0DD300838798 /* MHFHTTP.m in Sources */,
+				EC5D1C041F7482BC008BC02E /* NSUndoManager+MHF.m in Sources */,
 				EC6408D41DBAA6CC00AF9016 /* NSURL+MHF.m in Sources */,
 				ECB213631D84B40A00246A1F /* MHFHTTPError.m in Sources */,
 				EC07F1581D4CDEC800A28610 /* NSError+MHF.m in Sources */,
