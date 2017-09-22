@@ -48,9 +48,9 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 {
 #pragma unused (target, flags)
 	NSCAssert(info != NULL, @"info was NULL in ReachabilityCallback");
-	NSCAssert([(__bridge NSObject*) info isKindOfClass: [ICReachability class]], @"info was wrong class in ReachabilityCallback");
+	NSCAssert([(__bridge NSObject*) info isKindOfClass: [MHFReachability class]], @"info was wrong class in ReachabilityCallback");
 
-    ICReachability* noteObject = (__bridge ICReachability *)info;
+    MHFReachability* noteObject = (__bridge MHFReachability *)info;
     // Post a notification to notify the client that the network reachability changed.
     [[NSNotificationCenter defaultCenter] postNotificationName: MHFReachabilityChangedNotification object: noteObject];
 }
@@ -58,22 +58,22 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 
 #pragma mark - Reachability implementation
 
-@implementation ICReachability
+@implementation MHFReachability
 {
 	SCNetworkReachabilityRef _reachabilityRef;
 }
 
 + (instancetype)sharedReachabilityForInternetConnection{
-    static ICReachability *sharedReachability = nil;
+    static MHFReachability *sharedReachability = nil;
     if(!sharedReachability){
-        sharedReachability = [ICReachability reachabilityForInternetConnection];
+        sharedReachability = [MHFReachability reachabilityForInternetConnection];
     }
     return sharedReachability;
 }
 
 + (instancetype)reachabilityWithHostName:(NSString *)hostName
 {
-	ICReachability* returnValue = NULL;
+	MHFReachability* returnValue = NULL;
 	SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithName(NULL, [hostName UTF8String]);
 	if (reachability != NULL)
 	{
@@ -94,7 +94,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 {
 	SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithAddress(kCFAllocatorDefault, hostAddress);
 
-	ICReachability* returnValue = NULL;
+	MHFReachability* returnValue = NULL;
 
 	if (reachability != NULL)
 	{
@@ -122,7 +122,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 }
 
 + (BOOL)isInternetReachable{
-    NetworkStatus status = ICReachability.sharedReachabilityForInternetConnection.currentReachabilityStatus;
+    NetworkStatus status = MHFReachability.sharedReachabilityForInternetConnection.currentReachabilityStatus;
     if(status > 2){
         return NO;
     }

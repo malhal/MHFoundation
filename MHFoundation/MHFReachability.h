@@ -21,7 +21,7 @@ typedef enum : NSInteger {
 
 MHF_EXTERN NSString * const MHFReachabilityChangedNotification;
 
-@interface ICReachability : NSObject
+@interface MHFReachability : NSObject
 
 + (instancetype)sharedReachabilityForInternetConnection;
 

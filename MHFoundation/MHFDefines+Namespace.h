@@ -17,6 +17,7 @@
     #define MHFHTTPError __MHFOUNDATION_NAMESPACE_APPLY(MHFHTTPError)
     #define MHFQueueOperation __MHFOUNDATION_NAMESPACE_APPLY(MHFQueueOperation)
     #define MHFRESTOperation __MHFOUNDATION_NAMESPACE_APPLY(MHFRESTOperation)
+    #define MHFReachability __MHFOUNDATION_NAMESPACE_APPLY(MHFReachability)
     #define MHFRunLoopOperation __MHFOUNDATION_NAMESPACE_APPLY(MHFRunLoopOperation)
     #define MHFSelectorDelayer __MHFOUNDATION_NAMESPACE_APPLY(MHFSelectorDelayer)
     #define MHFSerialQueueOperation __MHFOUNDATION_NAMESPACE_APPLY(MHFSerialQueueOperation)
