@@ -55,6 +55,8 @@
 		EC6758EA1DB0376900838798 /* NSOperationQueue+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6758E81DB0376900838798 /* NSOperationQueue+MHF.m */; };
 		EC6758FC1DB0637000838798 /* MHFRESTOperationSubclass.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6758FA1DB0637000838798 /* MHFRESTOperationSubclass.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC6758FE1DB063A400838798 /* MHFoundation_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6758FD1DB063A400838798 /* MHFoundation_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		EC942EAA1F79C05700A53DA9 /* NSProcessInfo+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = EC942EA81F79C05700A53DA9 /* NSProcessInfo+MHF.h */; };
+		EC942EAB1F79C05700A53DA9 /* NSProcessInfo+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = EC942EA91F79C05700A53DA9 /* NSProcessInfo+MHF.m */; };
 		ECA372041D5279D900B9DA1B /* MHFQueueOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA372021D5279D900B9DA1B /* MHFQueueOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECA372051D5279D900B9DA1B /* MHFQueueOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA372031D5279D900B9DA1B /* MHFQueueOperation.m */; };
 		ECB16F751D96A95A003F987D /* MHFBatchRESTOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB16F731D96A95A003F987D /* MHFBatchRESTOperation.m */; };
@@ -140,6 +142,8 @@
 		EC6758E81DB0376900838798 /* NSOperationQueue+MHF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperationQueue+MHF.m"; sourceTree = "<group>"; };
 		EC6758FA1DB0637000838798 /* MHFRESTOperationSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFRESTOperationSubclass.h; sourceTree = "<group>"; };
 		EC6758FD1DB063A400838798 /* MHFoundation_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFoundation_Private.h; sourceTree = "<group>"; };
+		EC942EA81F79C05700A53DA9 /* NSProcessInfo+MHF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSProcessInfo+MHF.h"; sourceTree = "<group>"; };
+		EC942EA91F79C05700A53DA9 /* NSProcessInfo+MHF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSProcessInfo+MHF.m"; sourceTree = "<group>"; };
 		ECA372021D5279D900B9DA1B /* MHFQueueOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFQueueOperation.h; sourceTree = "<group>"; };
 		ECA372031D5279D900B9DA1B /* MHFQueueOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHFQueueOperation.m; sourceTree = "<group>"; };
 		ECB16F731D96A95A003F987D /* MHFBatchRESTOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHFBatchRESTOperation.m; sourceTree = "<group>"; };
@@ -272,6 +276,8 @@
 				EC5D1BF41F747E64008BC02E /* MHFSelectorDelayer.m */,
 				EC5D1C021F7482BC008BC02E /* NSUndoManager+MHF.h */,
 				EC5D1C031F7482BC008BC02E /* NSUndoManager+MHF.m */,
+				EC942EA81F79C05700A53DA9 /* NSProcessInfo+MHF.h */,
+				EC942EA91F79C05700A53DA9 /* NSProcessInfo+MHF.m */,
 			);
 			path = MHFoundation;
 			sourceTree = "<group>";
@@ -319,6 +325,7 @@
 				EC0CA8861F70AB25009DBC57 /* NSString+MHF.h in Headers */,
 				ECFB0F801D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.h in Headers */,
 				EC6758E91DB0376900838798 /* NSOperationQueue+MHF.h in Headers */,
+				EC942EAA1F79C05700A53DA9 /* NSProcessInfo+MHF.h in Headers */,
 				ECFB0F931D7CF2E100CC2BC3 /* NSUUID+MHF.h in Headers */,
 				EC6758FC1DB0637000838798 /* MHFRESTOperationSubclass.h in Headers */,
 				ECFD7F721D44087000449373 /* NSDate+MHF.h in Headers */,
@@ -460,6 +467,7 @@
 				EC5D1BF61F747E65008BC02E /* MHFSelectorDelayer.m in Sources */,
 				ECFD7F731D44087000449373 /* NSDate+MHF.m in Sources */,
 				EC6758401DAF0DD300838798 /* MHFHTTP.m in Sources */,
+				EC942EAB1F79C05700A53DA9 /* NSProcessInfo+MHF.m in Sources */,
 				EC5D1C041F7482BC008BC02E /* NSUndoManager+MHF.m in Sources */,
 				EC6408D41DBAA6CC00AF9016 /* NSURL+MHF.m in Sources */,
 				ECB213631D84B40A00246A1F /* MHFHTTPError.m in Sources */,
