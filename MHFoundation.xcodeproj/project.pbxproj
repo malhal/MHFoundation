@@ -55,7 +55,7 @@
 		EC6758EA1DB0376900838798 /* NSOperationQueue+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6758E81DB0376900838798 /* NSOperationQueue+MHF.m */; };
 		EC6758FC1DB0637000838798 /* MHFRESTOperationSubclass.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6758FA1DB0637000838798 /* MHFRESTOperationSubclass.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC6758FE1DB063A400838798 /* MHFoundation_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6758FD1DB063A400838798 /* MHFoundation_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		EC942EAA1F79C05700A53DA9 /* NSProcessInfo+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = EC942EA81F79C05700A53DA9 /* NSProcessInfo+MHF.h */; };
+		EC942EAA1F79C05700A53DA9 /* NSProcessInfo+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = EC942EA81F79C05700A53DA9 /* NSProcessInfo+MHF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC942EAB1F79C05700A53DA9 /* NSProcessInfo+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = EC942EA91F79C05700A53DA9 /* NSProcessInfo+MHF.m */; };
 		ECA372041D5279D900B9DA1B /* MHFQueueOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = ECA372021D5279D900B9DA1B /* MHFQueueOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECA372051D5279D900B9DA1B /* MHFQueueOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ECA372031D5279D900B9DA1B /* MHFQueueOperation.m */; };
@@ -325,9 +325,9 @@
 				EC0CA8861F70AB25009DBC57 /* NSString+MHF.h in Headers */,
 				ECFB0F801D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.h in Headers */,
 				EC6758E91DB0376900838798 /* NSOperationQueue+MHF.h in Headers */,
-				EC942EAA1F79C05700A53DA9 /* NSProcessInfo+MHF.h in Headers */,
 				ECFB0F931D7CF2E100CC2BC3 /* NSUUID+MHF.h in Headers */,
 				EC6758FC1DB0637000838798 /* MHFRESTOperationSubclass.h in Headers */,
+				EC942EAA1F79C05700A53DA9 /* NSProcessInfo+MHF.h in Headers */,
 				ECFD7F721D44087000449373 /* NSDate+MHF.h in Headers */,
 				ECB16F791D97373C003F987D /* MHFError_Internal.h in Headers */,
 				EC6758FE1DB063A400838798 /* MHFoundation_Private.h in Headers */,
