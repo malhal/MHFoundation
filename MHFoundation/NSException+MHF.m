@@ -21,4 +21,13 @@
     return [NSException exceptionWithName:@"AbstractException" reason:[[NSThread callStackSymbols] description] userInfo:nil];
 }
 
++ (NSException *)mhf_designatedInitializerException{
+    NSString *reason = [NSString stringWithFormat:@"Failed to call designated initializer on '%@' \n", NSStringFromClass([self class])];
+    return [NSException exceptionWithName:NSGenericException reason:reason userInfo:nil];
+}
+
+- (void)mhf_crashThisApp{
+    [NSException raise:NSGenericException format:@"You crashed the app on purpose."];
+}
+
 @end

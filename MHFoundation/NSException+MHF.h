@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSException *)mhf_notImplementedException;
 + (NSException *)mhf_abstractException;
++ (NSException *)mhf_designatedInitializerException;
++ (void)mhf_crashThisApp;
 
 @end
 
