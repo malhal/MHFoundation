@@ -26,7 +26,7 @@
     return [NSException exceptionWithName:NSGenericException reason:reason userInfo:nil];
 }
 
-- (void)mhf_crashThisApp{
++ (void)mhf_crashThisApp{
     [NSException raise:NSGenericException format:@"You crashed the app on purpose."];
 }
 
