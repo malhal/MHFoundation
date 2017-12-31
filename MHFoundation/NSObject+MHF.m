@@ -8,6 +8,7 @@
 
 #import "NSObject+MHF.h"
 
+#pragma clang diagnostic ignored "-Wincomplete-implementation" // for className
 @implementation NSObject (MHF)
 
 - (void)mhf_addObserver:(NSObject *)observer forKeyPaths:(NSArray <NSString *> *)keyPaths options:(NSKeyValueObservingOptions)options context:(void *)context{

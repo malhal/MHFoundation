@@ -11,5 +11,6 @@
 @interface NSObject (MHF)
 
 - (void)mhf_addObserver:(NSObject *)observer forKeyPaths:(NSArray <NSString *> *)keyPaths options:(NSKeyValueObservingOptions)options context:(void *)context;
+- (NSString *)className;
 
 @end
