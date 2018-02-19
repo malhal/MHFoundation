@@ -19,12 +19,9 @@ static void * const kObserverContext = (void *)&kObserverContext;
     else if(_object){
         [self removeObserversForObject:_object];
     }
+    _object = object;
     if(object){
         [self addObserversForObject:object];
-    }
-    _object = object;
-    for(NSString *keyPath in self.keyPaths){
-        [self objectChangedKeyPath:keyPath];
     }
 }
 
@@ -42,14 +39,14 @@ static void * const kObserverContext = (void *)&kObserverContext;
         }
     }
     for(NSString *key in keyPaths){
-        [self.object addObserver:self forKeyPath:key options:0 context:kObserverContext];
+        [self.object addObserver:self forKeyPath:key options:NSKeyValueObservingOptionInitial context:kObserverContext];
     }
     _keyPaths = keyPaths;
 }
 
 - (void)removeObserversForObject:(id)object{
     for(NSString *key in self.keyPaths){
-        [self.object addObserver:self forKeyPath:key options:0 context:kObserverContext];
+        [self.object addObserver:self forKeyPath:key options:NSKeyValueObservingOptionInitial context:kObserverContext];
     }
 }
 
