@@ -1,14 +1,16 @@
 //
-//  MHFKVOController.m
+//  MHFObserver.m
 //  MHFoundation
 //
 //  Created by Malcolm Hall on 19/02/2018.
 //  Copyright © 2018 Malcolm Hall. All rights reserved.
 //
 
-#import "MHFKVOController.h"
+#import "MHFObserver.h"
 
-@implementation MHFKVOController
+static void * const kObserverContext = (void *)&kObserverContext;
+
+@implementation MHFObserver
 
 - (void)setObject:(id)object{
     if(_object != object) {
@@ -24,7 +26,7 @@
 }
 
 - (void)objectChanged{
-    [self.delegate KVOControllerObjectChanged:self];
+    [self.delegate observerObjectChanged:self];
 }
 
 - (void)setKeysToObserve:(NSArray<NSString *> *)keysToObserve{
@@ -36,7 +38,7 @@
         }
         if(keysToObserve){
             for(NSString *key in keysToObserve){
-                [self.object addObserver:self forKeyPath:key options:0 context:nil];
+                [self.object addObserver:self forKeyPath:key options:0 context:kObserverContext];
             }
         }
         _keysToObserve = keysToObserve;
@@ -45,7 +47,7 @@
 
 - (void)removeObserversForObject:(id)object{
     for(NSString *key in self.keysToObserve){
-        [self.object addObserver:self forKeyPath:key options:0 context:nil];
+        [self.object addObserver:self forKeyPath:key options:0 context:kObserverContext];
     }
 }
 
@@ -56,6 +58,10 @@
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    if(context != kObserverContext){
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+        return;
+    }
     [self objectChanged];
 }
 

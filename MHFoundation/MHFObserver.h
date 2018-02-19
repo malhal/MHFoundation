@@ -1,5 +1,5 @@
 //
-//  MHFKVOController.h
+//  MHFObserver.h
 //  MHFoundation
 //
 //  Created by Malcolm Hall on 19/02/2018.
@@ -9,22 +9,22 @@
 #import <Foundation/Foundation.h>
 #import <MHFoundation/MHFDefines.h>
 
-@protocol MHFKVOControllerDelegate;
+@protocol MHFObserverDelegate;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MHFKVOController : NSObject
+@interface MHFObserver : NSObject
 
 @property (weak, nonatomic) id object;
 @property (nullable, nonatomic, strong) NSArray<NSString *> *keysToObserve;
-@property (weak, nonatomic) id<MHFKVOControllerDelegate> delegate;
+@property (weak, nonatomic) id<MHFObserverDelegate> delegate;
 
 @end
 
-@protocol MHFKVOControllerDelegate <NSObject>
+@protocol MHFObserverDelegate <NSObject>
 
 @required
-- (void)KVOControllerObjectChanged:(MHFKVOController *)controller;
+- (void)observerObjectChanged:(MHFObserver *)observer;
 
 @end
 
