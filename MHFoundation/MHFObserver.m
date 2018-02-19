@@ -65,4 +65,9 @@ static void * const kObserverContext = (void *)&kObserverContext;
     [self objectChanged];
 }
 
+- (void)dealloc
+{
+    self.object = nil;
+}
+
 @end
