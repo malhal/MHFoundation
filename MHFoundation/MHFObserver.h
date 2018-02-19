@@ -18,6 +18,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) id object;
 @property (nullable, nonatomic, strong) NSArray<NSString *> *keysToObserve;
 @property (weak, nonatomic) id<MHFObserverDelegate> delegate;
+@property (assign, nonatomic) NSKeyValueObservingOptions options;
+
+// subclassing
+//- (void)addObserversForObject:(id)object NS_REQUIRES_SUPER;
+//- (void)removeObserversForObject:(id)object NS_REQUIRES_SUPER;
+//- (void)observeValueForKeyPath:(nullable NSString *)keyPath ofObject:(nullable id)object change:(nullable NSDictionary<NSKeyValueChangeKey, id> *)change context:(nullable void *)context NS_REQUIRES_SUPER;
 
 @end
 

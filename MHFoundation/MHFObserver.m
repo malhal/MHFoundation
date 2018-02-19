@@ -13,15 +13,27 @@ static void * const kObserverContext = (void *)&kObserverContext;
 @implementation MHFObserver
 
 - (void)setObject:(id)object{
-    if(_object != object) {
-        if(_object){
-            [self removeObserversForObject:_object];
-        }
-        if(object){
-            [self addObserversForObject:object];
-        }
-        _object = object;
-        [self objectChanged];
+    if(_object == object) {
+        return;
+    }
+    else if(_object){
+        [self removeObserversForObject:_object];
+    }
+    if(object){
+        [self addObserversForObject:object];
+    }
+    _object = object;
+    [self objectChanged];
+}
+
+- (void)setOptions:(NSKeyValueObservingOptions)options{
+    if(_options == options){
+        return;
+    }
+    _options = options;
+    if(self.object){
+        [self removeObserversForObject:self.object];
+        [self addObserversForObject:self.object];
     }
 }
 
@@ -30,24 +42,23 @@ static void * const kObserverContext = (void *)&kObserverContext;
 }
 
 - (void)setKeysToObserve:(NSArray<NSString *> *)keysToObserve{
-    if(_keysToObserve != keysToObserve){
-        if(_keysToObserve){
-            for(NSString *key in _keysToObserve){
-                [self.object removeObserver:self forKeyPath:key];
-            }
-        }
-        if(keysToObserve){
-            for(NSString *key in keysToObserve){
-                [self.object addObserver:self forKeyPath:key options:0 context:kObserverContext];
-            }
-        }
-        _keysToObserve = keysToObserve;
+    if(_keysToObserve == keysToObserve){
+        return;
     }
+    else if(_keysToObserve){
+        for(NSString *key in _keysToObserve){
+            [self.object removeObserver:self forKeyPath:key];
+        }
+    }
+    for(NSString *key in keysToObserve){
+        [self.object addObserver:self forKeyPath:key options:self.options context:kObserverContext];
+    }
+    _keysToObserve = keysToObserve;
 }
 
 - (void)removeObserversForObject:(id)object{
     for(NSString *key in self.keysToObserve){
-        [self.object addObserver:self forKeyPath:key options:0 context:kObserverContext];
+        [self.object addObserver:self forKeyPath:key options:self.options context:kObserverContext];
     }
 }
 
@@ -57,7 +68,7 @@ static void * const kObserverContext = (void *)&kObserverContext;
     }
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+- (void)observeValueForKeyPath:(nullable NSString *)keyPath ofObject:(nullable id)object change:(nullable NSDictionary<NSKeyValueChangeKey, id> *)change context:(nullable void *)context{
     if(context != kObserverContext){
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
         return;
