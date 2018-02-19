@@ -16,9 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MHFObserver : NSObject
 
 @property (weak, nonatomic) id object;
-@property (nullable, nonatomic, strong) NSArray<NSString *> *keysToObserve;
+@property (nullable, nonatomic, strong) NSArray<NSString *> *keyPaths;
 @property (weak, nonatomic) id<MHFObserverDelegate> delegate;
-@property (assign, nonatomic) NSKeyValueObservingOptions options;
 
 // subclassing
 //- (void)addObserversForObject:(id)object NS_REQUIRES_SUPER;
@@ -30,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol MHFObserverDelegate <NSObject>
 
 @required
-- (void)observerObjectChanged:(MHFObserver *)observer;
+- (void)observer:(MHFObserver *)observer objectChangedKeyPath:(NSString *)keyPath;
 
 @end
 
