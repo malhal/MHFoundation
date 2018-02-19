@@ -9,8 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <MHFoundation/MHFDefines.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NSProcessInfo (MHF)
 
 @property (copy, readonly) NSDictionary *mhf_operationSystemVersionDictionary;
 
 @end
+
+NS_ASSUME_NONNULL_END
