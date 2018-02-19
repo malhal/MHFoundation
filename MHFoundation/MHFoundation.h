@@ -19,6 +19,7 @@
 #import <MHFoundation/MHFURLSessionTaskOperation.h>
 #import <MHFoundation/MHFRESTOperation.h>
 #import <MHFoundation/MHFBatchRESTOperation.h>
+#import <MHFoundation/MHFKVOController.h>
 
 #import <MHFoundation/NSDictionary+MHF.h>
 #import <MHFoundation/NSSet+MHF.h>

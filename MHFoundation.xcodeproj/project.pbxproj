@@ -78,7 +78,7 @@
 		ECC991381D0D74FD000F5EFB /* MHFError.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC991361D0D74FD000F5EFB /* MHFError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECC991391D0D74FD000F5EFB /* MHFError.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC991371D0D74FD000F5EFB /* MHFError.m */; };
 		ECD142CE1DB92287000B38AC /* MHFDefines+Namespace.h in Headers */ = {isa = PBXBuildFile; fileRef = ECD142CD1DB92287000B38AC /* MHFDefines+Namespace.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ECF22ECF203AF8880047DBD5 /* MHFKVOController.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF22ECD203AF8880047DBD5 /* MHFKVOController.h */; };
+		ECF22ECF203AF8880047DBD5 /* MHFKVOController.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF22ECD203AF8880047DBD5 /* MHFKVOController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECF22ED0203AF8880047DBD5 /* MHFKVOController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF22ECE203AF8880047DBD5 /* MHFKVOController.m */; };
 		ECFB0F771D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFB0F751D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECFB0F781D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB0F761D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.m */; };
