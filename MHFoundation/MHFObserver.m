@@ -44,13 +44,13 @@ static void * const kObserverContext = (void *)&kObserverContext;
     _keyPaths = keyPaths;
 }
 
-- (void)removeObserversForObject:(id)object{
+- (void)addObserversForObject:(id)object{
     for(NSString *key in self.keyPaths){
         [self.object addObserver:self forKeyPath:key options:NSKeyValueObservingOptionInitial context:kObserverContext];
     }
 }
 
-- (void)addObserversForObject:(id)object{
+- (void)removeObserversForObject:(id)object{
     for(NSString *key in self.keyPaths){
         [self.object removeObserver:self forKeyPath:key context:kObserverContext];
     }
@@ -59,6 +59,9 @@ static void * const kObserverContext = (void *)&kObserverContext;
 - (void)observeValueForKeyPath:(nullable NSString *)keyPath ofObject:(nullable id)object change:(nullable NSDictionary<NSKeyValueChangeKey, id> *)change context:(nullable void *)context{
     if(context != kObserverContext){
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+        return;
+    }
+    else if([change[NSKeyValueChangeNewKey] isEqual:change[NSKeyValueChangeOldKey]]){
         return;
     }
     [self objectChangedKeyPath:keyPath];
