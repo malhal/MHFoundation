@@ -39,14 +39,14 @@ static void * const kObserverContext = (void *)&kObserverContext;
         }
     }
     for(NSString *key in keyPaths){
-        [self.object addObserver:self forKeyPath:key options:NSKeyValueObservingOptionInitial context:kObserverContext];
+        [self.object addObserver:self forKeyPath:key options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:kObserverContext];
     }
     _keyPaths = keyPaths;
 }
 
 - (void)addObserversForObject:(id)object{
     for(NSString *key in self.keyPaths){
-        [self.object addObserver:self forKeyPath:key options:NSKeyValueObservingOptionInitial context:kObserverContext];
+        [self.object addObserver:self forKeyPath:key options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:kObserverContext];
     }
 }
 
