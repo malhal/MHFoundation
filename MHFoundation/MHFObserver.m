@@ -12,6 +12,14 @@ static void * const kObserverContext = (void *)&kObserverContext;
 
 @implementation MHFObserver
 
+- (instancetype)initWithDelegate:(id<MHFObserverDelegate>)delegate{
+    self = [super init];
+    if (self) {
+        _delegate = delegate;
+    }
+    return self;
+}
+
 - (void)setObject:(id)object{
     if(_object == object) {
         return;
@@ -23,6 +31,7 @@ static void * const kObserverContext = (void *)&kObserverContext;
     if(object){
         [self addObserversForObject:object];
     }
+    // using options initial causes object changed to be called now
 }
 
 - (void)objectChangedKeyPath:(NSString *)keyPath{
@@ -40,6 +49,7 @@ static void * const kObserverContext = (void *)&kObserverContext;
     }
     _keyPaths = keyPaths;
     for(NSString *key in keyPaths){
+        // since observe is called when a setter is used we need to compare new and old values to see if there has been a change.
         [self.object addObserver:self forKeyPath:key options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:kObserverContext];
     }
 }
