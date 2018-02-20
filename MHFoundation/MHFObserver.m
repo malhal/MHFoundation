@@ -38,10 +38,10 @@ static void * const kObserverContext = (void *)&kObserverContext;
             [self.object removeObserver:self forKeyPath:key context:kObserverContext];
         }
     }
+    _keyPaths = keyPaths;
     for(NSString *key in keyPaths){
         [self.object addObserver:self forKeyPath:key options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:kObserverContext];
     }
-    _keyPaths = keyPaths;
 }
 
 - (void)addObserversForObject:(id)object{
