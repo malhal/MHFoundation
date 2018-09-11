@@ -6,21 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		EC67599D1DB15F1700838798 /* Namespace */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = EC6759A01DB15F1700838798 /* Build configuration list for PBXAggregateTarget "Namespace" */;
-			buildPhases = (
-				EC6759A11DB15F3100838798 /* ShellScript */,
-			);
-			dependencies = (
-				EC6759A31DB15F4100838798 /* PBXTargetDependency */,
-			);
-			name = Namespace;
-			productName = Namespace;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		EC07F1571D4CDEC800A28610 /* NSError+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = EC07F1551D4CDEC800A28610 /* NSError+MHF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC07F1581D4CDEC800A28610 /* NSError+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = EC07F1561D4CDEC800A28610 /* NSError+MHF.m */; };
@@ -92,13 +77,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		EC3144591D073A1A0025F669 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC3144441D073A1A0025F669 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EC31444C1D073A1A0025F669;
-			remoteInfo = MHFoundation;
-		};
-		EC6759A21DB15F4100838798 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EC3144441D073A1A0025F669 /* Project object */;
 			proxyType = 1;
@@ -396,9 +374,6 @@
 					EC3144561D073A1A0025F669 = {
 						CreatedOnToolsVersion = 7.3;
 					};
-					EC67599D1DB15F1700838798 = {
-						CreatedOnToolsVersion = 7.3;
-					};
 				};
 			};
 			buildConfigurationList = EC3144471D073A1A0025F669 /* Build configuration list for PBXProject "MHFoundation" */;
@@ -415,7 +390,6 @@
 			targets = (
 				EC31444C1D073A1A0025F669 /* MHFoundation */,
 				EC3144561D073A1A0025F669 /* MHFoundationTests */,
-				EC67599D1DB15F1700838798 /* Namespace */,
 			);
 		};
 /* End PBXProject section */
@@ -436,22 +410,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		EC6759A11DB15F3100838798 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "dependencies/MHNamespaceGenerator/script.sh MHFoundation.framework MHFoundation MHF";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EC3144481D073A1A0025F669 /* Sources */ = {
@@ -505,11 +463,6 @@
 			isa = PBXTargetDependency;
 			target = EC31444C1D073A1A0025F669 /* MHFoundation */;
 			targetProxy = EC3144591D073A1A0025F669 /* PBXContainerItemProxy */;
-		};
-		EC6759A31DB15F4100838798 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EC31444C1D073A1A0025F669 /* MHFoundation */;
-			targetProxy = EC6759A21DB15F4100838798 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -670,20 +623,6 @@
 			};
 			name = Release;
 		};
-		EC67599E1DB15F1700838798 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		EC67599F1DB15F1700838798 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -710,15 +649,6 @@
 			buildConfigurations = (
 				EC3144651D073A1A0025F669 /* Debug */,
 				EC3144661D073A1A0025F669 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EC6759A01DB15F1700838798 /* Build configuration list for PBXAggregateTarget "Namespace" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EC67599E1DB15F1700838798 /* Debug */,
-				EC67599F1DB15F1700838798 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
