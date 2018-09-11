@@ -15,7 +15,7 @@
 }
 
 + (instancetype)mhf_errorWithDomain:(NSString *)domain code:(NSInteger)code descriptionFormat:(NSString*)descriptionFormat arguments:(va_list)arguments{
-    NSString *description = [[NSString alloc] initWithFormat:descriptionFormat arguments:arguments];
+    NSString *description = [NSString.alloc initWithFormat:descriptionFormat arguments:arguments];
     return [self mhf_errorWithDomain:domain code:code description:description];
 }
 

@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy, nullable) NSMutableURLRequest *request;
 // if no session is set, a new epheremal session is created.
-@property (nonatomic, strong, nullable) NSURLSession* session;
+@property (nonatomic, strong, nullable) NSURLSession *session;
 
 // responseJSONDictionary is nil if there is an error.
 // If there is a http status error then the error will contain the error dictionary as the userInfo.

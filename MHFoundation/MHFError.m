@@ -10,7 +10,6 @@
 #import "NSDictionary+MHF.h"
 
 NSString * const MHFoundationErrorDomain = @"MHFoundationErrorDomain";
-
 NSString * const MHFPartialErrorsByItemIDKey = @"MHFPartialErrorsByItemIDKey";
 
 @implementation MHFError

@@ -43,12 +43,12 @@
     return _session;
 }
 
--(void)cancel{
+- (void)cancel{
     [super cancel];
     [self.task cancel]; // the completion handler is called with a cancel error.
 }
 
-- (BOOL)asyncOperationShouldRun:(NSError**)error{
+- (BOOL)asyncOperationShouldRun:(NSError **)error{
     if(!self.task){
         *error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorInvalidArguments descriptionFormat:@"A task must be provided for %@ usually via a subclass", self.class];
         return NO;
@@ -56,7 +56,7 @@
     return [super asyncOperationShouldRun:error];
 }
 
--(void)performAsyncOperation{
+- (void)performAsyncOperation{
     [self.task resume];
 }
 
@@ -70,7 +70,7 @@
 
 @implementation MHFURLSessionDataTaskOperation
 
-- (BOOL)asyncOperationShouldRun:(NSError**)error{
+- (BOOL)asyncOperationShouldRun:(NSError **)error{
     
     // enforce understanding of delegate skipping behavior of the task with completion handler convenience method.
     // i.e. if they didn't set completion they might be expecting the NSURLSession delegate methods to be called,
@@ -79,7 +79,6 @@
         *error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorInvalidArguments descriptionFormat:@"A dataTaskCompletionBlock must be provided for %@", self.class];
         return NO;
     }
-    
     void(^completionHandler)(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) = ^void(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error){
         self.data = data;
         [self finishWithError:error];
@@ -95,11 +94,10 @@
         *error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorInvalidArguments descriptionFormat:@"Either a URL or request must be provided for %@", self.class];
         return NO;
     }
-
     return [super asyncOperationShouldRun:error];
 }
 
-- (void)finishOnCallbackQueueWithError:(NSError*)error{
+- (void)finishOnCallbackQueueWithError:(NSError *)error{
     if(self.dataTaskCompletionBlock){
         self.dataTaskCompletionBlock(self.data, self.task.response, error);
     }
@@ -124,13 +122,11 @@
     return self;
 }
 
-- (BOOL)asyncOperationShouldRun:(NSError**)error{
-    
+- (BOOL)asyncOperationShouldRun:(NSError **)error{
     if(!self.downloadTaskCompletionBlock){
         *error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorInvalidArguments descriptionFormat:@"A downloadTaskCompletionBlock must be provided for %@", self.class];
         return NO;
     }
-    
     void(^completionHandler)(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) = ^void(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error){
         self.location = location;
         [self finishWithError:error];

@@ -11,7 +11,7 @@
 
 @implementation NSDictionary (MHF)
 
--(NSSet*)mhf_allKeysSet{
+- (NSSet*)mhf_allKeysSet{
     return [NSSet setWithArray:self.allKeys];
 }
 
@@ -21,14 +21,14 @@
 
 - (NSDictionary *)mhf_unflattenDictionary{
     // create the new dict we will fill
-    NSMutableDictionary* d = [NSMutableDictionary dictionary];
-    for(NSString* key in self.allKeys){ // app.name, app.date etc.
+    NSMutableDictionary *d = [NSMutableDictionary dictionary];
+    for(NSString *key in self.allKeys){ // app.name, app.date etc.
         // copy a reference to a variable that we will change as we go through the tree.
-        NSMutableDictionary* d2 = d;
-        NSArray* parts = [key componentsSeparatedByString:@"."]; //e.g. key1,key2,key3
-        NSArray* partsExceptLast = [parts subarrayWithRange:NSMakeRange(0, parts.count - 1)]; // e.g. key1,key2
+        NSMutableDictionary *d2 = d;
+        NSArray *parts = [key componentsSeparatedByString:@"."]; //e.g. key1,key2,key3
+        NSArray*partsExceptLast = [parts subarrayWithRange:NSMakeRange(0, parts.count - 1)]; // e.g. key1,key2
         for(NSString* part in partsExceptLast){
-            NSMutableDictionary* d3 = d2[part];
+            NSMutableDictionary *d3 = d2[part];
             if(!d3){
                 d3 = [NSMutableDictionary dictionary];
             }
@@ -48,7 +48,7 @@
 
 - (id)mhf_nilIfNSNullObjectForKey:(id)aKey{
     id obj = [self objectForKey:aKey];
-    if(obj == [NSNull null]){
+    if(obj == NSNull.null){
         return nil;
     }
     return obj;
@@ -70,7 +70,6 @@
         }
         [s appendFormat:format, tabs, key, obj];
     }];
-    
     return s;
 }
 

@@ -11,7 +11,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 MHF_EXTERN NSString * const MHFoundationErrorDomain;
-
 MHF_EXTERN NSString * const MHFPartialErrorsByItemIDKey;
 
 typedef NS_ENUM(NSInteger, MHFErrorCode) {

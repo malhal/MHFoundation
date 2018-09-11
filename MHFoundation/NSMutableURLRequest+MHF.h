@@ -13,21 +13,21 @@
 
 // Sets the content type to application/json, json encodes the object, returning an error if fails, and sets it on the HTTPBody
 // Also sets method to POST.
--(BOOL)mhf_setJSONObject:(id)JSONObject error:(NSError**)error;
+- (BOOL)mhf_setJSONObject:(id)JSONObject error:(NSError **)error;
 
--(void)mhf_setPOST;
+- (void)mhf_setPOST;
 
--(void)mhf_setPUT;
+- (void)mhf_setPUT;
 
 // you must gzip the body too.
--(void)mhf_contentEncodingGZIP;
+- (void)mhf_contentEncodingGZIP;
 
--(void)mhf_setAcceptJSON;
+- (void)mhf_setAcceptJSON;
 
--(void)mhf_setContentTypeJSON;
+- (void)mhf_setContentTypeJSON;
 
--(void)mhf_setBasicAuthUsername:(NSString*)username password:(NSString*)password;
+- (void)mhf_setBasicAuthUsername:(NSString *)username password:(NSString *)password;
 
--(void)mhf_setAcceptGzip;
+- (void)mhf_setAcceptGzip;
 
 @end

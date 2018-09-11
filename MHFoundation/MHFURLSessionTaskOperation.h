@@ -21,11 +21,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithURL:(NSURL *)url;
 
 // if no session is set the shared session is used.
-@property (nonatomic, strong, nullable) NSURLSession* session;
+@property (nonatomic, strong, nullable) NSURLSession *session;
 
-@property (nonatomic, copy, nullable) NSURLRequest* request;
+@property (nonatomic, copy, nullable) NSURLRequest *request;
 
-@property (nonatomic, copy, nullable) NSURL* url;
+@property (nonatomic, copy, nullable) NSURL *url;
 
 @end
 
@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MHFURLSessionDownloadTaskOperation : MHFURLSessionTaskOperation
 
-@property (nonatomic, copy, nullable) NSData* resumeData;
+@property (nonatomic, copy, nullable) NSData *resumeData;
 
 - (instancetype)initWithResumeData:(NSData *)resumeData;
 
