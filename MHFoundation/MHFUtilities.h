@@ -18,6 +18,8 @@ MHF_EXTERN id MHFProtocolCast(Protocol *protocol, id object);
 MHF_EXTERN float MHFDispatchMainAfterDelay(dispatch_block_t block);
 MHF_EXTERN void MHFPerformBlockOnMainThread(dispatch_block_t block);
 
+MHF_EXTERN BOOL MHFProtocolHasInstanceMethod(Protocol * protocol, SEL selector);
+
 @interface MHFUtilities : NSObject
 
 + (struct _NSRange)range:(struct _NSRange)arg1 liesWithinRange:(struct _NSRange)arg2 assert:(BOOL)arg3;

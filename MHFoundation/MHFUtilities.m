@@ -9,6 +9,7 @@
 #import "MHFUtilities.h"
 #import "MHFReachability.h"
 #import "NSException+MHF.h"
+#import <objc/runtime.h>
 
 id MHFDynamicCast(Class aClass, id object){
     if([object isKindOfClass:aClass]){
@@ -48,6 +49,20 @@ void MHFPerformBlockOnMainThread(dispatch_block_t block){
         dispatch_sync(dispatch_get_main_queue(), block);
     }
 }
+
+BOOL MHFProtocolHasInstanceMethod(Protocol * protocol, SEL selector) {
+    struct objc_method_description desc;
+    desc = protocol_getMethodDescription(protocol, selector, NO, YES);
+    if(desc.name){
+        return YES;
+    }
+    desc = protocol_getMethodDescription(protocol, selector, YES, YES);
+    if(desc.name){
+        return YES;
+    }
+    return NO;
+}
+
 
 @implementation MHFUtilities
 
