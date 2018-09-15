@@ -27,7 +27,7 @@ static void * const MHFQueueOperationContext = (void *)&MHFQueueOperationContext
     if (self) {
         // we init here rather than shouldPerform so that it can be used before or after a subclasses call to super.
         // furthermore this object is definately required so no point in lazy loading.
-        _operationQueue = [[NSOperationQueue alloc] init];
+        _operationQueue = [NSOperationQueue.alloc init];
         _operationQueue.suspended = YES;
     }
     return self;
@@ -59,7 +59,7 @@ static void * const MHFQueueOperationContext = (void *)&MHFQueueOperationContext
     }
 }
 
--(void)performAsyncOperation{
+- (void)performAsyncOperation{
     // Start the queue and for safety delay until after the operations have been added by the subclass.
     // This means it doesn't matter if they call super at start or end of their method.
     [self performBlockOnCallbackQueue:^{
@@ -109,7 +109,7 @@ static void * const MHFQueueOperationContext = (void *)&MHFQueueOperationContext
     return self;
 }
 
--(void)addOperation:(NSOperation*)op{
+- (void)addOperation:(NSOperation*)op{
     [self.operationQueue mhf_addSerialOperation:op];
 }
 

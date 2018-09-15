@@ -36,20 +36,16 @@
         NSLog(@"Not starting already cancelled operation");
         return;
     }
-    
     if(self.isExecuting || self.isFinished){
         [NSException raise:NSInvalidArgumentException format:@"You can't restart an executing or finished %@", self.class];
     }
-
     self.executing = YES;
-    
     if(self.isCancelled){
         // Must move the operation to the finished state if it is canceled.
         NSError* error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorOperationCancelled descriptionFormat:@"The %@ was cancelled before it started", self.class];
         [self finishWithError:error];
         return;
     }
-    
     // If the operation is not cancelled, begin executing the task.
     // By using the callback queue we get easy access to a thread to support non-queued operations,
     // and also it allows us to finish with error if shouldn't run.
@@ -72,22 +68,20 @@
 }
 
 // on the call back queue
--(void)main{
+- (void)main{
     if(self.isCancelled){
         return;
     }
-    
     NSError* error = nil;
     if(![self asyncOperationShouldRun:&error]){
         [self finishOnCallbackQueueWithError:error];
         return;
     }
-    
     [self performAsyncOperation];
 }
 
 // Overridden by subclasses for property validation
--(BOOL)asyncOperationShouldRun:(NSError**)error{
+- (BOOL)asyncOperationShouldRun:(NSError **)error{
     return YES;
 }
 
@@ -97,23 +91,20 @@
     if(self.asyncOperationCompletionBlock){
         self.asyncOperationCompletionBlock(error);
     }
-    
     [self willChangeValueForKey:@"isFinished"];
     [self willChangeValueForKey:@"isExecuting"];
-    
     _executing = NO;
     _finished = YES;
-    
     [self didChangeValueForKey:@"isExecuting"];
     [self didChangeValueForKey:@"isFinished"];
 }
 
 // overriden by subclasses to run the operation.
--(void)performAsyncOperation{
+- (void)performAsyncOperation{
 }
 
 // may be called from any thread, either from subclasses in async results, or from cancel
-- (void)finishWithError:(NSError*)error{ // _handleCompletionCallback
+- (void)finishWithError:(NSError *)error{ // _handleCompletionCallback
     [self performBlockOnCallbackQueue:^{
         [self finishInternalOnCallbackQueueWithError:error]; // using self here has side effect that operation is retained while it is working.
     }];
@@ -124,18 +115,15 @@
     if(!self.isExecuting){
         return;
     }
-    
     if(!self.isFinished){
         [self finishOnCallbackQueueWithError:error];
         return;
     }
-    
     NSLog(@"The operation operation %@ didn't start or is already finished", self);
 }
 
--(void)cancel{
+- (void)cancel{
     [super cancel];
-    
     NSError* error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorOperationCancelled descriptionFormat:@"The %@ was cancelled", self.class];
     [self finishWithError:error];
 }

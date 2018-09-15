@@ -62,7 +62,6 @@
 		ECC991341D0D54A4000F5EFB /* MHFDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC991321D0D54A4000F5EFB /* MHFDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECC991381D0D74FD000F5EFB /* MHFError.h in Headers */ = {isa = PBXBuildFile; fileRef = ECC991361D0D74FD000F5EFB /* MHFError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECC991391D0D74FD000F5EFB /* MHFError.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC991371D0D74FD000F5EFB /* MHFError.m */; };
-		ECD142CE1DB92287000B38AC /* MHFDefines+Namespace.h in Headers */ = {isa = PBXBuildFile; fileRef = ECD142CD1DB92287000B38AC /* MHFDefines+Namespace.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECFB0F771D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFB0F751D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECFB0F781D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFB0F761D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.m */; };
 		ECFB0F801D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = ECFB0F7E1D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -144,7 +143,6 @@
 		ECC991321D0D54A4000F5EFB /* MHFDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFDefines.h; sourceTree = "<group>"; };
 		ECC991361D0D74FD000F5EFB /* MHFError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFError.h; sourceTree = "<group>"; };
 		ECC991371D0D74FD000F5EFB /* MHFError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHFError.m; sourceTree = "<group>"; };
-		ECD142CD1DB92287000B38AC /* MHFDefines+Namespace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MHFDefines+Namespace.h"; sourceTree = "<group>"; };
 		ECFB0F751D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSessionDataTask+MHF.h"; sourceTree = "<group>"; };
 		ECFB0F761D7B1C1F00CC2BC3 /* NSURLSessionDataTask+MHF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSessionDataTask+MHF.m"; sourceTree = "<group>"; };
 		ECFB0F7E1D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFURLSessionTaskOperation.h; sourceTree = "<group>"; };
@@ -200,7 +198,6 @@
 				EC3144501D073A1A0025F669 /* MHFoundation.h */,
 				EC6758FD1DB063A400838798 /* MHFoundation_Private.h */,
 				ECC991321D0D54A4000F5EFB /* MHFDefines.h */,
-				ECD142CD1DB92287000B38AC /* MHFDefines+Namespace.h */,
 				ECFB0F7E1D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.h */,
 				ECFB0F7F1D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.m */,
 				ECB213591D847E9700246A1F /* MHFRESTOperation.h */,
@@ -303,7 +300,6 @@
 				EC3144751D073AC10025F669 /* MHFAsyncOperation.h in Headers */,
 				EC5D1C051F7482BF008BC02E /* NSUndoManager+MHF.h in Headers */,
 				EC5D1BF81F747EF3008BC02E /* MHFReachability.h in Headers */,
-				ECD142CE1DB92287000B38AC /* MHFDefines+Namespace.h in Headers */,
 				EC5D1BF71F747EEA008BC02E /* MHFSelectorDelayer.h in Headers */,
 				ECB16F761D96A95A003F987D /* MHFBatchRESTOperation.h in Headers */,
 				ECB213571D846A9600246A1F /* NSHTTPURLResponse+MHF.h in Headers */,
@@ -365,7 +361,7 @@
 		EC3144441D073A1A0025F669 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Malcolm Hall";
 				TargetAttributes = {
 					EC31444C1D073A1A0025F669 = {
@@ -480,12 +476,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -512,7 +510,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -533,12 +531,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -559,7 +559,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -575,7 +575,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				HEADER_SEARCH_PATHS = dependencies/GZIP;
 				INFOPLIST_FILE = MHFoundation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -593,7 +592,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				HEADER_SEARCH_PATHS = dependencies/GZIP;
 				INFOPLIST_FILE = MHFoundation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

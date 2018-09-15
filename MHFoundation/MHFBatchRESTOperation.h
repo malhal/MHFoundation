@@ -16,9 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 // each request in the batch should have a mhf_JSONBody that is an NSDictionary
 // the url should be the path under http://host/api/ e.g. venue
-- (instancetype)initWithURLRequest:(nullable NSMutableURLRequest *)request batchRequests:(nullable NSArray <NSMutableURLRequest *> *)batchRequests;
+- (instancetype)initWithURLRequest:(nullable NSMutableURLRequest *)request batchRequests:(nullable NSArray<NSMutableURLRequest *> *)batchRequests;
 
-@property (nonatomic, copy, nullable) NSArray <NSMutableURLRequest *> *batchRequests;
+@property (nonatomic, copy, nullable) NSArray<NSMutableURLRequest *> *batchRequests;
 
 /* Called on success or failure for each request in the batch. The callback is called in order of the batch requests. */
 @property (nonatomic, copy, nullable) void (^perRequestCompletionBlock)(NSMutableURLRequest *request, id __nullable JSONObject, NSHTTPURLResponse * __nullable response, NSError * __nullable error);

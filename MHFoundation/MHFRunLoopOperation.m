@@ -39,7 +39,7 @@
     [self didChangeValueForKey:@"isExecuting"];
 }
 
-- (void)main {
+- (void)main{
     @try {
         // Do the main work of the operation here.
         [self willRun];
@@ -51,10 +51,11 @@
     }
 }
 
--(void)willRun{
+- (void)willRun{
+    // to be overridden by subclasses
 }
 
--(void)completeOperation{
+- (void)completeOperation{
     [self willChangeValueForKey:@"isFinished"];
     [self willChangeValueForKey:@"isExecuting"];
     

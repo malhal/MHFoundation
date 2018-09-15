@@ -20,7 +20,6 @@
 
 - (BOOL)mhf_isLaterThanDate:(NSDate*)date {
     return [self compare:date] == NSOrderedDescending;
-    
 }
 
 - (BOOL)mhf_isEarlierThanDate:(NSDate*)date {
@@ -28,7 +27,7 @@
 }
 
 //used to send a utc date to the server.
--(NSString*)mhf_MySQLString{
+- (NSString*)mhf_MySQLString{
     static NSDateFormatter *df = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -44,7 +43,7 @@
     return [df stringFromDate:self];
 }
 
--(NSString*)mhf_fractionalMySQLString{
+- (NSString*)mhf_fractionalMySQLString{
     double d = [self timeIntervalSince1970];
     d = d - floor(d); // extract fraction
     d*=1000000; // convert to micros

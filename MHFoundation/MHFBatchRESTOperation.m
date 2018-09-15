@@ -24,7 +24,7 @@
 
 @implementation MHFBatchRESTOperation
 
-- (instancetype)initWithURLRequest:(nullable NSMutableURLRequest *)request batchRequests:(nullable NSArray <NSMutableURLRequest *> *)batchRequests{
+- (instancetype)initWithURLRequest:(nullable NSMutableURLRequest *)request batchRequests:(nullable NSArray<NSMutableURLRequest *> *)batchRequests{
     
     self = [self initWithURLRequest:request];
     if (self) {
@@ -33,14 +33,14 @@
     return self;
 }
 
-- (BOOL)asyncOperationShouldRun:(NSError**)error{
+- (BOOL)asyncOperationShouldRun:(NSError **)error{
     if(!self.batchRequests.count) {
         *error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorInvalidArguments descriptionFormat:@"batchRequests must be provided for %@", self.class];
         return NO;
     }
     
     
-    NSMutableArray* requests = [NSMutableArray array];
+    NSMutableArray* requests = NSMutableArray.array;
     for(NSMutableURLRequest* batchRequest in self.batchRequests){
         [requests addObject:@{@"path" : batchRequest.URL.absoluteString,
                               @"method" : batchRequest.HTTPMethod,
@@ -52,16 +52,13 @@
     return [super asyncOperationShouldRun:error];
 }
 
--(void)performAsyncOperation{
+- (void)performAsyncOperation{
     [super performAsyncOperation];
-    
     NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
         NSArray* responses = (NSArray *)self.JSONObject;
-        
-        if(![responses isKindOfClass:[NSArray class]]){
+        if(![responses isKindOfClass:NSArray.class]){
             return [self finishWithError:[NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorUnknown descriptionFormat:@"An array of responses was not received for %@", self.class]];
         }
-        
         NSMutableDictionary* partialErrors = [NSMutableDictionary dictionary];
         [responses enumerateObjectsUsingBlock:^(NSDictionary *rd, NSUInteger idx, BOOL *stop)
         {
@@ -85,7 +82,7 @@
     [self addOperation:op];
 }
 
-- (void)finishOnCallbackQueueWithError:(NSError*)error{
+- (void)finishOnCallbackQueueWithError:(NSError *)error{
     if(!error){
         if(self.partialErrors.count){
             error = [MHFError errorWithCode:MHFErrorPartialFailure userInfo:@{MHFPartialErrorsByItemIDKey : self.partialErrors}];
@@ -101,11 +98,11 @@
 
 //@implementation NSMutableURLRequest (MHFBatchRESTOperation)
 //
-//-(id)mhf_identifier{
+//- (id)mhf_identifier{
 //    return objc_getAssociatedObject(self, @selector(mhf_identifier));
 //}
 //
-//-(void)mhf_setIdentifier:(NSString *)identifier{
+//- (void)mhf_setIdentifier:(NSString *)identifier{
 //    objc_setAssociatedObject(self, @selector(identifier), identifier, OBJC_ASSOCIATION_COPY_NONATOMIC);
 //}
 //

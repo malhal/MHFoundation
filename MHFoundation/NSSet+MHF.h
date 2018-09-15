@@ -12,7 +12,9 @@
 @interface NSSet<__covariant ObjectType>  (MHF)
 
 - (BOOL)mhf_containsObjectPassingTest:(BOOL (NS_NOESCAPE ^)(ObjectType obj, BOOL *stop))predicate;
+
 - (ObjectType)mhf_objectPassingTest:(BOOL (NS_NOESCAPE ^)(ObjectType obj, BOOL *stop))predicate;
+
 - (NSSet<ObjectType> *)mhf_objectsOfClass:(Class)aClass;
 
 @end

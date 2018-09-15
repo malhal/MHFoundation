@@ -40,7 +40,7 @@
     return _session;
 }
 
-- (BOOL)asyncOperationShouldRun:(NSError**)error{
+- (BOOL)asyncOperationShouldRun:(NSError **)error{
     if(!self.request) {
         *error = [NSError mhf_errorWithDomain:MHFoundationErrorDomain code:MHFErrorInvalidArguments descriptionFormat:@"A request must be provided for %@", self.class];
         return NO;
@@ -52,7 +52,7 @@
     return [super asyncOperationShouldRun:error];
 }
 
--(void)performAsyncOperation{
+- (void)performAsyncOperation{
     [super performAsyncOperation];
     
     MHFURLSessionDataTaskOperation* dataTask = [[MHFURLSessionDataTaskOperation alloc] init];
@@ -133,7 +133,7 @@
     return [response mhf_HTTPErrorWithUserInfo:errorDictionary];
 }
 
-- (void)finishOnCallbackQueueWithError:(NSError*)error{
+- (void)finishOnCallbackQueueWithError:(NSError *)error{
     if(self.RESTCompletionBlock){
         self.RESTCompletionBlock(self.JSONObject, self.response, error);
     }
@@ -144,12 +144,12 @@
 
 @implementation NSMutableURLRequest (MHFRESTOperation)
                                      
--(id)mhf_JSONBody{
+- (id)mhf_JSONBody{
     //return objc_getAssociatedObject(self, @selector(mhf_JSONBody));
     return [NSURLProtocol propertyForKey:NSStringFromSelector(@selector(mhf_JSONBody)) inRequest:self];
 }
 
--(void)mhf_setJSONBody:(id)JSONBody{
+- (void)mhf_setJSONBody:(id)JSONBody{
     //objc_setAssociatedObject(self, @selector(mhf_JSONBody), JSONBody, OBJC_ASSOCIATION_COPY_NONATOMIC);
     [NSURLProtocol setProperty:JSONBody forKey:NSStringFromSelector(@selector(mhf_JSONBody)) inRequest:self];
 }

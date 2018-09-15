@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSUndoManager (MHF)
 
-- (BOOL)mhf_isUndoingOrRedoing;
+@property (nonatomic, assign, readonly) BOOL mhf_isUndoingOrRedoing;
 
 @end
 

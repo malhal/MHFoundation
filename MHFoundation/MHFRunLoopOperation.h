@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MHFRunLoopOperation : NSOperation
 
--(void)willRun;
+- (void)willRun;
 
 @end
 

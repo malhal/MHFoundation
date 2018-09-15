@@ -27,7 +27,7 @@ NSString * const MHFHTTPErrorDomain = @"MHFHTTPErrorDomain";
 }
 
 + (instancetype)HTTPErrorWithStatusCode:(NSInteger)statusCode userInfo:(NSDictionary*)userInfo{
-    return [[MHFHTTPError alloc] initWithStatusCode:statusCode userInfo:userInfo];
+    return [MHFHTTPError.alloc initWithStatusCode:statusCode userInfo:userInfo];
 }
 
 @end
