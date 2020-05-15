@@ -3,7 +3,7 @@
 //  DataStoreDemo
 //
 //  Created by Malcolm Hall on 10/11/2014.
-//  Copyright (c) 2014 Dynamically Loaded Ltd. All rights reserved.
+//  Copyright (c) 2014 Malcolm Hall. All rights reserved.
 //
 
 #import "NSMutableDictionary+MHF.h"
