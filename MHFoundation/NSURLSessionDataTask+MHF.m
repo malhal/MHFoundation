@@ -38,4 +38,24 @@
     }];
 }
 
++ (NSURLSessionDataTask *)mhf_PropertyListTaskWithSession:(NSURLSession *)session request:(NSURLRequest *)request completionHandler:(void (^)(id __nullable propertyList, NSURLResponse * __nullable response, NSError * __nullable error))completionHandler{
+    return [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if(error){
+            completionHandler(nil, response, error);
+            return;
+        }
+        id receivedPropertyList;
+        // parse will fail if there is no data.
+        if(data.length){
+            NSString* parseErrorString = nil;
+            receivedPropertyList = [NSPropertyListSerialization propertyListFromData:data mutabilityOption:NSPropertyListImmutable format:NULL errorDescription:&parseErrorString];
+            if(parseErrorString){
+                NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:parseErrorString, NSLocalizedFailureReasonErrorKey, nil];
+                error = [NSError errorWithDomain:NSCocoaErrorDomain code:NSFileReadCorruptFileError userInfo:userInfo];
+            }
+        }
+        completionHandler(receivedPropertyList, response, error);
+    }];
+}
+
 @end

@@ -32,6 +32,11 @@
     [self setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
 }
 
+// untested
+- (void)mhf_setContentTypePropertyList{
+    [self setValue:@"text/xml" forHTTPHeaderField:@"Content-Type"];
+}
+
 - (void)mhf_setPOST{
     [self setHTTPMethod:MHFHTTPMethodPOST];
 }
@@ -54,4 +59,25 @@
 - (void)mhf_setAcceptGzip{
     [self addValue:@"gzip" forHTTPHeaderField:@"Accept-Encoding"];
 }
+
+// untested
+- (BOOL)mhf_setPropertyList:(id)propertyList error:(NSError**)error{
+    NSString* errorString = nil;
+    NSData* data = [NSPropertyListSerialization dataFromPropertyList:propertyList format:NSPropertyListXMLFormat_v1_0 errorDescription:&errorString];
+    if(!data){
+        if(error){
+            *error = [NSError errorWithDomain:NSCocoaErrorDomain code:NSFileReadCorruptFileError userInfo:[NSDictionary dictionaryWithObject:errorString forKey:NSLocalizedDescriptionKey]];
+        }
+        return NO;
+    }
+    self.HTTPBody = data;
+    [self mhf_setContentTypePropertyList];
+    if([self.HTTPMethod isEqualToString:@"GET"]){
+        [self mhf_setPOST];
+    }
+    return YES;
+    
+    
+}
+
 @end

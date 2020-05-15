@@ -30,4 +30,8 @@
 
 - (void)mhf_setAcceptGzip;
 
+- (BOOL)mhf_setPropertyList:(id)propertyList error:(NSError**)error;
+
+- (void)mhf_setContentTypePropertyList;
+
 @end

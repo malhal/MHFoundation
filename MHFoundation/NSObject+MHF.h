@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)mhf_addObserver:(NSObject *)observer forKeyPaths:(NSArray<NSString *> *)keyPaths options:(NSKeyValueObservingOptions)options context:(void *)context;
 - (NSString *)className;
+- (void)mhf_performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay;
 
 @end
 

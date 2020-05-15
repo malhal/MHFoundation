@@ -26,6 +26,8 @@
 		EC31447E1D073AC10025F669 /* NSArray+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3144701D073AC10025F669 /* NSArray+MHF.m */; };
 		EC31447F1D073AC10025F669 /* NSDictionary+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3144711D073AC10025F669 /* NSDictionary+MHF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC3144801D073AC10025F669 /* NSDictionary+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = EC3144721D073AC10025F669 /* NSDictionary+MHF.m */; };
+		EC31CCCA246EA65100DCFF05 /* NSMutableDictionary+MHF.h in Headers */ = {isa = PBXBuildFile; fileRef = EC31CCC8246EA65100DCFF05 /* NSMutableDictionary+MHF.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC31CCCB246EA65100DCFF05 /* NSMutableDictionary+MHF.m in Sources */ = {isa = PBXBuildFile; fileRef = EC31CCC9246EA65100DCFF05 /* NSMutableDictionary+MHF.m */; };
 		EC5D1BF11F7476CB008BC02E /* MHFReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5D1BF01F7476CB008BC02E /* MHFReachability.m */; };
 		EC5D1BF61F747E65008BC02E /* MHFSelectorDelayer.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5D1BF41F747E64008BC02E /* MHFSelectorDelayer.m */; };
 		EC5D1BF71F747EEA008BC02E /* MHFSelectorDelayer.h in Headers */ = {isa = PBXBuildFile; fileRef = EC5D1BF51F747E65008BC02E /* MHFSelectorDelayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -107,6 +109,8 @@
 		EC3144701D073AC10025F669 /* NSArray+MHF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MHF.m"; sourceTree = "<group>"; };
 		EC3144711D073AC10025F669 /* NSDictionary+MHF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+MHF.h"; sourceTree = "<group>"; };
 		EC3144721D073AC10025F669 /* NSDictionary+MHF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+MHF.m"; sourceTree = "<group>"; };
+		EC31CCC8246EA65100DCFF05 /* NSMutableDictionary+MHF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+MHF.h"; sourceTree = "<group>"; };
+		EC31CCC9246EA65100DCFF05 /* NSMutableDictionary+MHF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+MHF.m"; sourceTree = "<group>"; };
 		EC5D1BEF1F7476CB008BC02E /* MHFReachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHFReachability.h; sourceTree = "<group>"; };
 		EC5D1BF01F7476CB008BC02E /* MHFReachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHFReachability.m; sourceTree = "<group>"; };
 		EC5D1BF41F747E64008BC02E /* MHFSelectorDelayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHFSelectorDelayer.m; sourceTree = "<group>"; };
@@ -198,6 +202,8 @@
 				EC3144501D073A1A0025F669 /* MHFoundation.h */,
 				EC6758FD1DB063A400838798 /* MHFoundation_Private.h */,
 				ECC991321D0D54A4000F5EFB /* MHFDefines.h */,
+				ECFB0F821D7B952900CC2BC3 /* NSURLSession+MHF.h */,
+				ECFB0F831D7B952900CC2BC3 /* NSURLSession+MHF.m */,
 				ECFB0F7E1D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.h */,
 				ECFB0F7F1D7B895F00CC2BC3 /* MHFURLSessionTaskOperation.m */,
 				ECB213591D847E9700246A1F /* MHFRESTOperation.h */,
@@ -221,6 +227,8 @@
 				ECC0FB581F71533C009465E3 /* NSSet+MHF.m */,
 				EC3144711D073AC10025F669 /* NSDictionary+MHF.h */,
 				EC3144721D073AC10025F669 /* NSDictionary+MHF.m */,
+				EC31CCC8246EA65100DCFF05 /* NSMutableDictionary+MHF.h */,
+				EC31CCC9246EA65100DCFF05 /* NSMutableDictionary+MHF.m */,
 				ECB16F781D97373C003F987D /* MHFError_Internal.h */,
 				ECC991361D0D74FD000F5EFB /* MHFError.h */,
 				ECC991371D0D74FD000F5EFB /* MHFError.m */,
@@ -230,8 +238,6 @@
 				EC07F1561D4CDEC800A28610 /* NSError+MHF.m */,
 				ECFD7F701D44087000449373 /* NSDate+MHF.h */,
 				ECFD7F711D44087000449373 /* NSDate+MHF.m */,
-				ECFB0F821D7B952900CC2BC3 /* NSURLSession+MHF.h */,
-				ECFB0F831D7B952900CC2BC3 /* NSURLSession+MHF.m */,
 				ECFB0F911D7CF2E100CC2BC3 /* NSUUID+MHF.h */,
 				ECFB0F921D7CF2E100CC2BC3 /* NSUUID+MHF.m */,
 				ECB213551D846A9600246A1F /* NSHTTPURLResponse+MHF.h */,
@@ -299,6 +305,7 @@
 				ECC991381D0D74FD000F5EFB /* MHFError.h in Headers */,
 				EC3144751D073AC10025F669 /* MHFAsyncOperation.h in Headers */,
 				EC5D1C051F7482BF008BC02E /* NSUndoManager+MHF.h in Headers */,
+				EC31CCCA246EA65100DCFF05 /* NSMutableDictionary+MHF.h in Headers */,
 				EC5D1BF81F747EF3008BC02E /* MHFReachability.h in Headers */,
 				EC5D1BF71F747EEA008BC02E /* MHFSelectorDelayer.h in Headers */,
 				ECB16F761D96A95A003F987D /* MHFBatchRESTOperation.h in Headers */,
@@ -433,6 +440,7 @@
 				EC942EAB1F79C05700A53DA9 /* NSProcessInfo+MHF.m in Sources */,
 				EC5D1C041F7482BC008BC02E /* NSUndoManager+MHF.m in Sources */,
 				EC6408D41DBAA6CC00AF9016 /* NSURL+MHF.m in Sources */,
+				EC31CCCB246EA65100DCFF05 /* NSMutableDictionary+MHF.m in Sources */,
 				ECB213631D84B40A00246A1F /* MHFHTTPError.m in Sources */,
 				EC07F1581D4CDEC800A28610 /* NSError+MHF.m in Sources */,
 				ECFB0F851D7B952900CC2BC3 /* NSURLSession+MHF.m in Sources */,

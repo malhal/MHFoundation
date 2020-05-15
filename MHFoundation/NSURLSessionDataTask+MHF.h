@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 // parses the JSON and does not allow fragments, i.e. must be an array or dictionary.
 + (NSURLSessionDataTask *)mhf_JSONTaskWithSession:(NSURLSession *)session request:(NSURLRequest *)request completionHandler:(void (^)(id __nullable JSONObject, NSURLResponse * __nullable response, NSError * __nullable error))completionHandler;
 
++ (NSURLSessionDataTask *)mhf_PropertyListTaskWithSession:(NSURLSession *)session request:(NSURLRequest *)request completionHandler:(void (^)(id __nullable propertyList, NSURLResponse * __nullable response, NSError * __nullable error))completionHandler;
+
 @end
 
 
